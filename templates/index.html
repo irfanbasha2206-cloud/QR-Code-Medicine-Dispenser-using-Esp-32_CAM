@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AegisRx — Intelligent Prescription Scanner & IoT Dispensing System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-base: #060911;
+            --bg-surface: #0c1220;
+            --bg-card: rgba(15, 23, 42, 0.75);
+            --bg-card-hover: rgba(20, 30, 55, 0.85);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-active: rgba(99, 102, 241, 0.35);
+            
+            --royal-primary: #4f46e5;
+            --royal-accent: #6366f1;
+            --cyan-accent: #06b6d4;
+            --emerald-dispense: #10b981;
+            --amber-pending: #f59e0b;
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at 50% 0%, #111a33 0%, #060911 70%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ═══ NAVIGATION / HEADER ═══ */
+        .header {
+            background: rgba(8, 13, 24, 0.85);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 16px 36px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .brand-text h1 {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-text .version-tag {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 2px 7px;
+            border-radius: 6px;
+            background: rgba(99, 102, 241, 0.18);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            color: #a5b4fc;
+        }
+
+        .brand-text p {
+            color: var(--text-secondary);
+            font-size: 12px;
+            margin-top: 1px;
+            letter-spacing: 0.1px;
+        }
+
+        .status-cluster {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chip {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 15px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(8px);
+        }
+
+        .pulse-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--text-muted);
+            position: relative;
+        }
+
+        .chip.active-cam {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: rgba(16, 185, 129, 0.3);
+            color: #34d399;
+        }
+        .chip.active-cam .pulse-dot {
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+        }
+        .chip.active-cam .pulse-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 1px solid #10b981;
+            animation: radarPing 2s infinite cubic-bezier(0, 0, 0.2, 1);
+        }
+
+        @keyframes radarPing {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2.8); opacity: 0; }
+        }
+
+        .chip.scanning {
+            background: rgba(6, 182, 212, 0.1);
+            border-color: rgba(6, 182, 212, 0.3);
+            color: #38bdf8;
+        }
+        .chip.scanning .pulse-dot {
+            background: #06b6d4;
+            box-shadow: 0 0 8px #06b6d4;
+        }
+
+        .chip.detected {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.5);
+            color: #818cf8;
+            box-shadow: 0 0 16px rgba(99, 102, 241, 0.2);
+        }
+        .chip.detected .pulse-dot {
+            background: #6366f1;
+            box-shadow: 0 0 10px #6366f1;
+        }
+
+        .chip.dispensed {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.5);
+            color: #34d399;
+            box-shadow: 0 0 18px rgba(16, 185, 129, 0.25);
+        }
+        .chip.dispensed .pulse-dot {
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+        }
+
+        /* ═══ CONTAINER & GRID ═══ */
+        .main-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 28px 24px 70px;
+        }
+
+        /* Quick IP Configuration Bar */
+        .config-strip {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 24px;
+            backdrop-filter: blur(12px);
+        }
+
+        .config-label {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .config-label .endpoint-url {
+            color: #38bdf8;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12.5px;
+            background: rgba(6, 182, 212, 0.08);
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .config-form {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .config-input {
+            background: rgba(6, 9, 17, 0.8);
+            border: 1px solid var(--border-subtle);
+            border-radius: 8px;
+            padding: 6px 12px;
+            color: #ffffff;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12.5px;
+            outline: none;
+            width: 190px;
+            transition: all 0.2s;
+        }
+        .config-input:focus {
+            border-color: var(--royal-accent);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+        .config-btn {
+            background: linear-gradient(135deg, #3b82f6, #4f46e5);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .config-btn:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+        }
+
+        /* Two-Column Workspace */
+        .workspace {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        /* Glass Panel */
+        .panel {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 22px;
+            backdrop-filter: blur(24px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .panel-title {
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+
+        .panel-title svg {
+            color: var(--cyan-accent);
+        }
+
+        .live-tag {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #10b981;
+            letter-spacing: 0.6px;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 3px 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        /* ═══ CAMERA VIEWPORT WITH ROYAL RETICLE & SCANNER LASER ═══ */
+        .camera-chamber {
+            position: relative;
+            background: #02040a;
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .camera-chamber img {
+            width: 100%;
+            height: auto;
+            max-height: 520px;
+            object-fit: contain;
+            display: block;
+        }
+
+        /* Sleek Medical Laser Scan Beam */
+        .scan-laser-line {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.8) 50%, transparent 100%);
+            box-shadow: 0 0 15px #38bdf8, 0 0 30px #0284c7;
+            animation: laserSweep 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        @keyframes laserSweep {
+            0% { top: 6%; opacity: 0; }
+            15% { opacity: 1; }
+            85% { opacity: 1; }
+            100% { top: 92%; opacity: 0; }
+        }
+
+        /* Precision Corner Reticle */
+        .reticle-box {
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            pointer-events: none;
+            z-index: 9;
+        }
+
+        .reticle-corner {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-color: #38bdf8;
+            border-style: solid;
+        }
+        .corner-tl { top: 0; left: 0; border-width: 2.5px 0 0 2.5px; border-top-left-radius: 6px; }
+        .corner-tr { top: 0; right: 0; border-width: 2.5px 2.5px 0 0; border-top-right-radius: 6px; }
+        .corner-bl { bottom: 0; left: 0; border-width: 0 0 2.5px 2.5px; border-bottom-left-radius: 6px; }
+        .corner-br { bottom: 0; right: 0; border-width: 0 2.5px 2.5px 0; border-bottom-right-radius: 6px; }
+
+        .reticle-radar-ring {
+            position: absolute;
+            inset: 20px;
+            border-radius: 50%;
+            border: 1px dashed rgba(56, 189, 248, 0.25);
+            animation: ringRotate 20s linear infinite;
+        }
+
+        @keyframes ringRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ═══ RIGHT COLUMN: TELEMETRY & DISPENSE ═══ */
+        .telemetry-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Cloud Transmission Status Card */
+        .transmission-card {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(12, 18, 32, 0.95));
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .transmission-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #818cf8;
+            flex-shrink: 0;
+            transition: all 0.3s;
+        }
+
+        .transmission-info h3 {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: -0.2px;
+            color: #ffffff;
+        }
+        .transmission-info p {
+            font-size: 12.5px;
+            color: var(--text-secondary);
+            margin-top: 3px;
+        }
+
+        /* Transmission States */
+        .transmission-card.state-idle .transmission-icon-wrap {
+            background: rgba(148, 163, 184, 0.08);
+            border-color: rgba(148, 163, 184, 0.15);
+            color: #94a3b8;
+        }
+
+        .transmission-card.state-sending {
+            border-color: rgba(245, 158, 11, 0.4);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(15, 23, 42, 0.9));
+        }
+        .transmission-card.state-sending .transmission-icon-wrap {
+            background: rgba(245, 158, 11, 0.15);
+            border-color: rgba(245, 158, 11, 0.4);
+            color: #fbbf24;
+            animation: pulseGlow 1.5s infinite;
+        }
+
+        .transmission-card.state-dispensed {
+            border-color: rgba(16, 185, 129, 0.45);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(12, 25, 30, 0.95));
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.12);
+        }
+        .transmission-card.state-dispensed .transmission-icon-wrap {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.5);
+            color: #34d399;
+        }
+        .transmission-card.state-dispensed .transmission-info h3 {
+            color: #34d399;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        /* Raw Payload Monospace Box */
+        .raw-stream-box {
+            background: rgba(6, 9, 17, 0.8);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 14px 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: #38bdf8;
+            min-height: 48px;
+            word-break: break-all;
+            display: flex;
+            align-items: center;
+        }
+
+        /* ═══ PRESCRIPTION DISPENSE DOSSIER ═══ */
+        .dispense-dossier {
+            background: linear-gradient(145deg, rgba(16, 24, 40, 0.95), rgba(10, 16, 28, 0.98));
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            display: none;
+            animation: slideInDossier 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            position: relative;
+        }
+
+        @keyframes slideInDossier {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dossier-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 18px;
+        }
+
+        .patient-avatar-strip {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .patient-initials {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .dossier-meta h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .dossier-meta p {
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 1px;
+        }
+
+        .verified-seal {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid rgba(16, 185, 129, 0.4);
+            color: #34d399;
+        }
+
+        /* 4-Field Clinical Grid */
+        .clinical-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .clinical-tile {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 10px 14px;
+        }
+
+        .tile-caption {
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .tile-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Medicine Dosage Rows */
+        .meds-heading {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .med-row {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            transition: all 0.2s;
+        }
+        .med-row:hover {
+            border-color: rgba(99, 102, 241, 0.4);
+            background: rgba(20, 30, 55, 0.9);
+        }
+
+        .med-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .med-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #6366f1;
+            box-shadow: 0 0 8px #6366f1;
+        }
+
+        .dosage-badge {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(79, 70, 229, 0.3));
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            color: #a5b4fc;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ═══ AUDIT LOG CONSOLE (ROYAL TERMINAL) ═══ */
+        .terminal-panel {
+            background: #04070f;
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #94a3b8;
+            height: 180px;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .log-line {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 4px;
+            word-break: break-all;
+        }
+
+        .log-ts {
+            color: #475569;
+            flex-shrink: 0;
+        }
+
+        .log-msg-success { color: #34d399; font-weight: 600; }
+        .log-msg-info { color: #38bdf8; }
+        .log-msg-warn { color: #fbbf24; }
+        .log-msg-err { color: #f87171; }
+
+        /* Sleek Loading Ring */
+        .ring-loader {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            border-top-color: #38bdf8;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .workspace { grid-template-columns: 1fr; }
+            .header { padding: 14px 20px; }
+            .main-container { padding: 20px 16px 50px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══ APP NAVIGATION ═══ -->
+    <header class="header">
+        <div class="brand">
+            <div class="brand-badge">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4.5" y1="19.5" x2="19.5" y2="4.5"/>
+                    <line x1="10.5" y1="4.5" x2="19.5" y2="13.5"/>
+                    <path d="m14 10-6 6a4.24 4.24 0 0 0 6 6l6-6Z"/>
+                </svg>
+            </div>
+            <div class="brand-text">
+                <h1>AegisRx Scanner <span class="version-tag">IoT Cloud 2.0</span></h1>
+                <p>Autonomous Prescription Optical Decoding & Cloud Dispensing Station</p>
+            </div>
+        </div>
+
+        <div class="status-cluster">
+            <div class="chip" id="chip-camera">
+                <span class="pulse-dot"></span>
+                <span id="label-camera">Camera Initializing</span>
+            </div>
+            <div class="chip" id="chip-qr">
+                <span class="pulse-dot"></span>
+                <span id="label-qr">Optical Sensor Idle</span>
+            </div>
+            <div class="chip" id="chip-iot">
+                <span class="pulse-dot"></span>
+                <span id="label-iot">IoT Standby</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+
+        <!-- ═══ STREAM ENDPOINT CONFIGURATION ═══ -->
+        <div class="config-strip">
+            <div class="config-label">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span>Active ESP32 Stream Endpoint:</span>
+                <span class="endpoint-url" id="text-stream-url">{{ esp32_url }}</span>
+            </div>
+            <div class="config-form">
+                <input type="text" id="target-ip-input" class="config-input" placeholder="e.g. 172.20.99.128">
+                <button type="button" class="config-btn" onclick="modifyStreamEndpoint()">Set Camera IP</button>
+            </div>
+        </div>
+
+        <!-- ═══ PRIMARY WORKSPACE ═══ -->
+        <div class="workspace">
+
+            <!-- LEFT: OPTICAL SCANNER CHAMBER -->
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                        <span>Live ESP32-CAM Viewport</span>
+                    </div>
+                    <div class="live-tag">
+                        <span class="pulse-dot" style="background:#10b981;"></span>
+                        <span>SENSOR ACTIVE</span>
+                    </div>
+                </div>
+
+                <div class="camera-chamber">
+                    <img id="stream-display" src="/video_feed" alt="Sensor Feed">
+                    <div class="scan-laser-line"></div>
+                    <div class="reticle-box">
+                        <div class="reticle-corner corner-tl"></div>
+                        <div class="reticle-corner corner-tr"></div>
+                        <div class="reticle-corner corner-bl"></div>
+                        <div class="reticle-corner corner-br"></div>
+                        <div class="reticle-radar-ring"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: CLOUD DISPATCH & DOSSIER -->
+            <div class="telemetry-stack">
+
+                <!-- Cloud Transmission State Card -->
+                <div class="transmission-card state-idle" id="dispatch-card">
+                    <div class="transmission-icon-wrap" id="dispatch-icon-wrap">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="dispatch-svg">
+                            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+                            <path d="M12 13v6M9 16l3-3 3 3"/>
+                        </svg>
+                    </div>
+                    <div class="transmission-info">
+                        <h3 id="dispatch-headline">Awaiting Prescription Scan</h3>
+                        <p id="dispatch-subline">Present QR prescription target within 10-15 cm of the optical sensor</p>
+                    </div>
+                </div>
+
+                <!-- Decoded QR Target Data -->
+                <div class="panel" style="padding:18px;">
+                    <div class="panel-header" style="margin-bottom:10px;">
+                        <div class="panel-title" style="font-size:12px;">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="3" height="3"/><rect x="14" y="7" width="3" height="3"/><rect x="7" y="14" width="3" height="3"/><rect x="14" y="14" width="3" height="3"/></svg>
+                            <span>Decoded Optical Payload</span>
+                        </div>
+                        <span id="payload-type-tag" style="font-size:10px;font-weight:700;letter-spacing:0.6px;padding:3px 8px;border-radius:6px;background:rgba(255,255,255,0.06);color:var(--text-muted);">STANDBY</span>
+                    </div>
+                    <div class="raw-stream-box" id="raw-payload-display">Optical target not detected...</div>
+                </div>
+
+                <!-- Medical Dispense Dossier (Appears when Dispensed) -->
+                <div class="dispense-dossier" id="dossier-container">
+                    <div class="dossier-top">
+                        <div class="patient-avatar-strip">
+                            <div class="patient-initials" id="patient-avatar">RX</div>
+                            <div class="dossier-meta">
+                                <h2 id="dossier-name">Patient Name</h2>
+                                <p id="dossier-id">PRESC_0000000000</p>
+                            </div>
+                        </div>
+                        <div class="verified-seal">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>DISPENSED</span>
+                        </div>
+                    </div>
+
+                    <div class="clinical-grid">
+                        <div class="clinical-tile">
+                            <div class="tile-caption">Prescribing Clinician</div>
+                            <div class="tile-value" id="dossier-doctor">Dr. Doctor</div>
+                        </div>
+                        <div class="clinical-tile">
+                            <div class="tile-caption">Demographics</div>
+                            <div class="tile-value" id="dossier-demographics">-- Yrs / --</div>
+                        </div>
+                        <div class="clinical-tile">
+                            <div class="tile-caption">Contact Number</div>
+                            <div class="tile-value" id="dossier-contact">--</div>
+                        </div>
+                        <div class="clinical-tile">
+                            <div class="tile-caption">Authentication Time</div>
+                            <div class="tile-value" id="dossier-timestamp" style="font-family:'JetBrains Mono';font-size:12.5px;">--:--:--</div>
+                        </div>
+                    </div>
+
+                    <div class="meds-heading">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10.5 4.5 19.5 13.5M4.5 19.5 19.5 4.5"/><path d="m14 10-6 6a4.24 4.24 0 0 0 6 6l6-6Z"/></svg>
+                        <span>Prescribed Regimen to Dispense</span>
+                    </div>
+
+                    <div id="dossier-meds-list"></div>
+                </div>
+
+                <!-- Audit Log Console -->
+                <div class="panel" style="padding:18px;">
+                    <div class="panel-header" style="margin-bottom:12px;">
+                        <div class="panel-title" style="font-size:12px;">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                            <span>System Activity & Audit Telemetry</span>
+                        </div>
+                        <span style="font-size:10px;font-weight:700;color:var(--text-muted);font-family:'JetBrains Mono';">LIVE BUS</span>
+                    </div>
+                    <div class="terminal-panel" id="terminal-stream">
+                        <div class="log-line">
+                            <span class="log-ts">[00:00:00]</span>
+                            <span class="log-msg-info">System telemetry initialized. Monitoring optical sensor...</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- ═══ TELEMETRY SYNCHRONIZATION LOGIC ═══ -->
+    <script>
+
+        let lastHandledScanId = 0;
+
+        async function synchronizeTelemetry() {
+            try {
+                const response = await fetch("/qr_result", { cache: "no-store" });
+                const telemetry = await response.json();
+
+                // 1. Camera Link Status
+                const chipCam = document.getElementById("chip-camera");
+                const labelCam = document.getElementById("label-camera");
+                if (telemetry.camera_connected) {
+                    chipCam.className = "chip active-cam";
+                    labelCam.innerText = "Camera Stream Synchronized";
+                } else {
+                    chipCam.className = "chip";
+                    labelCam.innerHTML = '<span class="ring-loader"></span> Reconnecting Stream...';
+                }
+
+                // 2. Optical Sensor Payload
+                const chipQr = document.getElementById("chip-qr");
+                const labelQr = document.getElementById("label-qr");
+                const payloadBox = document.getElementById("raw-payload-display");
+                const payloadTag = document.getElementById("payload-type-tag");
+
+                if (telemetry.result) {
+                    chipQr.className = "chip detected";
+                    labelQr.innerText = "Target Payload Acquired";
+                    payloadBox.innerText = telemetry.result;
+                    payloadTag.innerText = telemetry.is_url ? "HYPERLINK" : "PRESCRIPTION RX";
+                    payloadTag.style.background = "rgba(99, 102, 241, 0.2)";
+                    payloadTag.style.color = "#a5b4fc";
+                } else {
+                    chipQr.className = "chip scanning";
+                    labelQr.innerHTML = '<span class="ring-loader" style="border-top-color:#06b6d4;"></span> Optical Scanning Active';
+                    payloadBox.innerText = "Scanning field of view for target...";
+                    payloadTag.innerText = "STANDBY";
+                    payloadTag.style.background = "rgba(255, 255, 255, 0.06)";
+                    payloadTag.style.color = "var(--text-muted)";
+                }
+
+                // 3. IoT Cloud Dispatch Status
+                const chipIot = document.getElementById("chip-iot");
+                const labelIot = document.getElementById("label-iot");
+                const dispatchCard = document.getElementById("dispatch-card");
+                const headline = document.getElementById("dispatch-headline");
+                const subline = document.getElementById("dispatch-subline");
+                const iconWrap = document.getElementById("dispatch-icon-wrap");
+
+                const iotState = telemetry.iot_status || "IDLE";
+                labelIot.innerText = iotState;
+
+                if (iotState.includes("DISPENSED") || iotState.includes("SENDED")) {
+                    chipIot.className = "chip dispensed";
+                    dispatchCard.className = "transmission-card state-dispensed";
+                    headline.innerText = "Cloud Transaction Authenticated";
+                    subline.innerText = "Prescription verified in cloud database and committed as DISPENSED.";
+                    iconWrap.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
+                } else if (iotState.includes("SENDING")) {
+                    chipIot.className = "chip scanning";
+                    dispatchCard.className = "transmission-card state-sending";
+                    headline.innerText = "Dispatching to Cloud Gateway...";
+                    subline.innerText = "Transmitting JSON encrypted payload to iotcloud22.in/4973 API";
+                    iconWrap.innerHTML = '<div class="ring-loader" style="width:20px;height:20px;border-width:2.5px;border-top-color:#fbbf24;"></div>';
+                } else {
+                    chipIot.className = "chip";
+                    dispatchCard.className = "transmission-card state-idle";
+                    headline.innerText = "Awaiting Prescription Scan";
+                    subline.innerText = "Present QR prescription target within 10-15 cm of the optical sensor";
+                    iconWrap.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 13v6M9 16l3-3 3 3"/></svg>';
+                }
+
+                // 4. Clinical Dossier Population
+                const dossier = document.getElementById("dossier-container");
+                if (telemetry.dispense && (telemetry.dispense.status === "success" || telemetry.dispense.status === "local_dispense")) {
+                    dossier.style.display = "block";
+                    const p = telemetry.dispense.patient || {};
+                    
+                    const name = p.name || 'Anonymous Patient';
+                    document.getElementById("dossier-name").innerText = name;
+                    
+                    // Initials for avatar
+                    const initials = name.split(" ").map(w => w[0]).join("").toUpperCase().slice(0, 2) || "RX";
+                    document.getElementById("patient-avatar").innerText = initials;
+                    
+                    document.getElementById("dossier-id").innerText = telemetry.dispense.presc_id || "PRESC_0000000000";
+                    document.getElementById("dossier-doctor").innerText = "Dr. " + (telemetry.dispense.doctor || "General Practitioner");
+                    document.getElementById("dossier-demographics").innerText = `${p.age || '--'} Years / ${p.gender || '--'}`;
+                    document.getElementById("dossier-contact").innerText = p.phone || 'Not on Record';
+                    document.getElementById("dossier-timestamp").innerText = telemetry.dispense.dispensed_at || '--:--:--';
+
+                    let medsListHtml = "";
+                    const meds = telemetry.dispense.medicines || [];
+                    meds.forEach(m => {
+                        medsListHtml += `
+                            <div class="med-row">
+                                <div class="med-label">
+                                    <span class="med-dot"></span>
+                                    <span>${m.name}</span>
+                                </div>
+                                <span class="dosage-badge">${m.qty} Units</span>
+                            </div>
+                        `;
+                    });
+                    document.getElementById("dossier-meds-list").innerHTML = medsListHtml;
+                }
+
+                // 5. Audit Log Terminal Synchronization
+                const termStream = document.getElementById("terminal-stream");
+                if (telemetry.logs && telemetry.logs.length > 0) {
+                    let formattedLogs = "";
+                    telemetry.logs.forEach(line => {
+                        let colorClass = "log-msg-info";
+                        if (line.includes("DISPENSED") || line.includes("Successfully")) colorClass = "log-msg-success";
+                        else if (line.includes("ERROR") || line.includes("failed")) colorClass = "log-msg-err";
+                        else if (line.includes("SENDING") || line.includes("WARNING")) colorClass = "log-msg-warn";
+
+                        // Split timestamp from content if present
+                        let ts = "[SYSTEM]";
+                        let msg = line;
+                        if (line.startsWith("[") && line.indexOf("]") > 0) {
+                            ts = line.substring(0, line.indexOf("]") + 1);
+                            msg = line.substring(line.indexOf("]") + 2);
+                        }
+
+                        // Strip any residual emojis from log messages
+                        msg = msg.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '').trim();
+
+                        formattedLogs += `
+                            <div class="log-line">
+                                <span class="log-ts">${ts}</span>
+                                <span class="${colorClass}">${msg}</span>
+                            </div>
+                        `;
+                    });
+                    termStream.innerHTML = formattedLogs;
+                    termStream.scrollTop = termStream.scrollHeight;
+                }
+
+                if (telemetry.esp32_url) {
+                    document.getElementById("text-stream-url").innerText = telemetry.esp32_url;
+                }
+
+            } catch (err) {
+                console.error("Telemetry link error:", err);
+            }
+        }
+
+        async function modifyStreamEndpoint() {
+            const input = document.getElementById("target-ip-input");
+            const newIp = input.value.trim();
+            if (!newIp) return;
+
+            try {
+                const res = await fetch("/update_ip", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ ip: newIp })
+                });
+                const data = await res.json();
+                if (data.status === "success") {
+                    document.getElementById("text-stream-url").innerText = data.url;
+                    input.value = "";
+                }
+            } catch (err) {
+                console.error("Endpoint update failed:", err);
+            }
+        }
+
+        // High-frequency telemetry polling (every 400ms)
+        setInterval(synchronizeTelemetry, 400);
+        synchronizeTelemetry();
+
+    </script>
+
+</body>
+</html>

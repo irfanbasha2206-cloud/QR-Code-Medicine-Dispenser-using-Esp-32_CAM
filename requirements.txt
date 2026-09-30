@@ -1,0 +1,17 @@
+# ═══════════════════════════════════════════════════════════
+# AegisRx — Smart Prescription QR Scanner & Cloud Dispenser
+# Python Dependencies
+# ═══════════════════════════════════════════════════════════
+
+# Core Web Framework
+flask>=2.2.0
+
+# Computer Vision & Image Processing
+opencv-python>=4.6.0.66
+numpy>=1.21.0
+
+# Ultra-Fast C-Engine QR Code Decoding (Sub-10ms response)
+pyzbar>=0.1.9
+
+# HTTP & API Communications (Optional helper)
+requests>=2.28.0
