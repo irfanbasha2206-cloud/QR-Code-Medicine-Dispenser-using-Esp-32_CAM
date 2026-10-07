@@ -392,6 +392,73 @@
             to { transform: rotate(360deg); }
         }
 
+        .reticle-box.locked .reticle-corner {
+            border-color: #10b981;
+            box-shadow: 0 0 14px rgba(16, 185, 129, 0.7);
+        }
+        .reticle-box.locked .reticle-radar-ring {
+            border-color: rgba(16, 185, 129, 0.6);
+            animation-duration: 4s;
+        }
+
+        /* SVG QR Bounding Box Overlay */
+        .qr-svg-overlay {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 8;
+        }
+
+        /* Viewport HUD Floating Badges */
+        .hud-top-bar {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            right: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: none;
+            z-index: 12;
+        }
+
+        .hud-status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 14px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            color: #38bdf8;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hud-status-badge.acquired {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.6);
+            color: #34d399;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
+        }
+
+        .hud-fps-badge {
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            backdrop-filter: blur(8px);
+        }
+
         /* ═══ RIGHT COLUMN: TELEMETRY & DISPENSE ═══ */
         .telemetry-stack {
             display: flex;
@@ -776,8 +843,20 @@
 
                 <div class="camera-chamber">
                     <img id="stream-display" src="/video_feed" alt="Sensor Feed">
+                    <svg id="qr-bounding-svg" class="qr-svg-overlay" viewBox="0 0 320 240" preserveAspectRatio="none">
+                        <polygon id="qr-polygon" points="" stroke="#10b981" stroke-width="3" fill="rgba(16, 185, 129, 0.25)" stroke-linejoin="round" style="display:none;" />
+                    </svg>
+                    <div class="hud-top-bar">
+                        <div id="hud-status-badge" class="hud-status-badge">
+                            <span class="pulse-dot" style="background:#06b6d4;box-shadow:0 0 8px #06b6d4;"></span>
+                            <span id="hud-status-text">OPTICAL SCANNING ACTIVE</span>
+                        </div>
+                        <div class="hud-fps-badge" id="hud-fps-badge">
+                            ⚡ ZERO-LATENCY DIRECT
+                        </div>
+                    </div>
                     <div class="scan-laser-line"></div>
-                    <div class="reticle-box">
+                    <div class="reticle-box" id="reticle-box">
                         <div class="reticle-corner corner-tl"></div>
                         <div class="reticle-corner corner-tr"></div>
                         <div class="reticle-corner corner-bl"></div>
@@ -828,7 +907,7 @@
                         </div>
                         <div class="verified-seal">
                             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                            <span>DISPENSED</span>
+                            <span>SCANNED</span>
                         </div>
                     </div>
 
@@ -853,7 +932,7 @@
 
                     <div class="meds-heading">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10.5 4.5 19.5 13.5M4.5 19.5 19.5 4.5"/><path d="m14 10-6 6a4.24 4.24 0 0 0 6 6l6-6Z"/></svg>
-                        <span>Prescribed Regimen to Dispense</span>
+                        <span>Prescribed Regimen Scanned</span>
                     </div>
 
                     <div id="dossier-meds-list"></div>
@@ -903,11 +982,15 @@
                     labelCam.innerHTML = '<span class="ring-loader"></span> Reconnecting Stream...';
                 }
 
-                // 2. Optical Sensor Payload
+                // 2. Optical Sensor Payload & Viewport HUD Synchronization
                 const chipQr = document.getElementById("chip-qr");
                 const labelQr = document.getElementById("label-qr");
                 const payloadBox = document.getElementById("raw-payload-display");
                 const payloadTag = document.getElementById("payload-type-tag");
+                const poly = document.getElementById("qr-polygon");
+                const reticle = document.getElementById("reticle-box");
+                const hudBadge = document.getElementById("hud-status-badge");
+                const hudText = document.getElementById("hud-status-text");
 
                 if (telemetry.result) {
                     chipQr.className = "chip detected";
@@ -916,6 +999,18 @@
                     payloadTag.innerText = telemetry.is_url ? "HYPERLINK" : "PRESCRIPTION RX";
                     payloadTag.style.background = "rgba(99, 102, 241, 0.2)";
                     payloadTag.style.color = "#a5b4fc";
+
+                    if (hudBadge) {
+                        hudBadge.className = "hud-status-badge acquired";
+                        hudText.innerText = "TARGET ACQUIRED: " + (telemetry.result.length > 20 ? telemetry.result.slice(0, 18) + '...' : telemetry.result);
+                    }
+                    if (reticle) reticle.classList.add("locked");
+
+                    if (poly && telemetry.qr_points && telemetry.qr_points.length >= 4) {
+                        const ptsStr = telemetry.qr_points.map(p => `${p[0]},${p[1]}`).join(" ");
+                        poly.setAttribute("points", ptsStr);
+                        poly.style.display = "block";
+                    }
                 } else {
                     chipQr.className = "chip scanning";
                     labelQr.innerHTML = '<span class="ring-loader" style="border-top-color:#06b6d4;"></span> Optical Scanning Active';
@@ -923,6 +1018,13 @@
                     payloadTag.innerText = "STANDBY";
                     payloadTag.style.background = "rgba(255, 255, 255, 0.06)";
                     payloadTag.style.color = "var(--text-muted)";
+
+                    if (hudBadge) {
+                        hudBadge.className = "hud-status-badge";
+                        hudText.innerText = "OPTICAL SCANNING ACTIVE";
+                    }
+                    if (reticle) reticle.classList.remove("locked");
+                    if (poly) poly.style.display = "none";
                 }
 
                 // 3. IoT Cloud Dispatch Status
@@ -936,11 +1038,11 @@
                 const iotState = telemetry.iot_status || "IDLE";
                 labelIot.innerText = iotState;
 
-                if (iotState.includes("DISPENSED") || iotState.includes("SENDED")) {
+                if (iotState.includes("SCANNED") || iotState.includes("DISPENSED") || iotState.includes("SENT") || iotState.includes("SENDED")) {
                     chipIot.className = "chip dispensed";
                     dispatchCard.className = "transmission-card state-dispensed";
                     headline.innerText = "Cloud Transaction Authenticated";
-                    subline.innerText = "Prescription verified in cloud database and committed as DISPENSED.";
+                    subline.innerText = "Prescription verified in cloud database and committed as SCANNED.";
                     iconWrap.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>';
                 } else if (iotState.includes("SENDING")) {
                     chipIot.className = "chip scanning";
@@ -997,7 +1099,7 @@
                     let formattedLogs = "";
                     telemetry.logs.forEach(line => {
                         let colorClass = "log-msg-info";
-                        if (line.includes("DISPENSED") || line.includes("Successfully")) colorClass = "log-msg-success";
+                        if (line.includes("SCANNED") || line.includes("DISPENSED") || line.includes("Successfully")) colorClass = "log-msg-success";
                         else if (line.includes("ERROR") || line.includes("failed")) colorClass = "log-msg-err";
                         else if (line.includes("SENDING") || line.includes("WARNING")) colorClass = "log-msg-warn";
 
@@ -1053,8 +1155,18 @@
             }
         }
 
-        // High-frequency telemetry polling (every 400ms)
-        setInterval(synchronizeTelemetry, 400);
+        // Active stream watchdog: automatically recovers video link if interrupted
+        const streamImg = document.getElementById("stream-display");
+        if (streamImg) {
+            streamImg.onerror = function() {
+                setTimeout(function() {
+                    streamImg.src = "/video_feed?" + Date.now();
+                }, 1200);
+            };
+        }
+
+        // Steady telemetry polling (every 1000ms: zero stream contention)
+        setInterval(synchronizeTelemetry, 1000);
         synchronizeTelemetry();
 
     </script>

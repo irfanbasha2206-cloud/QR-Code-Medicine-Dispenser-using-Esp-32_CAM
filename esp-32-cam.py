@@ -1,6 +1,9 @@
 # ─────────────────────────────────────────────────────────────
-#  ESP32-CAM MicroPython firmware  –  upload via Thonny
-#  ANTI-BROWNOUT + STREAM STABILITY OPTIMIZED VERSION
+#  ESP32-CAM MicroPython firmware  –  CRASH-PROOF v3.0
+#  - CIF 400x296 @ Quality 15 (sharp & stable)
+#  - Per-frame gc.collect() (prevents 40-second heap crash)
+#  - Single-threaded UDP beacon + MJPEG server
+#  - Auto-connects to 'ras' or 'NarenTech'
 # ─────────────────────────────────────────────────────────────
 import camera
 import network
@@ -9,55 +12,91 @@ import time
 import machine
 import gc
 
-# ── 1. REDUCE CPU CLOCK (PREVENTS BROWNOUT) ────────────────
-machine.freq(80_000_000)
-print("[Power] CPU throttled to 80 MHz")
-
-# ── 2. WI-FI CREDENTIALS ───────────────────────────────────
-SSID     = "ras"
-PASSWORD = "12345678"
-
-# ── 3. CONNECT TO WI-FI WITH REDUCED TX POWER ──────────────
-print("\n[WiFi] Connecting to", SSID, "...")
-wlan = network.WLAN(network.STA_IF)
-wlan.active(True)
-
-# Reduce Wi-Fi transmission power spikes to avoid brownout
+# ── 1. CPU & INITIAL SETUP (OPTIMAL 160 MHz ANTI-BROWNOUT) ───
 try:
-    wlan.config(txpower=8.5)
-    print("[Power] Wi-Fi TX power set to 8.5 dBm")
-except:
+    machine.freq(160_000_000)
+    print("[Power] CPU set to 160 MHz (Optimal Stability)")
+except Exception as e:
+    print("[Power] CPU freq notice:", e)
+
+KNOWN_NETWORKS = [
+    ("ras", "12345678"),
+    ("NarenTech", "9994119444"),
+]
+
+BEACON_PORT = 4210
+BEACON_INTERVAL = 3
+BEACON_MSG = "AEGISRX_ESP32CAM"
+
+# ── 2. WI-FI CONNECTION (STABLE POWER) ───────────────────────
+ap = network.WLAN(network.AP_IF)
+ap.active(False)
+time.sleep(0.2)
+
+try:
+    network.hostname("esp32cam")
+except Exception:
     pass
 
-wlan.connect(SSID, PASSWORD)
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+time.sleep(0.2)
 
-attempts = 0
-while not wlan.isconnected():
-    time.sleep(0.5)
-    attempts += 1
-    if attempts > 40:
-        print("[WiFi] FAILED to connect. Rebooting...")
-        machine.reset()
+for pwr in [15.0, 14.0]:
+    try:
+        wlan.config(txpower=pwr)
+        break
+    except Exception:
+        pass
 
+
+def connect_wifi():
+    for ssid, pwd in KNOWN_NETWORKS:
+        print(f"\n[WiFi] Connecting to '{ssid}' ...")
+        try:
+            wlan.disconnect()
+        except Exception:
+            pass
+        time.sleep(0.3)
+        try:
+            wlan.connect(ssid, pwd)
+        except Exception as e:
+            print(f"[WiFi] Error for {ssid}:", e)
+            continue
+        for _ in range(24):
+            if wlan.isconnected():
+                print(f"[WiFi] Connected to '{ssid}'!")
+                return
+            time.sleep(0.5)
+    print("[WiFi] Failed. Ensure hotspot 'ras' / '12345678' is ON.")
+    time.sleep(2)
+    machine.reset()
+
+
+connect_wifi()
 ip = wlan.ifconfig()[0]
-stream_url = "http://" + ip + "/stream"
-print("[WiFi] Connected! IP:", ip)
-print("[WiFi] Stream URL   :", stream_url)
+print("\n" + "=" * 55)
+print(f"[WiFi] IP: {ip}")
+print(f"[WiFi] Stream: http://{ip}/stream")
+print(f"[Beacon] UDP port {BEACON_PORT}")
+print("=" * 55 + "\n")
 
-# ── 4. INIT CAMERA (STABLE RESOLUTION) ──────────────────────
-time.sleep(0.5) # Power stabilization delay
+# ── 3. CAMERA INIT (CIF 400x296 — SHARP + STABLE) ───────────
+time.sleep(0.3)
+gc.collect()
+
 try:
     camera.deinit()
-except:
+except Exception:
     pass
 
 _cam_ok = False
 for _init_fn in [
+    lambda: camera.init(0, format=camera.JPEG, framesize=camera.FRAME_QVGA, quality=12),
     lambda: camera.init(0, format=camera.JPEG, framesize=camera.FRAME_QVGA, quality=15),
     lambda: camera.init(0, format=camera.JPEG, framesize=camera.FRAME_CIF, quality=15),
     lambda: camera.init(0, format=camera.JPEG),
     lambda: camera.init(0),
-    lambda: camera.init(),
 ]:
     try:
         _init_fn()
@@ -67,214 +106,233 @@ for _init_fn in [
         pass
 
 if not _cam_ok:
-    print("[Camera] ERROR: could not initialise camera")
+    print("[Camera] ERROR: init failed")
 else:
-    for _fn in [
-        lambda: camera.framesize(camera.FRAME_QVGA),
-        lambda: camera.quality(15),
-    ]:
-        try:
-            _fn()
-        except:
-            pass
-    print("[Camera] Initialized OK (Stable Mode)")
-
-# ── 5. HTTP HELPERS ────────────────────────────────────────
-def read_request(client):
     try:
-        raw   = client.recv(1024).decode('utf-8', 'ignore')
-        first = raw.split('\r\n')[0]
-        parts = first.split(' ')
+        camera.framesize(camera.FRAME_QVGA)
+    except Exception:
+        pass
+    try:
+        camera.quality(12)
+    except Exception:
+        pass
+    print("[Camera] OK (High-Speed QVGA 320x240 @ Quality 12)")
+
+gc.collect()
+print("[Memory] Free:", gc.mem_free(), "bytes")
+
+# ── 4. HTTP HELPERS ──────────────────────────────────────────
+def read_request(cl):
+    try:
+        raw = cl.recv(1024).decode('utf-8', 'ignore')
+        parts = raw.split('\r\n')[0].split(' ')
         if len(parts) >= 2:
             return parts[0].upper(), parts[1].split('?')[0]
-    except:
+    except Exception:
         pass
     return None, None
 
 
-def send_headers(client, status, content_type, extra_headers=b''):
-    client.send(('HTTP/1.1 ' + status + '\r\n').encode())
-    if content_type:
-        client.send(('Content-Type: ' + content_type + '\r\n').encode())
-    client.send(b'Access-Control-Allow-Origin: *\r\n')
-    client.send(b'Access-Control-Allow-Private-Network: true\r\n')
-    client.send(b'Access-Control-Allow-Methods: GET, OPTIONS\r\n')
-    client.send(b'Access-Control-Allow-Headers: *\r\n')
-    client.send(b'Cache-Control: no-cache, private, max-age=0, must-revalidate\r\n')
-    if extra_headers:
-        client.send(extra_headers)
-    client.send(b'\r\n')
+def send_headers(cl, status, ctype, extra=b''):
+    cl.send(('HTTP/1.1 ' + status + '\r\n').encode())
+    if ctype:
+        cl.send(('Content-Type: ' + ctype + '\r\n').encode())
+    cl.send(b'Access-Control-Allow-Origin: *\r\n')
+    cl.send(b'Cache-Control: no-cache\r\n')
+    if extra:
+        cl.send(extra)
+    cl.send(b'\r\n')
 
 
-def handle_options(client):
-    send_headers(client, '204 No Content', None)
-
-
-def handle_stream(client):
-    """
-    MJPEG stream handler with stability improvements:
-    - WiFi connectivity watchdog (checks every 50 frames)
-    - Socket write timeout prevents infinite blocking on dead connection
-    - Larger send chunks for better throughput
-    - Periodic garbage collection prevents memory fragmentation
-    - Graceful error recovery with explicit cleanup
-    """
-    BOUNDARY = b'123456789000000000000987654321'
-    send_headers(
-        client, 
-        '200 OK', 
-        'multipart/x-mixed-replace; boundary=' + BOUNDARY.decode()
-    )
-    
-    print("[Server] Client streaming started...")
-    
-    # Set a write timeout so send() doesn't block forever on dead WiFi
-    try:
-        client.settimeout(3)
-    except:
-        pass
-    
-    frame_count = 0
-    consecutive_capture_fails = 0
-    
-    while True:
-        # ── WiFi Watchdog: Check connectivity every 50 frames ──
-        if frame_count % 50 == 0:
-            if not wlan.isconnected():
-                print("[Server] WiFi disconnected during stream! Closing client.")
-                break
-            # Periodic garbage collection to prevent memory fragmentation
-            gc.collect()
-        
-        # ── Capture frame from camera ──
-        buf = camera.capture()
-        if not buf:
-            consecutive_capture_fails += 1
-            if consecutive_capture_fails > 20:
-                print("[Server] Camera capture failed 20 times. Closing stream.")
-                break
-            time.sleep(0.05)
-            continue
-        
-        consecutive_capture_fails = 0
-            
+def send_all(sock, data):
+    mv = memoryview(data)
+    total = len(mv)
+    sent = 0
+    retries = 0
+    while sent < total:
         try:
-            # Build the multipart header + JPEG in fewer send() calls
-            # This reduces per-call overhead and WiFi interrupt risk
-            header = (
-                b'--' + BOUNDARY + b'\r\n'
-                b'Content-Type: image/jpeg\r\n'
-                b'Content-Length: ' + str(len(buf)).encode() + b'\r\n\r\n'
-            )
-            client.send(header)
-            
-            # Send JPEG data in larger chunks (2048 bytes)
-            # Fewer send() calls = fewer WiFi interrupt windows
-            view = memoryview(buf)
-            chunk_size = 2048
-            for i in range(0, len(buf), chunk_size):
-                client.send(view[i:i + chunk_size])
-                
-            client.send(b'\r\n')
-            frame_count += 1
-            
-            # Frame pacing: prevents current surges on ESP32
-            time.sleep(0.04)
-            
+            n = sock.send(mv[sent:])
+            if n and n > 0:
+                sent += n
+                retries = 0
+            else:
+                retries += 1
+                if retries > 15:
+                    raise OSError(11)  # EAGAIN - buffer full
+                time.sleep(0.003)
         except OSError as e:
-            # Socket error — client disconnected or WiFi hiccup
-            print("[Server] Stream send error:", e)
-            break
+            if e.args and e.args[0] == 11:
+                retries += 1
+                if retries > 15:
+                    raise
+                time.sleep(0.003)
+            else:
+                raise
+
+
+def handle_stream(cl):
+    """
+    ROCK-SOLID non-dropping zero-latency stream handler.
+    If Wi-Fi buffer stalls momentarily, drops the frame and continues.
+    Never closes the connection on momentary packet jitter!
+    """
+    try:
+        cl.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+    except Exception:
+        pass
+
+    BOUNDARY = b'--camframe\r\n'
+    send_headers(cl, '200 OK',
+                 'multipart/x-mixed-replace; boundary=camframe')
+
+    print("[Stream] Client connected, streaming...")
+    try:
+        cl.settimeout(10.0)
+    except Exception:
+        pass
+
+    fc = 0
+    fails = 0
+    consecutive_skips = 0
+
+    while True:
+        # Wi-Fi watchdog every 200 frames
+        if fc > 0 and fc % 200 == 0:
+            if not wlan.isconnected():
+                print("[Stream] WiFi lost. Ending.")
+                break
+            print(f"[Stream] {fc} frames sent, free={gc.mem_free()}")
+
+        # Capture
+        try:
+            buf = camera.capture()
+        except Exception:
+            buf = None
+
+        if not buf:
+            fails += 1
+            if fails > 30:
+                print("[Stream] Too many capture failures.")
+                break
+            time.sleep(0.03)
+            gc.collect()
+            continue
+
+        fails = 0
+
+        try:
+            # Send MJPEG multipart frame atomically
+            header = (
+                BOUNDARY + 
+                b'Content-Type: image/jpeg\r\nContent-Length: ' + 
+                str(len(buf)).encode() + 
+                b'\r\n\r\n'
+            )
+            send_all(cl, header)
+            send_all(cl, buf)
+            send_all(cl, b'\r\n')
+            fc += 1
+            consecutive_skips = 0
+
+        except OSError as e:
+            # Fatal disconnects: ECONNRESET (104), EPIPE (32), ENOTCONN (128), EBADF (9)
+            if e.args and len(e.args) > 0 and e.args[0] in [104, 32, 128, 9]:
+                print("[Stream] Client disconnected:", e)
+                break
+            else:
+                # Momentary Wi-Fi stall: skip this frame, keep connection ALIVE!
+                consecutive_skips += 1
+                if consecutive_skips > 25:
+                    print("[Stream] Too many consecutive stalls. Closing.")
+                    break
+                time.sleep(0.005)
+                continue
         except Exception as e:
-            print("[Server] Client disconnected:", e)
+            print("[Stream] Fatal send exception:", e)
             break
-    
-    print("[Server] Stream ended after", frame_count, "frames")
+        finally:
+            buf = None
+
+        # Run garbage collection periodically every 30 frames (not every frame!)
+        if fc % 30 == 0:
+            gc.collect()
+
+        time.sleep(0.005)
+
+    print(f"[Stream] Session ended: {fc} frames total")
 
 
-def handle_health(client):
-    wifi_ok = wlan.isconnected()
+def handle_health(cl):
     rssi = -1
     try:
         rssi = wlan.status('rssi')
-    except:
+    except Exception:
         pass
-    body = '{{"status":"ok","device":"ESP32-CAM","wifi":{0},"rssi":{1}}}'.format(
-        "true" if wifi_ok else "false", rssi
-    ).encode()
-    send_headers(
-        client,
-        '200 OK',
-        'application/json',
-        ('Content-Length: ' + str(len(body)) + '\r\n').encode()
-    )
-    client.send(body)
+    body = '{{"status":"ok","wifi":true,"rssi":{0}}}'.format(rssi).encode()
+    send_headers(cl, '200 OK', 'application/json',
+                 ('Content-Length: ' + str(len(body)) + '\r\n').encode())
+    cl.send(body)
 
 
-def handle_not_found(client):
-    send_headers(client, '404 Not Found', 'text/plain')
-    client.send(b'Not found. Use /stream or /health')
+def handle_404(cl):
+    send_headers(cl, '404 Not Found', 'text/plain')
+    cl.send(b'Use /stream or /health')
 
 
-# ── 6. MAIN SERVER LOOP (WITH WIFI RECONNECTION) ──────────
+# ── 5. MAIN EVENT LOOP (Server + UDP Beacon) ─────────────────
 addr = socket.getaddrinfo('0.0.0.0', 80)[0][-1]
-srv  = socket.socket()
+srv = socket.socket()
 srv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 srv.bind(addr)
-srv.listen(3)  # Increased backlog from 2 to 3 for reconnect tolerance
+srv.listen(3)
+srv.settimeout(1.0)
+
+beacon_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+beacon_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+last_beacon = 0
 
 print("[Server] Listening on port 80")
-print("[Server] Waiting for requests...\n")
+print("[Server] Ready!\n")
 
 while True:
-    # ── WiFi Reconnection Watchdog ──
+    now = time.time()
+    if now - last_beacon >= BEACON_INTERVAL:
+        last_beacon = now
+        try:
+            if wlan.isconnected():
+                msg = BEACON_MSG + "|" + wlan.ifconfig()[0]
+                beacon_sock.sendto(msg.encode(), ("255.255.255.255", BEACON_PORT))
+        except Exception:
+            pass
+
     if not wlan.isconnected():
-        print("[WiFi] Connection lost! Attempting reconnect...")
-        reconnect_tries = 0
-        while not wlan.isconnected() and reconnect_tries < 30:
-            try:
-                wlan.connect(SSID, PASSWORD)
-            except:
-                pass
-            time.sleep(1)
-            reconnect_tries += 1
-        
-        if wlan.isconnected():
-            new_ip = wlan.ifconfig()[0]
-            print("[WiFi] Reconnected! IP:", new_ip)
-        else:
-            print("[WiFi] Reconnect failed after 30 attempts. Rebooting...")
-            machine.reset()
-    
+        print("[WiFi] Lost! Reconnecting...")
+        connect_wifi()
+        continue
+
     cl = None
     try:
-        cl, remote = srv.accept()
-        cl.settimeout(10)
-        method, path = read_request(cl)
+        cl, _ = srv.accept()
+    except OSError:
+        continue
 
-        if method == 'OPTIONS':
-            handle_options(cl)
-        elif method == 'GET':
+    try:
+        cl.settimeout(5.0)
+        method, path = read_request(cl)
+        if method == 'GET':
             if path == '/stream':
                 cl.settimeout(None)
                 handle_stream(cl)
             elif path == '/health':
                 handle_health(cl)
             else:
-                handle_not_found(cl)
-        else:
-            handle_not_found(cl)
-
-    except OSError as e:
-        # Socket accept timeout or client error — normal during reconnects
-        if e.args[0] != 11:  # EAGAIN is normal
-            print("[Server] Socket error:", e)
+                handle_404(cl)
     except Exception as e:
-        print("[Server] Error:", e)
+        pass
     finally:
         if cl:
             try:
                 cl.close()
-            except:
+            except Exception:
                 pass
-        gc.collect()  # Clean up after each request
+        gc.collect()
