@@ -42,14 +42,23 @@ try:
 except Exception:
     HAS_PYZBAR = False
 
+# Dr. Aegis AI Clinical Pharmacology Engine & Continuous Prescription Watcher
+try:
+    import prescription_watcher
+    from ai_clinical_agent import generate_clinical_analysis, doctor_consultation_chat
+    HAS_AI_ENGINE = True
+except Exception as _ai_err:
+    print(f"[AI] Note initializing AI Clinical Engine: {_ai_err}")
+    HAS_AI_ENGINE = False
+
 app = Flask(__name__)
 
 # ============================================================
 # CONFIGURATION
 # ============================================================
 
-# Default to known IP; auto-discovery dynamically updates if moved
-ESP32_STREAM_URL = "http://192.168.1.23/stream"
+# Default to active IP; auto-discovery dynamically updates if moved
+ESP32_STREAM_URL = "http://192.168.1.21/stream"
 CLOUD_API_URL = "https://iotcloud22.in/4973/receive_scan.php"
 
 # UDP & Subnet Discovery Settings
@@ -57,11 +66,11 @@ DISCOVERY_PORT = 4210
 DISCOVERY_MAGIC = "AEGISRX_ESP32CAM"
 
 # Stream Resilience Settings
-STREAM_SOCKET_TIMEOUT = 5.0        # Seconds before socket read times out
-STREAM_RECONNECT_DELAY = 1.0       # Seconds between reconnect attempts
+STREAM_SOCKET_TIMEOUT = 10.0       # Seconds before socket read times out (robust against Wi-Fi jitter)
+STREAM_RECONNECT_DELAY = 0.5       # Seconds between reconnect attempts
 STREAM_MAX_FRAME_BYTES = 250000    # Max JPEG frame size (safety ceiling)
 FRAME_FRESHNESS_TIMEOUT = 5.0      # Seconds before stale frames = disconnected
-DISPATCH_COOLDOWN = 3.5            # Seconds before same QR re-triggers cloud dispatch
+DISPATCH_COOLDOWN = 12.0           # Seconds before same QR re-triggers cloud dispatch
 
 # ============================================================
 # TELEMETRY & THREAD SYNCHRONIZATION
@@ -85,6 +94,7 @@ last_frame_received_time = 0
 current_display_bytes = None
 current_display_frame_id = 0
 frame_condition = threading.Condition()
+active_stream_socket = None
 
 # Asynchronous optical target tracking
 detected_qr_lock = threading.Lock()
@@ -252,10 +262,39 @@ def send_to_cloud_async(qr_text, medicines):
             dispense_result = result
 
             if result.get("status") == "success":
-                iot_status = "SENT TO IOT (SCANNED)"
+                disp_status = result.get("dispense_status", "SCANNED").upper()
                 patient = result.get("patient", {}).get("name", "Unknown")
                 presc_id = result.get("presc_id", "N/A")
-                add_log(f"[SUCCESS] Cloud Verification Confirmed: SCANNED | Patient: {patient} | ID: {presc_id}")
+
+                if disp_status == "SCANNED":
+                    iot_status = "SCANNED (DISPENSING IN PROGRESS)"
+                    add_log(f"[SUCCESS] QR Verified: SCANNED | Hardware Dispenser Triggered | Patient: {patient} | ID: {presc_id}")
+                    # Pre-cache AI dossier in background so it is instantly ready when hardware confirms DISPENSED
+                    if HAS_AI_ENGINE and presc_id:
+                        def _async_precache_ai():
+                            try:
+                                item_payload = {
+                                    "presc_id": presc_id,
+                                    "patient_name": patient,
+                                    "age": result.get("patient", {}).get("age", 25),
+                                    "gender": result.get("patient", {}).get("gender", "Unspecified"),
+                                    "medicines": medicines,
+                                    "dispense_status": "SCANNED"
+                                }
+                                prescription_watcher.process_single_prescription(item_payload)
+                                add_log(f"[AI] 🧠 Pre-cached Clinical Dossier for {patient}. Awaiting hardware confirmation to unlock.")
+                            except Exception as _e:
+                                add_log(f"[AI] Pre-cache notice: {_e}")
+
+                        threading.Thread(target=_async_precache_ai, daemon=True).start()
+
+                elif disp_status == "DISPENSED":
+                    iot_status = "DISPENSED (CONFIRMED)"
+                    add_log(f"[SUCCESS] Cloud Dispense Authenticated: DISPENSED | Patient: {patient} | ID: {presc_id}")
+
+            elif result.get("status") == "already_dispensed":
+                iot_status = "ALREADY DISPENSED"
+                add_log(f"[NOTICE] Prescription Already Dispensed: {result.get('presc_id')}")
             elif result.get("status") == "not_found":
                 iot_status = "TARGET NOT IN DATABASE"
                 add_log(f"[WARNING] Prescription Target Not In Database: {result.get('message')}")
@@ -310,7 +349,7 @@ def send_to_cloud_async(qr_text, medicines):
 # ============================================================
 
 def get_local_ip():
-    """Gets the active local IP address of this machine."""
+    """Gets the active local IP address of this machine across Wi-Fi/Hotspots."""
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.connect(("8.8.8.8", 80))
@@ -318,28 +357,33 @@ def get_local_ip():
         s.close()
         return ip
     except Exception:
-        return "192.168.1.22"
-
-
-def check_esp32_ip(ip):
-    """Probes port 80 /health on a target IP in <0.3s."""
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.settimeout(0.3)
+        pass
     try:
-        s.connect((ip, 80))
-        s.close()
-        # Verify it is indeed our ESP32-CAM via /health
-        with urllib.request.urlopen(f"http://{ip}/health", timeout=0.5) as r:
-            body = r.read().decode("utf-8", "ignore")
-            if "wifi" in body or "rssi" in body:
+        ips = socket.gethostbyname_ex(socket.gethostname())[2]
+        for ip in ips:
+            if ip.startswith("192.168.") or ip.startswith("172.20."):
+                return ip
+        for ip in ips:
+            if not ip.startswith("127."):
                 return ip
     except Exception:
         pass
-    finally:
-        try:
-            s.close()
-        except Exception:
-            pass
+    return "192.168.1.19"
+
+
+def check_esp32_ip(ip):
+    """Probes /health endpoint on target IP in <0.6s without opening dummy connections."""
+    try:
+        req = urllib.request.Request(
+            f"http://{ip}/health",
+            headers={"User-Agent": "AegisRx-Scanner/2.0"}
+        )
+        with urllib.request.urlopen(req, timeout=0.6) as r:
+            body = r.read().decode("utf-8", "ignore")
+            if "wifi" in body or "rssi" in body or "status" in body:
+                return ip
+    except Exception:
+        pass
     return None
 
 
@@ -354,13 +398,14 @@ def probe_local_subnet():
 
     # Priority IPs: first check known static IPs, then common router ranges
     priority_ips = [
-        "192.168.1.23",
+        f"{subnet_base}21",
         f"{subnet_base}23",
+        f"{subnet_base}22",
         f"{subnet_base}24",
         f"{subnet_base}25",
-        f"{subnet_base}22",
         f"{subnet_base}100",
         f"{subnet_base}101",
+        f"{subnet_base}2",
         f"{subnet_base}1",
     ]
     for ip in priority_ips:
@@ -369,7 +414,7 @@ def probe_local_subnet():
             return found
 
     # Scan entire subnet pool (2 to 254) with 50 concurrent workers in ~1 second
-    all_ips = [f"{subnet_base}{i}" for i in range(2, 255)]
+    all_ips = [f"{subnet_base}{i}" for i in range(2, 255) if f"{subnet_base}{i}" not in priority_ips]
     with ThreadPoolExecutor(max_workers=50) as executor:
         results = executor.map(check_esp32_ip, all_ips)
         for r in results:
@@ -378,14 +423,33 @@ def probe_local_subnet():
     return None
 
 
+def switch_stream_endpoint(new_url, source="Discovery"):
+    """
+    Seamless endpoint switch helper:
+    Updates global ESP32_STREAM_URL and cleanly interrupts any active
+    ingest socket so connection to the new network IP is immediate!
+    """
+    global ESP32_STREAM_URL, active_stream_socket
+    if not new_url.startswith("http"):
+        new_url = f"http://{new_url}/stream" if not new_url.endswith("/stream") else f"http://{new_url}"
+
+    if ESP32_STREAM_URL != new_url:
+        old_url = ESP32_STREAM_URL
+        ESP32_STREAM_URL = new_url
+        add_log(f"[{source.upper()}] Auto-Switched ESP32 Target: {old_url} -> {new_url}")
+        if active_stream_socket:
+            try:
+                active_stream_socket.close()
+            except Exception:
+                pass
+
+
 def auto_discovery_worker():
     """
     Continuous background discovery daemon:
     1. Immediately checks known IP / probes subnet if stream isn't connected.
     2. Listens for UDP broadcast beacons on port 4210.
     """
-    global ESP32_STREAM_URL
-
     add_log("[DISCOVERY] Auto-Discovery & UDP Beacon Engine initialized")
 
     # Start UDP listener
@@ -412,9 +476,7 @@ def auto_discovery_worker():
             detected_ip = probe_local_subnet()
             if detected_ip:
                 target_url = f"http://{detected_ip}/stream"
-                if ESP32_STREAM_URL != target_url:
-                    ESP32_STREAM_URL = target_url
-                    add_log(f"[DISCOVERY] Auto-Located ESP32-CAM via Rapid Subnet Scan: {target_url}")
+                switch_stream_endpoint(target_url, source="Subnet Scan")
 
         # Listen for UDP Beacon
         try:
@@ -425,9 +487,7 @@ def auto_discovery_worker():
                     parts = text.split("|")
                     discovered_ip = parts[1] if len(parts) > 1 else addr[0]
                     target_url = f"http://{discovered_ip}/stream"
-                    if ESP32_STREAM_URL != target_url:
-                        ESP32_STREAM_URL = target_url
-                        add_log(f"[DISCOVERY] Auto-Located ESP32-CAM via UDP Beacon: {target_url}")
+                    switch_stream_endpoint(target_url, source="UDP Beacon")
         except socket.timeout:
             pass
         except Exception:
@@ -446,7 +506,7 @@ def stream_ingest_worker():
     CPU decoding overhead and ZERO memory reallocation!
     """
     global camera_connected, last_frame_received_time, connection_attempts
-    global current_display_bytes, current_display_frame_id
+    global current_display_bytes, current_display_frame_id, active_stream_socket
 
     add_log(f"[INGEST] Direct Zero-Copy TCP Ingest initialized: {ESP32_STREAM_URL}")
 
@@ -455,13 +515,14 @@ def stream_ingest_worker():
             time.sleep(0.5)
             continue
 
+        target_url = ESP32_STREAM_URL
         connection_attempts += 1
         if connection_attempts > 1 and connection_attempts % 5 == 2:
-            add_log(f"[STREAM] Connecting to ESP32: {ESP32_STREAM_URL} (Attempt #{connection_attempts})...")
+            add_log(f"[STREAM] Connecting to ESP32: {target_url} (Attempt #{connection_attempts})...")
 
         # Parse host and port
         try:
-            parsed = urllib.parse.urlparse(ESP32_STREAM_URL)
+            parsed = urllib.parse.urlparse(target_url)
             host = parsed.hostname
             port = parsed.port or 80
             path = parsed.path or "/stream"
@@ -471,10 +532,10 @@ def stream_ingest_worker():
 
         s = None
         try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            active_stream_socket = s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
-            # Cap OS receive buffer to 16KB so Windows never queues stale frames!
-            s.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 16384)
+            # Use 128KB socket buffer: allows smooth TCP window without choking ESP32
+            s.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 131072)
             s.settimeout(STREAM_SOCKET_TIMEOUT)
             s.connect((host, port))
 
@@ -490,6 +551,10 @@ def stream_ingest_worker():
             last_frame_time = time.time()
 
             while True:
+                # If target URL changed dynamically, switch connection immediately
+                if ESP32_STREAM_URL != target_url:
+                    break
+
                 chunk = s.recv(32768)
                 if not chunk:
                     break
@@ -516,6 +581,9 @@ def stream_ingest_worker():
                                 current_display_bytes = jpeg_bytes
                                 current_display_frame_id += 1
                                 frame_condition.notify_all()
+                    else:
+                        # Orphaned fragment before last_eoi — purge up to EOI to keep buffer clean
+                        del byte_buf[:last_eoi + 2]
 
                 # Safety guard against buffer growth
                 if len(byte_buf) > STREAM_MAX_FRAME_BYTES * 2:
@@ -533,6 +601,7 @@ def stream_ingest_worker():
         except Exception as e:
             add_log(f"[STREAM] Notice: {type(e).__name__}: {e}")
         finally:
+            active_stream_socket = None
             camera_connected = False
             if s:
                 try:
@@ -644,7 +713,9 @@ def qr_scanner_worker():
                     active_qr_data = None
                     active_qr_points = None
                 latest_qr = ""
-                last_detected = ""
+                # Clear last_detected only after cooldown has passed so duplicate spam is avoided
+                if current_time - last_dispatch_time > DISPATCH_COOLDOWN:
+                    last_detected = ""
 
         # Scan 5-6 times a second: instant recognition, zero CPU load
         time.sleep(0.18)
@@ -761,6 +832,12 @@ def qr_result():
     with detected_qr_lock:
         qr_pts = active_qr_points
 
+    ai_feedback_data = None
+    if dispense_result and HAS_AI_ENGINE:
+        p_id = dispense_result.get("presc_id")
+        if p_id:
+            ai_feedback_data = prescription_watcher.get_ai_feedback(p_id)
+
     return jsonify({
         "result": latest_qr,
         "is_url": is_valid_url(latest_qr),
@@ -768,6 +845,7 @@ def qr_result():
         "camera_connected": effective_connected,
         "iot_status": iot_status,
         "dispense": dispense_result,
+        "ai_feedback": ai_feedback_data,
         "logs": recent_logs,
         "esp32_url": ESP32_STREAM_URL,
         "qr_points": qr_pts
@@ -776,15 +854,84 @@ def qr_result():
 
 @app.route("/update_ip", methods=["POST"])
 def update_ip():
-    global ESP32_STREAM_URL
     new_ip = request.json.get("ip", "").strip()
     if new_ip:
-        if not new_ip.startswith("http"):
-            new_ip = f"http://{new_ip}/stream" if not new_ip.endswith("/stream") else f"http://{new_ip}"
-        ESP32_STREAM_URL = new_ip
-        add_log(f"[CONFIG] ESP32 Stream URL Updated to: {ESP32_STREAM_URL}")
+        switch_stream_endpoint(new_ip, source="Manual Config")
         return jsonify({"status": "success", "url": ESP32_STREAM_URL})
     return jsonify({"status": "error", "message": "Invalid IP endpoint"})
+
+
+@app.route("/simulate_scan", methods=["POST", "GET"])
+def simulate_scan():
+    """Simulates a live QR code scan detection (useful for demo & client verification)."""
+    global latest_qr, last_detected, last_seen_time, scan_id, iot_status
+    qr_input = request.args.get("qr") or (request.json.get("qr") if request.is_json else None) or "Paracetamol:4|Cetirizine:6|Dolo650:2"
+    
+    current_time = time.time()
+    scan_id += 1
+    latest_qr = qr_input
+    last_detected = qr_input
+    last_seen_time = current_time
+    
+    meds = parse_prescription(qr_input)
+    add_log(f"[SIMULATION] Live QR Optical Triggered: {qr_input}")
+    
+    # Trigger async cloud dispatch to receive_scan.php
+    threading.Thread(target=send_to_cloud_async, args=(qr_input, meds), daemon=True).start()
+    
+    return jsonify({
+        "status": "triggered",
+        "qr": qr_input,
+        "medicines": meds,
+        "scan_id": scan_id
+    })
+
+
+# ============================================================
+# 🩺 AI CLINICAL PHARMACOLOGY & CONSULTATION APIS
+# ============================================================
+
+@app.route("/api/ai_feedback/<target>")
+def get_ai_feedback_route(target):
+    """Returns doctoral clinical review for given presc_id or token."""
+    if not HAS_AI_ENGINE:
+        return jsonify({"status": "error", "message": "AI Engine not initialized"}), 503
+    fb = prescription_watcher.get_ai_feedback(target)
+    if fb:
+        return jsonify({"status": "success", "data": fb})
+    return jsonify({"status": "not_found", "message": "No AI feedback generated yet for this record"}), 404
+
+
+@app.route("/api/ai_feedback_all")
+def get_ai_feedback_all():
+    """Returns all cached patient clinical dossiers."""
+    if not HAS_AI_ENGINE:
+        return jsonify({"status": "error", "message": "AI Engine not initialized"}), 503
+    with prescription_watcher.records_lock:
+        data = dict(prescription_watcher.processed_records)
+    return jsonify({"status": "success", "count": len(data), "data": data})
+
+
+@app.route("/api/ai_chat", methods=["POST"])
+def ai_chat_route():
+    """Live consultation with AI Clinical Consultant in English or Tamil."""
+    if not HAS_AI_ENGINE:
+        return jsonify({"status": "error", "message": "AI Engine not initialized"}), 503
+    req_data = request.get_json(silent=True) or {}
+    user_msg = req_data.get("message", "").strip()
+    patient = req_data.get("patient", {})
+    history = req_data.get("history", [])
+
+    if not user_msg:
+        return jsonify({"status": "error", "message": "Empty query"}), 400
+
+    resp = doctor_consultation_chat(user_msg, patient, history)
+    return jsonify({
+        "status": "success",
+        "reply": resp.get("reply", ""),
+        "engine": resp.get("engine", "AI Clinical Engine"),
+        "timestamp": resp.get("timestamp", "")
+    })
 
 
 # ============================================================
@@ -801,6 +948,11 @@ if __name__ == "__main__":
     print(f"   Decoder Engine:    {'pyzbar (C-Accelerated 3ms)' if HAS_PYZBAR else 'OpenCV Accelerated'}")
     print(f"   Stream Method:     Zero-Copy Direct Hardware MJPEG Passthrough")
     print(f"   Clinical Station:  http://127.0.0.1:5000")
+    if HAS_AI_ENGINE:
+        print(f"   AI Clinical Agent: ACTIVE (Clinical Pharmacologist Dual Gemini & Groq)")
+        print(f"   Cloud Watcher:     ACTIVE (Polling https://iotcloud22.in/4973/get_emails.php)")
+        # Start continuous cloud prescription watcher daemon
+        prescription_watcher.start_watcher_background()
     print("=" * 64)
     print("")
 

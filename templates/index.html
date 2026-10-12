@@ -822,6 +822,7 @@
             <div class="config-form">
                 <input type="text" id="target-ip-input" class="config-input" placeholder="e.g. 172.20.99.128">
                 <button type="button" class="config-btn" onclick="modifyStreamEndpoint()">Set Camera IP</button>
+                <button type="button" class="config-btn" style="background: linear-gradient(135deg, #10b981, #059669); border-color: #34d399; color: #fff;" onclick="triggerDemoScan()" title="Simulate QR Code Scan">⚡ Test QR Scan</button>
             </div>
         </div>
 
@@ -936,6 +937,22 @@
                     </div>
 
                     <div id="dossier-meds-list"></div>
+
+                    <!-- Dr. Aegis AI Clinical Review & Dosage Validation -->
+                    <div id="dossier-ai-section" style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08);display:none;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <span style="background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:10px;font-weight:800;padding:3px 8px;border-radius:6px;letter-spacing:0.5px;">AI CLINICAL REVIEW</span>
+                                <span style="font-size:12px;font-weight:700;color:#c7d2fe;">Dr. Aegis (MD, PhD)</span>
+                            </div>
+                            <span id="ai-engine-tag" style="font-size:10px;color:#94a3b8;font-family:'JetBrains Mono';">Dual LLM</span>
+                        </div>
+                        <div id="ai-summary-text" style="font-size:12px;color:#cbd5e1;line-height:1.5;background:rgba(15,23,42,0.6);padding:12px 14px;border-radius:10px;border:1px solid rgba(99,102,241,0.25);margin-bottom:10px;">
+                        </div>
+                        <div id="ai-warnings-box" style="font-size:11.5px;color:#fca5a5;background:rgba(239,68,68,0.12);padding:10px 12px;border-radius:8px;border:1px solid rgba(239,68,68,0.3);display:none;">
+                            <strong>Safety & Interaction Alerts:</strong> <span id="ai-warnings-text"></span>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Audit Log Console -->
@@ -1091,6 +1108,31 @@
                         `;
                     });
                     document.getElementById("dossier-meds-list").innerHTML = medsListHtml;
+
+                    // Populate Dr. Aegis AI Clinical Review Dossier on Station HUD
+                    const aiSec = document.getElementById("dossier-ai-section");
+                    const aiSumm = document.getElementById("ai-summary-text");
+                    const aiTag = document.getElementById("ai-engine-tag");
+                    const aiWarn = document.getElementById("ai-warnings-box");
+                    const aiWarnText = document.getElementById("ai-warnings-text");
+
+                    if (telemetry.ai_feedback) {
+                        if (aiSec && aiSumm) {
+                            aiSec.style.display = "block";
+                            aiSumm.innerText = telemetry.ai_feedback.patient_summary || "Clinical analysis verified by Dr. Aegis.";
+                            if (aiTag && telemetry.ai_feedback.metadata) {
+                                aiTag.innerText = telemetry.ai_feedback.metadata.ai_engine || "Dr. Aegis AI";
+                            }
+                            if (telemetry.ai_feedback.drug_interactions_and_safety && aiWarn && aiWarnText) {
+                                aiWarn.style.display = "block";
+                                aiWarnText.innerText = telemetry.ai_feedback.drug_interactions_and_safety;
+                            } else if (aiWarn) {
+                                aiWarn.style.display = "none";
+                            }
+                        }
+                    } else if (aiSec) {
+                        aiSec.style.display = "none";
+                    }
                 }
 
                 // 5. Audit Log Terminal Synchronization
@@ -1152,6 +1194,17 @@
                 }
             } catch (err) {
                 console.error("Endpoint update failed:", err);
+            }
+        }
+
+        async function triggerDemoScan() {
+            try {
+                const resp = await fetch("/simulate_scan");
+                const data = await resp.json();
+                console.log("Simulate Scan response:", data);
+                synchronizeTelemetry();
+            } catch (err) {
+                console.error("Simulation error:", err);
             }
         }
 

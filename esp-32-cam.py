@@ -27,6 +27,11 @@ KNOWN_NETWORKS = [
 BEACON_PORT = 4210
 BEACON_INTERVAL = 3
 BEACON_MSG = "AEGISRX_ESP32CAM"
+beacon_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+try:
+    beacon_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+except Exception:
+    pass
 
 # ── 2. WI-FI CONNECTION (STABLE POWER) ───────────────────────
 ap = network.WLAN(network.AP_IF)
@@ -42,7 +47,7 @@ wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 time.sleep(0.2)
 
-for pwr in [15.0, 14.0]:
+for pwr in [16.5, 15.0, 14.0]:
     try:
         wlan.config(txpower=pwr)
         break
@@ -81,7 +86,7 @@ print(f"[WiFi] Stream: http://{ip}/stream")
 print(f"[Beacon] UDP port {BEACON_PORT}")
 print("=" * 55 + "\n")
 
-# ── 3. CAMERA INIT (CIF 400x296 — SHARP + STABLE) ───────────
+# ── 3. CAMERA INIT (STABLE QVGA @ QUALITY 20) ───────────────
 time.sleep(0.3)
 gc.collect()
 
@@ -92,9 +97,9 @@ except Exception:
 
 _cam_ok = False
 for _init_fn in [
-    lambda: camera.init(0, format=camera.JPEG, framesize=camera.FRAME_QVGA, quality=12),
-    lambda: camera.init(0, format=camera.JPEG, framesize=camera.FRAME_QVGA, quality=15),
-    lambda: camera.init(0, format=camera.JPEG, framesize=camera.FRAME_CIF, quality=15),
+    lambda: camera.init(0, format=camera.JPEG, framesize=camera.FRAME_QVGA, quality=20),
+    lambda: camera.init(0, format=camera.JPEG, framesize=camera.FRAME_QVGA, quality=22),
+    lambda: camera.init(0, format=camera.JPEG, framesize=camera.FRAME_CIF, quality=20),
     lambda: camera.init(0, format=camera.JPEG),
     lambda: camera.init(0),
 ]:
@@ -113,10 +118,10 @@ else:
     except Exception:
         pass
     try:
-        camera.quality(12)
+        camera.quality(20)
     except Exception:
         pass
-    print("[Camera] OK (High-Speed QVGA 320x240 @ Quality 12)")
+    print("[Camera] OK (Stable High-Speed QVGA 320x240 @ Quality 20)")
 
 gc.collect()
 print("[Memory] Free:", gc.mem_free(), "bytes")
@@ -157,15 +162,15 @@ def send_all(sock, data):
                 retries = 0
             else:
                 retries += 1
-                if retries > 15:
+                if retries > 60:
                     raise OSError(11)  # EAGAIN - buffer full
-                time.sleep(0.003)
+                time.sleep(0.01)
         except OSError as e:
-            if e.args and e.args[0] == 11:
+            if e.args and e.args[0] in (11, 12):
                 retries += 1
-                if retries > 15:
+                if retries > 60:
                     raise
-                time.sleep(0.003)
+                time.sleep(0.01)
             else:
                 raise
 
@@ -187,7 +192,7 @@ def handle_stream(cl):
 
     print("[Stream] Client connected, streaming...")
     try:
-        cl.settimeout(10.0)
+        cl.settimeout(6.0)
     except Exception:
         pass
 
@@ -196,11 +201,12 @@ def handle_stream(cl):
     consecutive_skips = 0
 
     while True:
-        # Wi-Fi watchdog every 200 frames
-        if fc > 0 and fc % 200 == 0:
+        # Wi-Fi watchdog & UDP keepalive beacon every 100 frames (~4s)
+        if fc > 0 and fc % 100 == 0:
             if not wlan.isconnected():
-                print("[Stream] WiFi lost. Ending.")
+                print("[Stream] WiFi lost. Ending stream to reconnect.")
                 break
+            send_beacon()
             print(f"[Stream] {fc} frames sent, free={gc.mem_free()}")
 
         # Capture
@@ -221,7 +227,7 @@ def handle_stream(cl):
         fails = 0
 
         try:
-            # Send MJPEG multipart frame atomically
+            # Send MJPEG multipart frame in controlled 2KB chunks
             header = (
                 BOUNDARY + 
                 b'Content-Type: image/jpeg\r\nContent-Length: ' + 
@@ -229,7 +235,9 @@ def handle_stream(cl):
                 b'\r\n\r\n'
             )
             send_all(cl, header)
-            send_all(cl, buf)
+            chunk_size = 2048
+            for i in range(0, len(buf), chunk_size):
+                send_all(cl, buf[i:i + chunk_size])
             send_all(cl, b'\r\n')
             fc += 1
             consecutive_skips = 0
@@ -242,10 +250,10 @@ def handle_stream(cl):
             else:
                 # Momentary Wi-Fi stall: skip this frame, keep connection ALIVE!
                 consecutive_skips += 1
-                if consecutive_skips > 25:
+                if consecutive_skips > 20:
                     print("[Stream] Too many consecutive stalls. Closing.")
                     break
-                time.sleep(0.005)
+                time.sleep(0.01)
                 continue
         except Exception as e:
             print("[Stream] Fatal send exception:", e)
@@ -253,11 +261,12 @@ def handle_stream(cl):
         finally:
             buf = None
 
-        # Run garbage collection periodically every 30 frames (not every frame!)
-        if fc % 30 == 0:
+        # Run garbage collection periodically every 50 frames
+        if fc % 50 == 0:
             gc.collect()
 
-        time.sleep(0.005)
+        # Frame pacing: ~20-22 FPS maintains silky-smooth feed while preventing buffer overflows
+        time.sleep(0.040)
 
     print(f"[Stream] Session ended: {fc} frames total")
 
@@ -279,6 +288,29 @@ def handle_404(cl):
     cl.send(b'Use /stream or /health')
 
 
+def send_beacon():
+    try:
+        if wlan.isconnected():
+            my_ip = wlan.ifconfig()[0]
+            msg = BEACON_MSG + "|" + my_ip
+            bdata = msg.encode()
+            # 1. Universal broadcast
+            try:
+                beacon_sock.sendto(bdata, ("255.255.255.255", BEACON_PORT))
+            except Exception:
+                pass
+            # 2. Subnet directed broadcast (crucial for mobile hotspots like 'ras'!)
+            try:
+                parts = my_ip.split(".")
+                if len(parts) == 4:
+                    bcast = parts[0] + "." + parts[1] + "." + parts[2] + ".255"
+                    beacon_sock.sendto(bdata, (bcast, BEACON_PORT))
+            except Exception:
+                pass
+    except Exception:
+        pass
+
+
 # ── 5. MAIN EVENT LOOP (Server + UDP Beacon) ─────────────────
 addr = socket.getaddrinfo('0.0.0.0', 80)[0][-1]
 srv = socket.socket()
@@ -287,8 +319,6 @@ srv.bind(addr)
 srv.listen(3)
 srv.settimeout(1.0)
 
-beacon_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-beacon_sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 last_beacon = 0
 
 print("[Server] Listening on port 80")
@@ -298,12 +328,7 @@ while True:
     now = time.time()
     if now - last_beacon >= BEACON_INTERVAL:
         last_beacon = now
-        try:
-            if wlan.isconnected():
-                msg = BEACON_MSG + "|" + wlan.ifconfig()[0]
-                beacon_sock.sendto(msg.encode(), ("255.255.255.255", BEACON_PORT))
-        except Exception:
-            pass
+        send_beacon()
 
     if not wlan.isconnected():
         print("[WiFi] Lost! Reconnecting...")

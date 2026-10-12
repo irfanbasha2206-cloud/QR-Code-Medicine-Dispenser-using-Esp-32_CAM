@@ -1,0 +1,1382 @@
+{
+  "PRESC_6ac9e9c3cf2e8": {
+    "patient_summary": "The prescription of Cetirizine for a 22-year-old female is clinically appropriate for the management of allergic conditions. The dosage aligns with standard adult therapeutic guidelines, with no immediate contraindications identified for this demographic.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Cetirizine",
+        "pharmacological_action": "Cetirizine is a second-generation H1-antihistamine that competitively inhibits the binding of histamine to H1 receptors. This action reduces the physiological effects of histamine, such as vasodilation, increased vascular permeability, and bronchoconstriction, thereby alleviating symptoms of allergic rhinitis, urticaria, and other allergic reactions. It has minimal blood-brain barrier penetration compared to first-generation antihistamines, resulting in less sedation.",
+        "side_effects": "Common side effects include somnolence (drowsiness), fatigue, dry mouth, and headache. Less common effects may include nausea, vomiting, and nasopharyngitis. Rarely, it may cause paradoxical excitation or allergic reactions to the excipients.",
+        "meal_guidelines": "Cetirizine can be taken with or without food. Food does not significantly affect its bioavailability, but taking it with a small amount of food may help mitigate potential gastrointestinal discomfort. It should be taken with a full glass of water. Avoid alcohol as it may potentiate sedative effects. No specific restrictions on citrus or milk, but maintaining a balanced diet is recommended.",
+        "dosage_for_age": "For a 22-year-old female, the standard adult dose of 10 mg once daily (or 5 mg twice daily, depending on the specific formulation prescribed) is appropriate. The quantity of 4 tablets suggests a short-term course, which is consistent with acute allergic management. No age-adjusted reduction is necessary for this age group."
+      }
+    ],
+    "drug_interactions_and_safety": "Cetirizine has a favorable safety profile with minimal drug-drug interactions. It is primarily excreted unchanged by the kidneys, so renal function should be considered if there is known impairment, though this is unlikely in a healthy 22-year-old. Hepatic metabolism is minimal, so liver safety is generally not a concern. It is compatible with most common medications, but caution is advised when combined with other CNS depressants (e.g., benzodiazepines, opioids) due to additive sedation.",
+    "lifestyle_precautions": "Patients should be advised to avoid driving or operating heavy machinery until they know how the medication affects them, as drowsiness is a common side effect. Adequate hydration is recommended to counteract dry mouth. Alcohol should be avoided as it can increase drowsiness. Sun exposure does not require specific avoidance for cetirizine, but general sun protection is always advisable.",
+    "red_flag_symptoms": "Immediate medical attention is required if the patient experiences signs of a severe allergic reaction (anaphylaxis), such as difficulty breathing, swelling of the face, lips, tongue, or throat, or widespread hives. Also seek care for signs of severe dehydration, persistent vomiting, or unusual neurological symptoms like confusion or severe drowsiness that does not resolve.",
+    "tamil_patient_guidance": "அருமை, உங்கள் மருந்து மருத்துவரால் சரியாக பரிந்துரைக்கப்பட்டுள்ளது. சிட்டிரிசின் (Cetirizine) என்பது அலர்ஜி (Allergy) பிரச்சனைகளுக்கு மிகவும் பயனுள்ள மருந்து. இது உடலில் உள்ள ஹிஸ்டமைன் (Histamine) என்ற வேதியியல் பொருளை தடுக்கிறது, இதனால் மூக்கு கசிவு, தோல் துடிப்பு மற்றும் அலர்ஜி அறிகுறிகள் குறையும். இந்த மருந்தை உணவுக்கு முன் அல்லது பின்னர் எப்போது வேண்டுமானாலும் எடுத்துக்கொள்ளலாம்; ஆனால் ஒரு முழு கிளாஸ் தண்ணீருடன் எடுப்பது நல்லது. சிலருக்கு மயக்கம் (Drowsiness) அல்லது வாய் உலர்வு ஏற்படலாம், எனவே மருந்து எடுத்த பிறகு கார் ஓட்டுவது அல்லது எந்திரங்களை இயக்குவதை தவிர்க்கவும். மதுபானத்தை முழுமையாக தவிர்க்கவும். உங்கள் உடல்நலம் சீக்கிரம் சீக்கிரம் சீராகும் என்று நம்புகிறேன். எந்த அசாதாரண அறிகுறிகள் (சுவாசம் மூடுதல், முகம் வீங்குதல்) தெரிந்தால் உடனடியாக மருத்துவரை அணுகவும்.",
+    "metadata": {
+      "presc_id": "PRESC_6ac9e9c3cf2e8",
+      "patient_name": "sruthisuresh",
+      "age": 22,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "Cetirizine",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 13:26:09",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "852135a8e18af8b2d84d22236efad2d54f0260578b6522b92ca2c4946e7e4326",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=852135a8e18af8b2d84d22236efad2d54f0260578b6522b92ca2c4946e7e4326",
+    "dispense_status": "PENDING"
+  },
+  "852135a8e18af8b2d84d22236efad2d54f0260578b6522b92ca2c4946e7e4326": {
+    "patient_summary": "The prescription of Cetirizine for a 22-year-old female is clinically appropriate for the management of allergic conditions. The dosage aligns with standard adult therapeutic guidelines, with no immediate contraindications identified for this demographic.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Cetirizine",
+        "pharmacological_action": "Cetirizine is a second-generation H1-antihistamine that competitively inhibits the binding of histamine to H1 receptors. This action reduces the physiological effects of histamine, such as vasodilation, increased vascular permeability, and bronchoconstriction, thereby alleviating symptoms of allergic rhinitis, urticaria, and other allergic reactions. It has minimal blood-brain barrier penetration compared to first-generation antihistamines, resulting in less sedation.",
+        "side_effects": "Common side effects include somnolence (drowsiness), fatigue, dry mouth, and headache. Less common effects may include nausea, vomiting, and nasopharyngitis. Rarely, it may cause paradoxical excitation or allergic reactions to the excipients.",
+        "meal_guidelines": "Cetirizine can be taken with or without food. Food does not significantly affect its bioavailability, but taking it with a small amount of food may help mitigate potential gastrointestinal discomfort. It should be taken with a full glass of water. Avoid alcohol as it may potentiate sedative effects. No specific restrictions on citrus or milk, but maintaining a balanced diet is recommended.",
+        "dosage_for_age": "For a 22-year-old female, the standard adult dose of 10 mg once daily (or 5 mg twice daily, depending on the specific formulation prescribed) is appropriate. The quantity of 4 tablets suggests a short-term course, which is consistent with acute allergic management. No age-adjusted reduction is necessary for this age group."
+      }
+    ],
+    "drug_interactions_and_safety": "Cetirizine has a favorable safety profile with minimal drug-drug interactions. It is primarily excreted unchanged by the kidneys, so renal function should be considered if there is known impairment, though this is unlikely in a healthy 22-year-old. Hepatic metabolism is minimal, so liver safety is generally not a concern. It is compatible with most common medications, but caution is advised when combined with other CNS depressants (e.g., benzodiazepines, opioids) due to additive sedation.",
+    "lifestyle_precautions": "Patients should be advised to avoid driving or operating heavy machinery until they know how the medication affects them, as drowsiness is a common side effect. Adequate hydration is recommended to counteract dry mouth. Alcohol should be avoided as it can increase drowsiness. Sun exposure does not require specific avoidance for cetirizine, but general sun protection is always advisable.",
+    "red_flag_symptoms": "Immediate medical attention is required if the patient experiences signs of a severe allergic reaction (anaphylaxis), such as difficulty breathing, swelling of the face, lips, tongue, or throat, or widespread hives. Also seek care for signs of severe dehydration, persistent vomiting, or unusual neurological symptoms like confusion or severe drowsiness that does not resolve.",
+    "tamil_patient_guidance": "அருமை, உங்கள் மருந்து மருத்துவரால் சரியாக பரிந்துரைக்கப்பட்டுள்ளது. சிட்டிரிசின் (Cetirizine) என்பது அலர்ஜி (Allergy) பிரச்சனைகளுக்கு மிகவும் பயனுள்ள மருந்து. இது உடலில் உள்ள ஹிஸ்டமைன் (Histamine) என்ற வேதியியல் பொருளை தடுக்கிறது, இதனால் மூக்கு கசிவு, தோல் துடிப்பு மற்றும் அலர்ஜி அறிகுறிகள் குறையும். இந்த மருந்தை உணவுக்கு முன் அல்லது பின்னர் எப்போது வேண்டுமானாலும் எடுத்துக்கொள்ளலாம்; ஆனால் ஒரு முழு கிளாஸ் தண்ணீருடன் எடுப்பது நல்லது. சிலருக்கு மயக்கம் (Drowsiness) அல்லது வாய் உலர்வு ஏற்படலாம், எனவே மருந்து எடுத்த பிறகு கார் ஓட்டுவது அல்லது எந்திரங்களை இயக்குவதை தவிர்க்கவும். மதுபானத்தை முழுமையாக தவிர்க்கவும். உங்கள் உடல்நலம் சீக்கிரம் சீக்கிரம் சீராகும் என்று நம்புகிறேன். எந்த அசாதாரண அறிகுறிகள் (சுவாசம் மூடுதல், முகம் வீங்குதல்) தெரிந்தால் உடனடியாக மருத்துவரை அணுகவும்.",
+    "metadata": {
+      "presc_id": "PRESC_6ac9e9c3cf2e8",
+      "patient_name": "sruthisuresh",
+      "age": 22,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "Cetirizine",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 13:26:09",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "852135a8e18af8b2d84d22236efad2d54f0260578b6522b92ca2c4946e7e4326",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=852135a8e18af8b2d84d22236efad2d54f0260578b6522b92ca2c4946e7e4326",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6ac9e92281a21": {
+    "patient_summary": "The prescription of Vitamin C Injection for a 19-year-old female is clinically appropriate for the management of documented Vitamin C deficiency (Scurvy) or severe malabsorption where oral supplementation is insufficient or contraindicated. The dosage and indication align with standard clinical guidelines for young adults.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Vitamin C Injection",
+        "pharmacological_action": "Ascorbic acid acts as a potent antioxidant and co-factor for prolyl and lysyl hydroxylase enzymes, which are essential for collagen synthesis. It facilitates iron absorption, supports immune function, and repairs connective tissues. The primary clinical indication here is the correction of Vitamin C deficiency.",
+        "side_effects": "Common side effects include injection site reactions such as pain, swelling, redness, and induration. Systemic effects may include nausea, vomiting, diarrhea, and headache. Rare but serious risks include hemolysis in patients with G6PD deficiency (though less common in this demographic, it must be ruled out) and potential interference with certain laboratory tests (e.g., blood glucose, bilirubin).",
+        "meal_guidelines": "Injections are administered parenterally (IV or IM) and are not taken with food. However, to minimize gastrointestinal upset if IV administration causes nausea, it is advisable to administer the dose after a light meal or snack. Avoid consuming large amounts of citrus fruits or acidic beverages immediately before or after the injection if the patient has a sensitive stomach, as this may exacerbate gastric acidity. No specific restrictions on milk or alcohol, but alcohol should generally be avoided during active treatment of deficiency to support liver health and nutrient absorption.",
+        "dosage_for_age": "The dosage is suitable for a 19-year-old female. Standard therapeutic doses for deficiency typically range from 250 mg to 1000 mg per day, depending on severity. The quantity of 5 suggests a short course of daily injections, which is a standard protocol for rapid repletion in severe cases. No age-adjusted reduction is necessary for this age group unless there is underlying renal impairment."
+      }
+    ],
+    "drug_interactions_and_safety": "Vitamin C is generally safe with minimal drug interactions. However, high doses can interfere with the metabolism of warfarin (potentially enhancing its effect) and may reduce the efficacy of certain chemotherapy agents. It can also interfere with the accuracy of laboratory tests for blood glucose, bilirubin, and uric acid. There are no significant liver or kidney toxicity concerns at therapeutic doses for a healthy 19-year-old, but patients with a history of kidney stones (oxalate) should be monitored, as Vitamin C is metabolized to oxalate.",
+    "lifestyle_precautions": "Maintain adequate hydration to support renal clearance of oxalate metabolites. A diet rich in fresh fruits and vegetables (natural sources of Vitamin C) should be encouraged to sustain levels after the injection course. No specific restrictions on driving or sleep are required. Sun exposure is not a direct contraindication, but general skin protection is advised.",
+    "red_flag_symptoms": "Immediate medical attention is required if the patient experiences signs of anaphylaxis (difficulty breathing, swelling of the face/lips/throat, hives), severe abdominal pain, dark urine (indicating possible hemolysis or kidney issues), or persistent vomiting/diarrhea leading to dehydration.",
+    "tamil_patient_guidance": "கமலி அக்கா, உங்களுக்கு வைட்டமின் சி இன்ஜெக்ஷன் (Vitamin C Injection) கொடுக்கப்பட்டுள்ளது. இது உங்கள் உடலில் வைட்டமின் சி குறைபாட்டை (Scurvy) சரி செய்யவும், எலும்பு மற்றும் தசை வலி குறைக்கவும், மற்றும் நோய் எதிர்ப்பு சக்தியை அதிகரிக்கவும் மிகவும் பயனுள்ள மருந்து. \n\n1. எப்போது எடுக்க வேண்டும்: இது ஒரு இன்ஜெக்ஷன் மருந்து என்பதால், மருத்துவமனையில் அல்லது கிளினிக்கில் மருத்துவரால் அல்லது செவிலியரால் கொடுக்கப்படும். வீட்டில் தானாக எடுக்க வேண்டாம். \n2. உணவு விதிமுறைகள்: இன்ஜெக்ஷன் கொடுக்கும் போது, உடல் சிறிது மயக்கம் அல்லது மோசமாக இருந்தால், முன்பே ஒரு சிறிய உணவு (snack) சாப்பிடுவது நல்லது. பால் அல்லது மதுவுடன் எந்த சிக்கலும் இல்லை, ஆனால் உடல் நலனுக்காக மதுவை தவிர்க்கவும். \n3. பக்கவிளைவுகள்: இன்ஜெக்ஷன் போடும் இடத்தில் சிறிது வலி, சிவப்பு அல்லது வீக்கம் ஏற்படலாம். இது இயல்பானது. ஆனால், மூச்சுத் திணறல், முகம் வீங்குதல், அல்லது கடுமையான வயிற்று வலி ஏற்பட்டால் உடனடியாக மருத்துவரை அணுகவும். \n4. பாதுகாப்பு குறிப்புகள்: தினமும் போதுமான அளவு தண்ணீர் குடிக்கவும். இன்ஜெக்ஷன் முடிந்த பிறகு, இயற்கையான பழங்கள் (ஆரஞ்சு, கிவி, ஸ்ட்ராபெரி) மற்றும் காய்கறிகளை உணவில் சேர்த்து கொள்ளுங்கள். இது உங்கள் உடலை ஆரோக்கியமாக வைத்திருக்க உதவும். எந்த சந்தேகத்திற்கும் மருத்துவரை அணுகவும். உங்கள் ஆரோக்கியம் எங்கள் முக்கியத்துவம்.",
+    "metadata": {
+      "presc_id": "PRESC_6ac9e92281a21",
+      "patient_name": "Kamali",
+      "age": 19,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "VitaminC",
+          "qty": 5
+        }
+      ],
+      "analyzed_at": "2026-10-10 13:26:48",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "0bade1caaae253f47b8f46670f4575f1b5c48726aff219e0ab2185f523d8f796",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=0bade1caaae253f47b8f46670f4575f1b5c48726aff219e0ab2185f523d8f796",
+    "dispense_status": "PENDING"
+  },
+  "0bade1caaae253f47b8f46670f4575f1b5c48726aff219e0ab2185f523d8f796": {
+    "patient_summary": "The prescription of Vitamin C Injection for a 19-year-old female is clinically appropriate for the management of documented Vitamin C deficiency (Scurvy) or severe malabsorption where oral supplementation is insufficient or contraindicated. The dosage and indication align with standard clinical guidelines for young adults.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Vitamin C Injection",
+        "pharmacological_action": "Ascorbic acid acts as a potent antioxidant and co-factor for prolyl and lysyl hydroxylase enzymes, which are essential for collagen synthesis. It facilitates iron absorption, supports immune function, and repairs connective tissues. The primary clinical indication here is the correction of Vitamin C deficiency.",
+        "side_effects": "Common side effects include injection site reactions such as pain, swelling, redness, and induration. Systemic effects may include nausea, vomiting, diarrhea, and headache. Rare but serious risks include hemolysis in patients with G6PD deficiency (though less common in this demographic, it must be ruled out) and potential interference with certain laboratory tests (e.g., blood glucose, bilirubin).",
+        "meal_guidelines": "Injections are administered parenterally (IV or IM) and are not taken with food. However, to minimize gastrointestinal upset if IV administration causes nausea, it is advisable to administer the dose after a light meal or snack. Avoid consuming large amounts of citrus fruits or acidic beverages immediately before or after the injection if the patient has a sensitive stomach, as this may exacerbate gastric acidity. No specific restrictions on milk or alcohol, but alcohol should generally be avoided during active treatment of deficiency to support liver health and nutrient absorption.",
+        "dosage_for_age": "The dosage is suitable for a 19-year-old female. Standard therapeutic doses for deficiency typically range from 250 mg to 1000 mg per day, depending on severity. The quantity of 5 suggests a short course of daily injections, which is a standard protocol for rapid repletion in severe cases. No age-adjusted reduction is necessary for this age group unless there is underlying renal impairment."
+      }
+    ],
+    "drug_interactions_and_safety": "Vitamin C is generally safe with minimal drug interactions. However, high doses can interfere with the metabolism of warfarin (potentially enhancing its effect) and may reduce the efficacy of certain chemotherapy agents. It can also interfere with the accuracy of laboratory tests for blood glucose, bilirubin, and uric acid. There are no significant liver or kidney toxicity concerns at therapeutic doses for a healthy 19-year-old, but patients with a history of kidney stones (oxalate) should be monitored, as Vitamin C is metabolized to oxalate.",
+    "lifestyle_precautions": "Maintain adequate hydration to support renal clearance of oxalate metabolites. A diet rich in fresh fruits and vegetables (natural sources of Vitamin C) should be encouraged to sustain levels after the injection course. No specific restrictions on driving or sleep are required. Sun exposure is not a direct contraindication, but general skin protection is advised.",
+    "red_flag_symptoms": "Immediate medical attention is required if the patient experiences signs of anaphylaxis (difficulty breathing, swelling of the face/lips/throat, hives), severe abdominal pain, dark urine (indicating possible hemolysis or kidney issues), or persistent vomiting/diarrhea leading to dehydration.",
+    "tamil_patient_guidance": "கமலி அக்கா, உங்களுக்கு வைட்டமின் சி இன்ஜெக்ஷன் (Vitamin C Injection) கொடுக்கப்பட்டுள்ளது. இது உங்கள் உடலில் வைட்டமின் சி குறைபாட்டை (Scurvy) சரி செய்யவும், எலும்பு மற்றும் தசை வலி குறைக்கவும், மற்றும் நோய் எதிர்ப்பு சக்தியை அதிகரிக்கவும் மிகவும் பயனுள்ள மருந்து. \n\n1. எப்போது எடுக்க வேண்டும்: இது ஒரு இன்ஜெக்ஷன் மருந்து என்பதால், மருத்துவமனையில் அல்லது கிளினிக்கில் மருத்துவரால் அல்லது செவிலியரால் கொடுக்கப்படும். வீட்டில் தானாக எடுக்க வேண்டாம். \n2. உணவு விதிமுறைகள்: இன்ஜெக்ஷன் கொடுக்கும் போது, உடல் சிறிது மயக்கம் அல்லது மோசமாக இருந்தால், முன்பே ஒரு சிறிய உணவு (snack) சாப்பிடுவது நல்லது. பால் அல்லது மதுவுடன் எந்த சிக்கலும் இல்லை, ஆனால் உடல் நலனுக்காக மதுவை தவிர்க்கவும். \n3. பக்கவிளைவுகள்: இன்ஜெக்ஷன் போடும் இடத்தில் சிறிது வலி, சிவப்பு அல்லது வீக்கம் ஏற்படலாம். இது இயல்பானது. ஆனால், மூச்சுத் திணறல், முகம் வீங்குதல், அல்லது கடுமையான வயிற்று வலி ஏற்பட்டால் உடனடியாக மருத்துவரை அணுகவும். \n4. பாதுகாப்பு குறிப்புகள்: தினமும் போதுமான அளவு தண்ணீர் குடிக்கவும். இன்ஜெக்ஷன் முடிந்த பிறகு, இயற்கையான பழங்கள் (ஆரஞ்சு, கிவி, ஸ்ட்ராபெரி) மற்றும் காய்கறிகளை உணவில் சேர்த்து கொள்ளுங்கள். இது உங்கள் உடலை ஆரோக்கியமாக வைத்திருக்க உதவும். எந்த சந்தேகத்திற்கும் மருத்துவரை அணுகவும். உங்கள் ஆரோக்கியம் எங்கள் முக்கியத்துவம்.",
+    "metadata": {
+      "presc_id": "PRESC_6ac9e92281a21",
+      "patient_name": "Kamali",
+      "age": 19,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "VitaminC",
+          "qty": 5
+        }
+      ],
+      "analyzed_at": "2026-10-10 13:26:48",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "0bade1caaae253f47b8f46670f4575f1b5c48726aff219e0ab2185f523d8f796",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=0bade1caaae253f47b8f46670f4575f1b5c48726aff219e0ab2185f523d8f796",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6ac9e5c93f0cd": {
+    "patient_summary": "A 23‑year‑old male has been prescribed a short course of vitamin C injection (4 units) likely for correction of deficiency; the regimen is generally safe but requires attention to injection technique and renal status.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Vitamin C Injection (Ascorbic Acid)",
+        "pharmacological_action": "Ascorbic acid is a water‑soluble antioxidant that serves as a co‑factor for several enzymatic reactions (e.g., collagen synthesis, catecholamine production, and iron absorption). Intravenous administration bypasses gastrointestinal absorption limits and rapidly raises plasma ascorbate levels, useful for acute deficiency, certain postoperative settings, or as an adjunct in high‑oxidative‑stress states.",
+        "side_effects": "Most common: pain, erythema, swelling, or bruising at the injection site. Less frequent but clinically important: hypersensitivity reactions (urticaria, bronchospasm, anaphylaxis), transient nausea/vomiting, hyperoxaluria leading to renal stone formation in susceptible individuals, and rare metabolic acidosis with very high doses.",
+        "meal_guidelines": "Vitamin C injection is administered intravenously or intramuscularly; timing relative to meals is not critical. Avoid concurrent infusion of calcium‑containing solutions as high concentrations of ascorbate may precipitate calcium oxalate. No specific beverage restrictions, but advise the patient not to consume large amounts of alcohol immediately before or after the injection due to potential renal stress.",
+        "dosage_for_age": "For a healthy 23‑year‑old male, a typical replacement dose is 500 mg to 1 g IV/IM daily for 3–5 days, not exceeding 2 g per day unless under specialist supervision. The prescribed quantity (4 units) appears appropriate for a short corrective course, assuming each unit contains 500 mg–1 g."
+      }
+    ],
+    "drug_interactions_and_safety": "Vitamin C has low potential for drug‑drug interactions. It may increase iron absorption, so concurrent high‑dose iron therapy should be monitored for iron overload. High‑dose ascorbate can interfere with certain laboratory assays (e.g., glucose oxidase, blood gas measurements). Caution in patients with renal impairment, G6PD deficiency, or a history of oxalate kidney stones; dose reduction or avoidance is recommended in these conditions.",
+    "lifestyle_precautions": "Maintain adequate hydration (≥2 L water/day) to facilitate renal clearance of oxalate. Avoid excessive intake of other high‑oxalate foods (spinach, rhubarb, nuts) during the injection course. No driving or occupational restrictions are needed, but monitor for any acute allergic reaction that could impair alertness. Sun exposure does not affect vitamin C pharmacokinetics, but a balanced diet rich in fruits and vegetables will support overall antioxidant status.",
+    "red_flag_symptoms": "Severe or rapidly spreading swelling, intense pain at the injection site, hives, difficulty breathing, wheezing, throat tightness, chest pain, sudden onset of dark urine (possible hematuria or oxalate crystals), or any signs of anaphylaxis require immediate emergency medical attention.",
+    "tamil_patient_guidance": "இர்ஃபான் அவர்களுக்கு விட்டமின் C (அஸ்கார்பிக் அமிலம்) ஊசியால் 4 முறை வழங்கப்படும். இது உடலில் ஆன்டிஆக்ஸிடெண்ட் ஆக働ித்து, கொலாஜன் உருவாக்கம், இரும்பு உறிஞ்சுதல், மற்றும் நரம்பு இரசாயனங்கள் தயாரிப்பு போன்ற பல முக்கிய செயல்களில் உதவுகிறது. \n\n**எப்போது எடுத்துக்கொள்ள வேண்டும்?**\n- இந்த ஊசி உணவுடன் அல்லது உணவுக்கு பிறகு எதுவும் கவலைப்பட வேண்டியதில்லை; ஊசியை மருத்துவர் அல்லது நர்ஸின் கண்காணிப்பில் நேரடியாக வழங்க வேண்டும். \n- கால்சியம் கொண்ட திரவங்களுடன் ஒரே நேரத்தில் ஊசி கொடுக்க avoided செய்யவும், ஏனெனில் அதிக ஆக்சலேட் உருவாகி சிறுநீரகக் கற்கள் உருவாகும் அபாயம் உள்ளது.\n\n**முக்கிய பக்கவிளைவுகள்:**\n- ஊசி இடத்தில் வலி, சிவப்பு, வீக்கம், அல்லது நீலப்புள்ளிகள். \n- அரிதாக அலர்ஜி (கோழை, மூச்சுத்திணறல், தோல் சிவப்பு) அல்லது ஆபத்தான அநாபிலாக்ஸிஸ். \n- அதிக அளவில் எடுத்தால் சிறுநீரகத்தில் ஆக்சலேட் கற்கள் உருவாகலாம்; இதைத் தவிர்க்க அதிக தண்ணீர் குடிக்க வேண்டும்.\n\n**பாதுகாப்பு குறிப்புகள்:**\n- சிறுநீரக பிரச்சனை, இரும்பு அதிகம், அல்லது G6PD குறைபாடு இருந்தால் மருத்துவரை அறிவிக்கவும். \n- தினமும் 2 லிட்டர் மேல் தண்ணீர் குடித்து உடலை நன்றாக நீர்ப்பூர்த்தி செய்யவும். \n- அதிக ஆக்சலேட் கொண்ட உணவுகள் (பசலைக் கீரை, ருபார்ப், நட்டுகள்) உட்கொள்ளும் அளவை குறைக்கவும்.\n\n**அவசர அறிகுறிகள் (Red Flag):**\n- ஊசி இடத்தில் திடீரென அதிக வலி, வீக்கம், அல்லது சிவப்பு. \n- மூச்சு விடுவதில் சிரமம், தும்மல், முகம் அல்லது தொண்டை வீக்கம், மார்பு வலி. \n- இருண்ட நிற சிறுநீர் (கற்கள் உருவாகும் சாத்தியம்). \n- இவற்றில் ஏதேனும் ஏற்பட்டால் உடனடியாக 108 அழைக்கவும் அல்லது அருகிலுள்ள அவசர மருத்துவமனைக்கு செல்லவும்.\n\nஇந்த மருந்தை மருத்துவர் கூறியபடி பயன்படுத்தினால், விட்டமின் C குறைபாட்டை விரைவாக சரி செய்யலாம், மேலும் எந்தவொரு பிரச்சனை இருந்தாலும் உடனே ஆலோசனை பெறுங்கள்.",
+    "metadata": {
+      "presc_id": "PRESC_6ac9e5c93f0cd",
+      "patient_name": "irfan",
+      "age": 23,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "VitaminC",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 13:27:06",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "9df66df2dd108f3d146d4e9c4d091b41120673042b5efc9202b6fa7dc8783c7a",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=9df66df2dd108f3d146d4e9c4d091b41120673042b5efc9202b6fa7dc8783c7a",
+    "dispense_status": "PENDING"
+  },
+  "9df66df2dd108f3d146d4e9c4d091b41120673042b5efc9202b6fa7dc8783c7a": {
+    "patient_summary": "A 23‑year‑old male has been prescribed a short course of vitamin C injection (4 units) likely for correction of deficiency; the regimen is generally safe but requires attention to injection technique and renal status.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Vitamin C Injection (Ascorbic Acid)",
+        "pharmacological_action": "Ascorbic acid is a water‑soluble antioxidant that serves as a co‑factor for several enzymatic reactions (e.g., collagen synthesis, catecholamine production, and iron absorption). Intravenous administration bypasses gastrointestinal absorption limits and rapidly raises plasma ascorbate levels, useful for acute deficiency, certain postoperative settings, or as an adjunct in high‑oxidative‑stress states.",
+        "side_effects": "Most common: pain, erythema, swelling, or bruising at the injection site. Less frequent but clinically important: hypersensitivity reactions (urticaria, bronchospasm, anaphylaxis), transient nausea/vomiting, hyperoxaluria leading to renal stone formation in susceptible individuals, and rare metabolic acidosis with very high doses.",
+        "meal_guidelines": "Vitamin C injection is administered intravenously or intramuscularly; timing relative to meals is not critical. Avoid concurrent infusion of calcium‑containing solutions as high concentrations of ascorbate may precipitate calcium oxalate. No specific beverage restrictions, but advise the patient not to consume large amounts of alcohol immediately before or after the injection due to potential renal stress.",
+        "dosage_for_age": "For a healthy 23‑year‑old male, a typical replacement dose is 500 mg to 1 g IV/IM daily for 3–5 days, not exceeding 2 g per day unless under specialist supervision. The prescribed quantity (4 units) appears appropriate for a short corrective course, assuming each unit contains 500 mg–1 g."
+      }
+    ],
+    "drug_interactions_and_safety": "Vitamin C has low potential for drug‑drug interactions. It may increase iron absorption, so concurrent high‑dose iron therapy should be monitored for iron overload. High‑dose ascorbate can interfere with certain laboratory assays (e.g., glucose oxidase, blood gas measurements). Caution in patients with renal impairment, G6PD deficiency, or a history of oxalate kidney stones; dose reduction or avoidance is recommended in these conditions.",
+    "lifestyle_precautions": "Maintain adequate hydration (≥2 L water/day) to facilitate renal clearance of oxalate. Avoid excessive intake of other high‑oxalate foods (spinach, rhubarb, nuts) during the injection course. No driving or occupational restrictions are needed, but monitor for any acute allergic reaction that could impair alertness. Sun exposure does not affect vitamin C pharmacokinetics, but a balanced diet rich in fruits and vegetables will support overall antioxidant status.",
+    "red_flag_symptoms": "Severe or rapidly spreading swelling, intense pain at the injection site, hives, difficulty breathing, wheezing, throat tightness, chest pain, sudden onset of dark urine (possible hematuria or oxalate crystals), or any signs of anaphylaxis require immediate emergency medical attention.",
+    "tamil_patient_guidance": "இர்ஃபான் அவர்களுக்கு விட்டமின் C (அஸ்கார்பிக் அமிலம்) ஊசியால் 4 முறை வழங்கப்படும். இது உடலில் ஆன்டிஆக்ஸிடெண்ட் ஆக働ித்து, கொலாஜன் உருவாக்கம், இரும்பு உறிஞ்சுதல், மற்றும் நரம்பு இரசாயனங்கள் தயாரிப்பு போன்ற பல முக்கிய செயல்களில் உதவுகிறது. \n\n**எப்போது எடுத்துக்கொள்ள வேண்டும்?**\n- இந்த ஊசி உணவுடன் அல்லது உணவுக்கு பிறகு எதுவும் கவலைப்பட வேண்டியதில்லை; ஊசியை மருத்துவர் அல்லது நர்ஸின் கண்காணிப்பில் நேரடியாக வழங்க வேண்டும். \n- கால்சியம் கொண்ட திரவங்களுடன் ஒரே நேரத்தில் ஊசி கொடுக்க avoided செய்யவும், ஏனெனில் அதிக ஆக்சலேட் உருவாகி சிறுநீரகக் கற்கள் உருவாகும் அபாயம் உள்ளது.\n\n**முக்கிய பக்கவிளைவுகள்:**\n- ஊசி இடத்தில் வலி, சிவப்பு, வீக்கம், அல்லது நீலப்புள்ளிகள். \n- அரிதாக அலர்ஜி (கோழை, மூச்சுத்திணறல், தோல் சிவப்பு) அல்லது ஆபத்தான அநாபிலாக்ஸிஸ். \n- அதிக அளவில் எடுத்தால் சிறுநீரகத்தில் ஆக்சலேட் கற்கள் உருவாகலாம்; இதைத் தவிர்க்க அதிக தண்ணீர் குடிக்க வேண்டும்.\n\n**பாதுகாப்பு குறிப்புகள்:**\n- சிறுநீரக பிரச்சனை, இரும்பு அதிகம், அல்லது G6PD குறைபாடு இருந்தால் மருத்துவரை அறிவிக்கவும். \n- தினமும் 2 லிட்டர் மேல் தண்ணீர் குடித்து உடலை நன்றாக நீர்ப்பூர்த்தி செய்யவும். \n- அதிக ஆக்சலேட் கொண்ட உணவுகள் (பசலைக் கீரை, ருபார்ப், நட்டுகள்) உட்கொள்ளும் அளவை குறைக்கவும்.\n\n**அவசர அறிகுறிகள் (Red Flag):**\n- ஊசி இடத்தில் திடீரென அதிக வலி, வீக்கம், அல்லது சிவப்பு. \n- மூச்சு விடுவதில் சிரமம், தும்மல், முகம் அல்லது தொண்டை வீக்கம், மார்பு வலி. \n- இருண்ட நிற சிறுநீர் (கற்கள் உருவாகும் சாத்தியம்). \n- இவற்றில் ஏதேனும் ஏற்பட்டால் உடனடியாக 108 அழைக்கவும் அல்லது அருகிலுள்ள அவசர மருத்துவமனைக்கு செல்லவும்.\n\nஇந்த மருந்தை மருத்துவர் கூறியபடி பயன்படுத்தினால், விட்டமின் C குறைபாட்டை விரைவாக சரி செய்யலாம், மேலும் எந்தவொரு பிரச்சனை இருந்தாலும் உடனே ஆலோசனை பெறுங்கள்.",
+    "metadata": {
+      "presc_id": "PRESC_6ac9e5c93f0cd",
+      "patient_name": "irfan",
+      "age": 23,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "VitaminC",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 13:27:06",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "9df66df2dd108f3d146d4e9c4d091b41120673042b5efc9202b6fa7dc8783c7a",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=9df66df2dd108f3d146d4e9c4d091b41120673042b5efc9202b6fa7dc8783c7a",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6ac9dae4402b3": {
+    "patient_summary": "Sruthi, a 22‑year‑old female, has been prescribed Vitamin C injection without a documented deficiency; routine supplementation is usually oral and not required in healthy adults.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Vitamin C Injection (Ascorbic Acid)",
+        "pharmacological_action": "Provides high‑dose ascorbic acid intravenously, bypassing gastrointestinal absorption. It replenishes plasma vitamin C levels rapidly and is indicated for documented scurvy, severe malabsorption, or as an adjunct in certain oncologic protocols.",
+        "side_effects": "Local pain, erythema, swelling or induration at the injection site; rare hypersensitivity (urticaria, bronchospasm, anaphylaxis); high‑dose therapy may cause oxalate nephropathy, gastrointestinal upset, or increased risk of calcium oxalate kidney stones.",
+        "meal_guidelines": "Administered intravenously, timing relative to meals is irrelevant; however, avoid simultaneous infusion of calcium‑containing solutions to prevent precipitation. No specific beverage restrictions, but excessive alcohol may increase renal load.",
+        "dosage_for_age": "For a healthy adult, typical regimens are 500 mg–1 g IV once daily for 3–5 days. The prescribed quantity (5 vials) aligns with a short‑course, but the indication should be confirmed before use."
+      }
+    ],
+    "drug_interactions_and_safety": "Vitamin C has minimal drug‑drug interactions; it can modestly increase iron absorption and may slightly reduce the anticoagulant effect of warfarin, so INR monitoring is advised if the patient is on warfarin. Renal function should be assessed before high‑dose IV therapy because of oxalate load. No known hepatotoxicity.",
+    "lifestyle_precautions": "Maintain adequate hydration (≥2 L water/day) to facilitate renal clearance of oxalate. Avoid excessive citrus or supplemental vitamin C concurrently to prevent cumulative high doses. No impairment of driving or cognition is expected, but monitor for any allergic symptoms after infusion.",
+    "red_flag_symptoms": "Severe injection‑site swelling, hives, difficulty breathing, wheezing, chest tightness, sudden drop in blood pressure, persistent vomiting, flank pain suggestive of kidney stones, or any signs of anaphylaxis – seek emergency care immediately.",
+    "tamil_patient_guidance": "ஸ்ருதி அவர்களுக்கு, இந்த வைட்டமின் C ஊசியை (அஸ்கார்பிக் அமிலம்) மருத்துவர் குறிப்பிட்ட காரணம் (உதாரணம்: வைட்டமின் C குறைபாடு) இருந்தால் மட்டுமே பயன்படுத்த வேண்டும். இது உடலுக்குள் நேரடியாக வைட்டமின் C அளவை உயர்த்தும், பொதுவாக 500 மி.கி – 1 கி.கி அளவில் 3‑5 நாட்கள் கொடுக்கப்படுகிறது. \n\n**எப்போது எடுத்துக்கொள்ள வேண்டும்:** ஊசி நேரடியாக இரத்தத்தில் செல்கிறது, ஆகையால் உணவுடன் அல்லது பின் எதுவும் தொடர்பில்லை; ஆனால் கால்சியம் கொண்ட திரவங்களுடன் ஒரே நேரத்தில் ஊசி விட avoided செய்யவும். \n\n**முக்கிய பக்கவிளைவுகள்:** ஊசி இடத்தில் வலி, சிவப்பு, வீக்கம்; அரிதாக அலர்ஜிக் எதிர்வினை (கோழை, மூச்சு விட சிரமம்) அல்லது அதிக அளவில் எடுத்தால் சிறுநீரகக் கற்கள் (ஆக்ஸலேட்) உருவாகலாம். \n\n**பாதுகாப்பு குறிப்புகள்:** சிறுநீரக பிரச்சனை, அதிக இரும்பு எடுத்துக்கொள்வது, அல்லது இரத்த உறைவு மருந்துகள் (வார்ஃபரின்) எடுத்துக்கொள்வோர் மருத்துவரை அறிவிக்கவும். \n\n**எச்சரிக்கை அறிகுறிகள்:** ஊசி இடத்தில் அதிக வீக்கம், தோல் சிவப்பு, மூச்சு விட சிரமம், மார்பு வலி, திடீர் தலைவலி, பக்கவாட்டில் வலி (சிறுநீரகக் கற்கள்) போன்றவை வந்தால் உடனே மருத்துவமனைக்கு செல்லவும். \n\n**நாளாந்திர கவனிப்பு:** அதிக தண்ணீர் குடித்து (குறைந்தது 2 லிட்டர்) சிறுநீரகத்தை சுத்தமாக வைத்துக்கொள்ளவும்; அதிக அளவு சிட்ரஸ் பழம் அல்லது கூடுதல் வைட்டமின் C மாத்திரைகள் எடுக்க வேண்டாம். \n\nஇந்த தகவல் உங்களுக்கு தெளிவாகவும், பாதுகாப்பாகவும் உதவும் என்று நம்புகிறோம். ஏதேனும் சந்தேகம் இருந்தால் உடனே உங்கள் மருத்துவரை அணுகவும்.",
+    "metadata": {
+      "presc_id": "PRESC_6ac9dae4402b3",
+      "patient_name": "sruthi",
+      "age": 22,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "VitaminC",
+          "qty": 5
+        }
+      ],
+      "analyzed_at": "2026-10-10 13:27:23",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "32de26da984f4e834349f5b2d131ad875748372f386c97b0f2aebb9657b9c240",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=32de26da984f4e834349f5b2d131ad875748372f386c97b0f2aebb9657b9c240",
+    "dispense_status": "PENDING"
+  },
+  "32de26da984f4e834349f5b2d131ad875748372f386c97b0f2aebb9657b9c240": {
+    "patient_summary": "Sruthi, a 22‑year‑old female, has been prescribed Vitamin C injection without a documented deficiency; routine supplementation is usually oral and not required in healthy adults.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Vitamin C Injection (Ascorbic Acid)",
+        "pharmacological_action": "Provides high‑dose ascorbic acid intravenously, bypassing gastrointestinal absorption. It replenishes plasma vitamin C levels rapidly and is indicated for documented scurvy, severe malabsorption, or as an adjunct in certain oncologic protocols.",
+        "side_effects": "Local pain, erythema, swelling or induration at the injection site; rare hypersensitivity (urticaria, bronchospasm, anaphylaxis); high‑dose therapy may cause oxalate nephropathy, gastrointestinal upset, or increased risk of calcium oxalate kidney stones.",
+        "meal_guidelines": "Administered intravenously, timing relative to meals is irrelevant; however, avoid simultaneous infusion of calcium‑containing solutions to prevent precipitation. No specific beverage restrictions, but excessive alcohol may increase renal load.",
+        "dosage_for_age": "For a healthy adult, typical regimens are 500 mg–1 g IV once daily for 3–5 days. The prescribed quantity (5 vials) aligns with a short‑course, but the indication should be confirmed before use."
+      }
+    ],
+    "drug_interactions_and_safety": "Vitamin C has minimal drug‑drug interactions; it can modestly increase iron absorption and may slightly reduce the anticoagulant effect of warfarin, so INR monitoring is advised if the patient is on warfarin. Renal function should be assessed before high‑dose IV therapy because of oxalate load. No known hepatotoxicity.",
+    "lifestyle_precautions": "Maintain adequate hydration (≥2 L water/day) to facilitate renal clearance of oxalate. Avoid excessive citrus or supplemental vitamin C concurrently to prevent cumulative high doses. No impairment of driving or cognition is expected, but monitor for any allergic symptoms after infusion.",
+    "red_flag_symptoms": "Severe injection‑site swelling, hives, difficulty breathing, wheezing, chest tightness, sudden drop in blood pressure, persistent vomiting, flank pain suggestive of kidney stones, or any signs of anaphylaxis – seek emergency care immediately.",
+    "tamil_patient_guidance": "ஸ்ருதி அவர்களுக்கு, இந்த வைட்டமின் C ஊசியை (அஸ்கார்பிக் அமிலம்) மருத்துவர் குறிப்பிட்ட காரணம் (உதாரணம்: வைட்டமின் C குறைபாடு) இருந்தால் மட்டுமே பயன்படுத்த வேண்டும். இது உடலுக்குள் நேரடியாக வைட்டமின் C அளவை உயர்த்தும், பொதுவாக 500 மி.கி – 1 கி.கி அளவில் 3‑5 நாட்கள் கொடுக்கப்படுகிறது. \n\n**எப்போது எடுத்துக்கொள்ள வேண்டும்:** ஊசி நேரடியாக இரத்தத்தில் செல்கிறது, ஆகையால் உணவுடன் அல்லது பின் எதுவும் தொடர்பில்லை; ஆனால் கால்சியம் கொண்ட திரவங்களுடன் ஒரே நேரத்தில் ஊசி விட avoided செய்யவும். \n\n**முக்கிய பக்கவிளைவுகள்:** ஊசி இடத்தில் வலி, சிவப்பு, வீக்கம்; அரிதாக அலர்ஜிக் எதிர்வினை (கோழை, மூச்சு விட சிரமம்) அல்லது அதிக அளவில் எடுத்தால் சிறுநீரகக் கற்கள் (ஆக்ஸலேட்) உருவாகலாம். \n\n**பாதுகாப்பு குறிப்புகள்:** சிறுநீரக பிரச்சனை, அதிக இரும்பு எடுத்துக்கொள்வது, அல்லது இரத்த உறைவு மருந்துகள் (வார்ஃபரின்) எடுத்துக்கொள்வோர் மருத்துவரை அறிவிக்கவும். \n\n**எச்சரிக்கை அறிகுறிகள்:** ஊசி இடத்தில் அதிக வீக்கம், தோல் சிவப்பு, மூச்சு விட சிரமம், மார்பு வலி, திடீர் தலைவலி, பக்கவாட்டில் வலி (சிறுநீரகக் கற்கள்) போன்றவை வந்தால் உடனே மருத்துவமனைக்கு செல்லவும். \n\n**நாளாந்திர கவனிப்பு:** அதிக தண்ணீர் குடித்து (குறைந்தது 2 லிட்டர்) சிறுநீரகத்தை சுத்தமாக வைத்துக்கொள்ளவும்; அதிக அளவு சிட்ரஸ் பழம் அல்லது கூடுதல் வைட்டமின் C மாத்திரைகள் எடுக்க வேண்டாம். \n\nஇந்த தகவல் உங்களுக்கு தெளிவாகவும், பாதுகாப்பாகவும் உதவும் என்று நம்புகிறோம். ஏதேனும் சந்தேகம் இருந்தால் உடனே உங்கள் மருத்துவரை அணுகவும்.",
+    "metadata": {
+      "presc_id": "PRESC_6ac9dae4402b3",
+      "patient_name": "sruthi",
+      "age": 22,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "VitaminC",
+          "qty": 5
+        }
+      ],
+      "analyzed_at": "2026-10-10 13:27:23",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "32de26da984f4e834349f5b2d131ad875748372f386c97b0f2aebb9657b9c240",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=32de26da984f4e834349f5b2d131ad875748372f386c97b0f2aebb9657b9c240",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6ac9ff7914dba": {
+    "patient_summary": "The prescription for a 25-year-old male includes Dolo 650 (Paracetamol) and Amoxicillin, a standard combination for managing fever/pain and treating bacterial infections. The dosage appears appropriate for an adult, but the internal repository data contains a critical catalog mismatch that requires clinical verification before dispensing.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Dolo650",
+        "pharmacological_action": "Paracetamol (Acetaminophen) acts centrally to inhibit cyclooxygenase (COX) enzymes, reducing prostaglandin synthesis in the CNS to provide analgesic (pain-relieving) and antipyretic (fever-reducing) effects. It has minimal anti-inflammatory activity compared to NSAIDs.",
+        "side_effects": "Common side effects are rare at therapeutic doses but may include mild nausea or rash. Serious adverse effects include hepatotoxicity (liver damage) if overdosed or taken with alcohol, and rare hypersensitivity reactions.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with a small amount of food or water may reduce gastric irritation. Avoid alcohol completely. No specific restrictions on milk or citrus, but maintain adequate hydration.",
+        "dosage_for_age": "Suitable for a 25-year-old male. Standard adult dose is 500-1000 mg every 4-6 hours, not exceeding 4000 mg in 24 hours. The quantity of 4 tablets suggests a short-term course or single-day supply, which is safe if spaced correctly."
+      },
+      {
+        "medicine_name": "Amoxicillin",
+        "pharmacological_action": "Amoxicillin is a broad-spectrum penicillin antibiotic that inhibits bacterial cell wall synthesis by binding to penicillin-binding proteins (PBPs), leading to bacterial lysis and death. It is effective against many Gram-positive and some Gram-negative bacteria.",
+        "side_effects": "Common side effects include diarrhea, nausea, vomiting, and abdominal pain. Allergic reactions (rash, urticaria, anaphylaxis) are a significant concern, especially in patients with a history of penicillin allergy.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may reduce gastrointestinal upset. Avoid dairy products immediately before or after the dose if they interfere with absorption (though generally acceptable, spacing by 1-2 hours is optimal). Avoid alcohol as it may exacerbate gastrointestinal side effects and liver load.",
+        "dosage_for_age": "Suitable for a 25-year-old male. Standard adult dose is 500 mg every 8 hours or 875 mg every 12 hours, depending on infection severity. The quantity of 2 tablets is insufficient for a typical course (which usually lasts 5-10 days), suggesting this may be a partial prescription or requires clarification."
+      }
+    ],
+    "drug_interactions_and_safety": "No significant pharmacokinetic interaction between Paracetamol and Amoxicillin. Both are generally safe for liver and kidney function in healthy adults when used at prescribed doses. However, concurrent use of alcohol is contraindicated due to increased hepatotoxic risk from Paracetamol and potential GI irritation from Amoxicillin. The internal repository incorrectly maps both drugs to 'Zithrocin XL Syrup' (Azithromycin), which is a critical data error. Azithromycin is a macrolide antibiotic with different interactions (e.g., QT prolongation) and dosing. This discrepancy must be resolved with the prescribing physician to ensure the correct medication is dispensed and monitored.",
+    "lifestyle_precautions": "Maintain adequate hydration to support renal clearance of both drugs. Avoid driving or operating heavy machinery if experiencing dizziness or drowsiness, though these are not common side effects of these specific drugs. Complete the full course of Amoxicillin if prescribed for a bacterial infection to prevent antibiotic resistance. Avoid live vaccines while on antibiotics if applicable. Monitor for any signs of allergic reaction.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: difficulty breathing, swelling of the face/lips/tongue (anaphylaxis), severe or persistent diarrhea (possible C. difficile infection), yellowing of skin/eyes (jaundice, indicating liver issues), dark urine, severe abdominal pain, or widespread rash/hives.",
+    "tamil_patient_guidance": "இர்பான், உங்களுக்கான மருந்துகள் பற்றிய முக்கிய விவரங்கள்:\n\n1. மருந்துகளின் பயன்கள்:\n- டோலோ 650 (Dolo 650): இது காய்ச்சலையும் வலியையும் குறைக்க உதவுகிறது. இது உடலில் உள்ள வலி மற்றும் காய்ச்சல் மையங்களைத் தாக்கி செயல்படுகிறது.\n- அமோக்சிசிலின் (Amoxicillin): இது ஒரு ஆன்டிபயாட்டிக் மருந்து. பாக்டீரியா தொற்றுகளை (Bacterial Infections) குணப்படுத்த உதவுகிறது. இது பாக்டீரியாவின் சுவரை அழித்து அதைக் கொல்லுகிறது.\n\n2. எப்போது சாப்பிட வேண்டும்:\n- இரண்டு மருந்துகளையும் உணவுடன் அல்லது உணவுக்குப் பிறகு எடுத்துக்கொள்ளலாம். இது வயிட்டுப் பிரச்சனைகளைத் தடுக்க உதவும்.\n- மருந்துகளை எடுக்கும்போது போதுமான அளவு தண்ணீர் குடிக்கவும்.\n- மதுவை முற்றிலும் தவிர்க்கவும். இது மருந்துகளின் செயல்திறனைக் குறைக்கலாம் மற்றும் கல்லீரலுக்குப் பாதிப்பு ஏற்படுத்தலாம்.\n\n3. முக்கியமான பக்கவிளைவுகள்:\n- வயிற்று வலி, மலச்சிக்கல், அல்லது வாந்தி போன்ற சிறு பிரச்சனைகள் ஏற்படலாம். இவை பொதுவானவை.\n- எந்தவிதமான அலர்ஜி ராஷ் (Allergy Rash), மூச்சுத் திணறல், அல்லது முகம்/தொண்டை வீக்கம் போன்ற அறிகுறிகள் தெரிந்தால் உடனடியாக மருத்துவரை அணுகவும்.\n\n4. பாதுகாப்பு குறிப்புகள்:\n- அமோக்சிசிலின் மருந்தை மருத்துவர் குறிப்பிட்ட காலத்திற்கு முழுமையாக எடுத்துக்கொள்ளவும். இது பாக்டீரியா எதிர்ப்பை (Resistance) தடுக்க உதவும்.\n- உங்கள் மருந்துகளின் தரவுகளில் ஒரு சிறிய தவறு உள்ளது (Zithrocin XL Syrup என்று குறிப்பிடப்பட்டுள்ளது). இது முக்கியமானது. உங்கள் மருத்துவரிடம் இதைப் பற்றி உறுதிப்படுத்தி, சரியான மருந்துகளைப் பெறுவதை உறுதிசெய்யவும்.\n- எந்தவிதமான அசாதாரண அறிகுறிகளும் தெரிந்தால் உடனடியாக மருத்துவரை அணுகவும்.\n\nநீங்கள் விரைவில் குணமடைய வாழ்த்துகள்!",
+    "metadata": {
+      "presc_id": "PRESC_6ac9ff7914dba",
+      "patient_name": "irfan",
+      "age": 25,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Dolo650",
+          "qty": 4
+        },
+        {
+          "name": "Amoxicillin",
+          "qty": 2
+        }
+      ],
+      "analyzed_at": "2026-10-10 14:34:11",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "26ac7bc82d4d49bc2eb6ef48502bdea54dded7722fb75be9d581179e9350efc5",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=26ac7bc82d4d49bc2eb6ef48502bdea54dded7722fb75be9d581179e9350efc5",
+    "dispense_status": "PENDING"
+  },
+  "26ac7bc82d4d49bc2eb6ef48502bdea54dded7722fb75be9d581179e9350efc5": {
+    "patient_summary": "The prescription for a 25-year-old male includes Dolo 650 (Paracetamol) and Amoxicillin, a standard combination for managing fever/pain and treating bacterial infections. The dosage appears appropriate for an adult, but the internal repository data contains a critical catalog mismatch that requires clinical verification before dispensing.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Dolo650",
+        "pharmacological_action": "Paracetamol (Acetaminophen) acts centrally to inhibit cyclooxygenase (COX) enzymes, reducing prostaglandin synthesis in the CNS to provide analgesic (pain-relieving) and antipyretic (fever-reducing) effects. It has minimal anti-inflammatory activity compared to NSAIDs.",
+        "side_effects": "Common side effects are rare at therapeutic doses but may include mild nausea or rash. Serious adverse effects include hepatotoxicity (liver damage) if overdosed or taken with alcohol, and rare hypersensitivity reactions.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with a small amount of food or water may reduce gastric irritation. Avoid alcohol completely. No specific restrictions on milk or citrus, but maintain adequate hydration.",
+        "dosage_for_age": "Suitable for a 25-year-old male. Standard adult dose is 500-1000 mg every 4-6 hours, not exceeding 4000 mg in 24 hours. The quantity of 4 tablets suggests a short-term course or single-day supply, which is safe if spaced correctly."
+      },
+      {
+        "medicine_name": "Amoxicillin",
+        "pharmacological_action": "Amoxicillin is a broad-spectrum penicillin antibiotic that inhibits bacterial cell wall synthesis by binding to penicillin-binding proteins (PBPs), leading to bacterial lysis and death. It is effective against many Gram-positive and some Gram-negative bacteria.",
+        "side_effects": "Common side effects include diarrhea, nausea, vomiting, and abdominal pain. Allergic reactions (rash, urticaria, anaphylaxis) are a significant concern, especially in patients with a history of penicillin allergy.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may reduce gastrointestinal upset. Avoid dairy products immediately before or after the dose if they interfere with absorption (though generally acceptable, spacing by 1-2 hours is optimal). Avoid alcohol as it may exacerbate gastrointestinal side effects and liver load.",
+        "dosage_for_age": "Suitable for a 25-year-old male. Standard adult dose is 500 mg every 8 hours or 875 mg every 12 hours, depending on infection severity. The quantity of 2 tablets is insufficient for a typical course (which usually lasts 5-10 days), suggesting this may be a partial prescription or requires clarification."
+      }
+    ],
+    "drug_interactions_and_safety": "No significant pharmacokinetic interaction between Paracetamol and Amoxicillin. Both are generally safe for liver and kidney function in healthy adults when used at prescribed doses. However, concurrent use of alcohol is contraindicated due to increased hepatotoxic risk from Paracetamol and potential GI irritation from Amoxicillin. The internal repository incorrectly maps both drugs to 'Zithrocin XL Syrup' (Azithromycin), which is a critical data error. Azithromycin is a macrolide antibiotic with different interactions (e.g., QT prolongation) and dosing. This discrepancy must be resolved with the prescribing physician to ensure the correct medication is dispensed and monitored.",
+    "lifestyle_precautions": "Maintain adequate hydration to support renal clearance of both drugs. Avoid driving or operating heavy machinery if experiencing dizziness or drowsiness, though these are not common side effects of these specific drugs. Complete the full course of Amoxicillin if prescribed for a bacterial infection to prevent antibiotic resistance. Avoid live vaccines while on antibiotics if applicable. Monitor for any signs of allergic reaction.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: difficulty breathing, swelling of the face/lips/tongue (anaphylaxis), severe or persistent diarrhea (possible C. difficile infection), yellowing of skin/eyes (jaundice, indicating liver issues), dark urine, severe abdominal pain, or widespread rash/hives.",
+    "tamil_patient_guidance": "இர்பான், உங்களுக்கான மருந்துகள் பற்றிய முக்கிய விவரங்கள்:\n\n1. மருந்துகளின் பயன்கள்:\n- டோலோ 650 (Dolo 650): இது காய்ச்சலையும் வலியையும் குறைக்க உதவுகிறது. இது உடலில் உள்ள வலி மற்றும் காய்ச்சல் மையங்களைத் தாக்கி செயல்படுகிறது.\n- அமோக்சிசிலின் (Amoxicillin): இது ஒரு ஆன்டிபயாட்டிக் மருந்து. பாக்டீரியா தொற்றுகளை (Bacterial Infections) குணப்படுத்த உதவுகிறது. இது பாக்டீரியாவின் சுவரை அழித்து அதைக் கொல்லுகிறது.\n\n2. எப்போது சாப்பிட வேண்டும்:\n- இரண்டு மருந்துகளையும் உணவுடன் அல்லது உணவுக்குப் பிறகு எடுத்துக்கொள்ளலாம். இது வயிட்டுப் பிரச்சனைகளைத் தடுக்க உதவும்.\n- மருந்துகளை எடுக்கும்போது போதுமான அளவு தண்ணீர் குடிக்கவும்.\n- மதுவை முற்றிலும் தவிர்க்கவும். இது மருந்துகளின் செயல்திறனைக் குறைக்கலாம் மற்றும் கல்லீரலுக்குப் பாதிப்பு ஏற்படுத்தலாம்.\n\n3. முக்கியமான பக்கவிளைவுகள்:\n- வயிற்று வலி, மலச்சிக்கல், அல்லது வாந்தி போன்ற சிறு பிரச்சனைகள் ஏற்படலாம். இவை பொதுவானவை.\n- எந்தவிதமான அலர்ஜி ராஷ் (Allergy Rash), மூச்சுத் திணறல், அல்லது முகம்/தொண்டை வீக்கம் போன்ற அறிகுறிகள் தெரிந்தால் உடனடியாக மருத்துவரை அணுகவும்.\n\n4. பாதுகாப்பு குறிப்புகள்:\n- அமோக்சிசிலின் மருந்தை மருத்துவர் குறிப்பிட்ட காலத்திற்கு முழுமையாக எடுத்துக்கொள்ளவும். இது பாக்டீரியா எதிர்ப்பை (Resistance) தடுக்க உதவும்.\n- உங்கள் மருந்துகளின் தரவுகளில் ஒரு சிறிய தவறு உள்ளது (Zithrocin XL Syrup என்று குறிப்பிடப்பட்டுள்ளது). இது முக்கியமானது. உங்கள் மருத்துவரிடம் இதைப் பற்றி உறுதிப்படுத்தி, சரியான மருந்துகளைப் பெறுவதை உறுதிசெய்யவும்.\n- எந்தவிதமான அசாதாரண அறிகுறிகளும் தெரிந்தால் உடனடியாக மருத்துவரை அணுகவும்.\n\nநீங்கள் விரைவில் குணமடைய வாழ்த்துகள்!",
+    "metadata": {
+      "presc_id": "PRESC_6ac9ff7914dba",
+      "patient_name": "irfan",
+      "age": 25,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Dolo650",
+          "qty": 4
+        },
+        {
+          "name": "Amoxicillin",
+          "qty": 2
+        }
+      ],
+      "analyzed_at": "2026-10-10 14:34:11",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "26ac7bc82d4d49bc2eb6ef48502bdea54dded7722fb75be9d581179e9350efc5",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=26ac7bc82d4d49bc2eb6ef48502bdea54dded7722fb75be9d581179e9350efc5",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6aca100e4eef5": {
+    "patient_summary": "The prescription for Cetirizine is clinically appropriate for the management of allergic conditions in a 25-year-old male. The dosage and selection are standard for adult patients with no immediate contraindications identified.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Cetirizine",
+        "pharmacological_action": "Cetirizine is a second-generation H1-antihistamine that selectively blocks peripheral H1 receptors, thereby inhibiting the effects of histamine released during allergic reactions. It is primarily indicated for the symptomatic relief of allergic rhinitis, chronic idiopathic urticaria, and other allergic skin conditions. Note: The repository lists 'Levocetirizine' as a catalog match, but the prescribed item is Cetirizine; both are first-line antihistamines with similar mechanisms, though Cetirizine is the racemic mixture.",
+        "side_effects": "Common side effects include somnolence (drowsiness), fatigue, dry mouth, and headache. Less common effects may include nausea, vomiting, and nasopharyngitis. While second-generation antihistamines are less sedating than first-generation, individual sensitivity to drowsiness varies.",
+        "meal_guidelines": "Cetirizine can be taken with or without food. Food does not significantly alter its bioavailability, but taking it with a small snack may help mitigate potential gastrointestinal discomfort if the patient has a sensitive stomach. It should be taken with a full glass of water. Avoid alcohol, as it can potentiate the sedative effects.",
+        "dosage_for_age": "The standard adult dosage for Cetirizine is 10 mg once daily. For a 25-year-old male with normal renal and hepatic function, this dosage is appropriate and safe. No age-based adjustment is required for this demographic."
+      }
+    ],
+    "drug_interactions_and_safety": "Cetirizine has a favorable safety profile with minimal drug-drug interactions. It is primarily excreted unchanged by the kidneys, so renal function should be considered if the patient has known renal impairment (dose reduction may be necessary). Hepatic metabolism is minimal, so liver safety is generally not a concern. There are no significant interactions with common dietary components, but concurrent use with CNS depressants (alcohol, sedatives) should be avoided.",
+    "lifestyle_precautions": "Patients should be advised to avoid driving or operating heavy machinery until they know how the medication affects them, as drowsiness is a potential side effect. Maintain adequate hydration to help manage dry mouth. Avoid excessive alcohol consumption. No specific sun exposure precautions are required for Cetirizine, unlike some other medications.",
+    "red_flag_symptoms": "Immediate medical attention is required if the patient experiences signs of a severe allergic reaction (anaphylaxis) such as difficulty breathing, swelling of the face/lips/tongue/throat, or severe dizziness. Also, contact a doctor if symptoms of the underlying allergy do not improve or worsen, or if unusual mood changes or severe drowsiness persist.",
+    "doctor_audio_guidance": "Hello Irfan, this is Dr. Aegis. I have reviewed your prescription for Cetirizine, which is a very common and effective medication for treating allergies. It works by blocking histamine, the chemical your body releases that causes itching, sneezing, and runny nose. You can take this tablet with or without food, but I recommend taking it with a glass of water. Since it can cause mild drowsiness in some people, I suggest taking it in the evening if you find it makes you sleepy, or simply be cautious if you need to drive or operate machinery during the day. Avoid alcohol while on this medication as it can increase drowsiness. If you experience any severe swelling, difficulty breathing, or if your symptoms do not improve, please seek medical attention immediately. Otherwise, this is a safe and well-tolerated medication for your age and health status.",
+    "metadata": {
+      "presc_id": "PRESC_6aca100e4eef5",
+      "patient_name": "Irfan",
+      "age": "25",
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Cetirizine",
+          "qty": 3
+        }
+      ],
+      "analyzed_at": "2026-10-10 15:46:29",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "",
+    "prescription_url": null,
+    "dispense_status": "DISPENSED"
+  },
+  "97420a7e047446555eb03fb2d00071e044b81a549c102ff596fbd3cf5b3fb6ab": {
+    "patient_summary": "The prescription of Cetirizine for a 25-year-old male is clinically appropriate for the management of allergic conditions. The dosage and drug selection align with standard adult therapeutic guidelines, presenting a favorable safety profile for this demographic.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Cetirizine",
+        "pharmacological_action": "Cetirizine is a second-generation H1-antihistamine that acts as a selective inverse agonist at peripheral H1 receptors. It effectively inhibits the release of histamine from mast cells and basophils, thereby alleviating symptoms of allergic rhinitis, urticaria, and other allergic manifestations without significant central nervous system penetration compared to first-generation agents.",
+        "side_effects": "Common adverse effects include somnolence (drowsiness), fatigue, dry mouth, and headache. Less frequently, patients may experience nausea, vomiting, or nasopharyngitis. While rare, severe hypersensitivity reactions or paradoxical excitation should be monitored.",
+        "meal_guidelines": "Cetirizine can be administered with or without food. However, taking it with a small amount of food may help mitigate potential gastrointestinal discomfort. It is recommended to take the medication with a full glass of water. Avoid consuming alcohol concurrently, as it may potentiate sedative effects. No specific restrictions regarding milk or citrus are required, but maintaining a balanced diet is advised.",
+        "dosage_for_age": "The prescribed quantity of 3 tablets is consistent with standard adult dosing protocols (typically 10 mg once daily or 5 mg twice daily). For a 25-year-old male with normal renal and hepatic function, this dosage is safe and effective. No age-adjusted modifications are necessary."
+      }
+    ],
+    "drug_interactions_and_safety": "Cetirizine has a low potential for significant drug-drug interactions. It is primarily excreted unchanged by the kidneys, so caution is advised in patients with severe renal impairment, though this is unlikely in a healthy 25-year-old. Hepatic metabolism is minimal, making it safe for patients with mild to moderate liver disease. No significant interactions are expected with common over-the-counter medications, but concurrent use of CNS depressants (e.g., benzodiazepines, opioids) should be avoided to prevent additive sedation.",
+    "lifestyle_precautions": "Patients should be advised to avoid driving or operating heavy machinery until they are certain of how the medication affects their alertness, as drowsiness is a common side effect. Adequate hydration is recommended to counteract dry mouth. Alcohol consumption should be avoided or strictly limited while on therapy. No specific sun exposure precautions are required for Cetirizine, unlike some other antihistamines or antibiotics.",
+    "red_flag_symptoms": "Immediate medical attention is required if the patient experiences signs of a severe allergic reaction (anaphylaxis), including difficulty breathing, swelling of the face, lips, tongue, or throat, or widespread hives. Additionally, seek care for signs of severe dehydration, persistent vomiting, or unusual changes in mood or behavior.",
+    "doctor_audio_guidance": "Hello Irfan, I am Dr. Aegis. I have reviewed your prescription for Cetirizine, which is a very common and effective medication for treating allergies. It works by blocking histamine, the chemical in your body that causes allergy symptoms like itching, sneezing, and runny nose. You can take this tablet with or without food, but I recommend taking it with a full glass of water. If you find it upsets your stomach, taking it with a light snack can help. Please be aware that Cetirizine can cause some drowsiness or dry mouth, so stay hydrated and avoid alcohol, as it can make you sleepier. It is important to avoid driving or operating machinery until you know how this medication affects your alertness. If you experience any severe symptoms like difficulty breathing or swelling of the face or throat, please seek emergency medical care immediately. Otherwise, this is a safe and well-tolerated medication for your age and health status. Feel free to reach out if you have any further questions.",
+    "metadata": {
+      "presc_id": "PRESC_6aca100e4eef5",
+      "patient_name": "Irfan",
+      "age": 25,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Cetirizine",
+          "qty": 3
+        }
+      ],
+      "analyzed_at": "2026-10-10 15:46:21",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "97420a7e047446555eb03fb2d00071e044b81a549c102ff596fbd3cf5b3fb6ab",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=97420a7e047446555eb03fb2d00071e044b81a549c102ff596fbd3cf5b3fb6ab",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6aca11e033fdc": {
+    "patient_summary": "The prescription for Sruthi (22F) involves Paracetamol and Dolo650, which are both formulations of the same active ingredient (Acetaminophen/Paracetamol). This constitutes a significant therapeutic duplication and creates a high risk of accidental overdose and hepatotoxicity if both are taken concurrently or without strict separation.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Paracetamol",
+        "pharmacological_action": "Paracetamol (Acetaminophen) is an analgesic and antipyretic that acts centrally to inhibit prostaglandin synthesis, reducing pain and fever. It has minimal anti-inflammatory activity compared to NSAIDs. The catalog match suggests a combination product, but the primary active agent for pain relief is Paracetamol.",
+        "side_effects": "Common side effects are rare at therapeutic doses but may include nausea, vomiting, heartburn, stomach pain, diarrhea, loss of appetite, and dryness in the mouth. Serious adverse effects include hepatotoxicity (liver damage) and, rarely, severe skin reactions (Stevens-Johnson syndrome).",
+        "meal_guidelines": "Can be taken with or without food. Taking it with a small amount of food or water may help prevent gastric irritation. Avoid alcohol consumption while taking this medication. No specific restrictions on milk or citrus, but adequate hydration is recommended.",
+        "dosage_for_age": "For a 22-year-old female, the standard adult dose is 500mg to 1000mg every 4 to 6 hours, not exceeding 4000mg (4g) in 24 hours. The quantity of 5 tablets is appropriate for a short-term course if spaced correctly."
+      },
+      {
+        "medicine_name": "Dolo650",
+        "pharmacological_action": "Dolo650 contains 650mg of Paracetamol (Acetaminophen). It functions as an analgesic and antipyretic, working via the same central mechanism as standard Paracetamol. The catalog match to 'Zithrocin XL Syrup' is a data mismatch; clinically, Dolo650 is a Paracetamol formulation, not an antibiotic.",
+        "side_effects": "Similar to Paracetamol: nausea, abdominal pain, and diarrhea are possible. The primary risk is dose-dependent liver toxicity. Since the dose is higher (650mg) than standard 500mg tablets, the margin for error is smaller.",
+        "meal_guidelines": "Take with food or a full glass of water to minimize gastrointestinal discomfort. Do not take on an empty stomach if prone to nausea. Strictly avoid alcohol.",
+        "dosage_for_age": "650mg is a standard adult dose. However, because it is the same active ingredient as the other prescribed medicine, it should NOT be taken in addition to the other Paracetamol. It should be used as an alternative, not a supplement."
+      }
+    ],
+    "drug_interactions_and_safety": "CRITICAL SAFETY ALERT: Both Paracetamol and Dolo650 contain Acetaminophen (Paracetamol). Taking them together or in close succession can lead to cumulative dosing exceeding the safe limit of 4000mg/24 hours, causing acute liver failure. There is no therapeutic benefit to combining them. The patient must be instructed to treat these as the SAME medication. Choose one formulation (e.g., Dolo650) and adhere to the 4-6 hour interval. Do not mix. Monitor liver function if symptoms persist or if there is a history of liver disease. Avoid concurrent use with other acetaminophen-containing products (cold/flu remedies).",
+    "lifestyle_precautions": "1. Hydration: Drink plenty of water to support renal clearance and prevent dehydration. 2. Alcohol: Strictly avoid alcohol, as it significantly increases the risk of liver damage when combined with Paracetamol. 3. Driving: Paracetamol generally does not cause drowsiness, but if nausea or dizziness occurs, avoid driving. 4. Diet: Maintain a balanced diet; no specific food restrictions other than avoiding alcohol. 5. Sun Exposure: No significant photosensitivity associated with Paracetamol.",
+    "red_flag_symptoms": "Seek immediate emergency medical care if the patient experiences: yellowing of the skin or eyes (jaundice), dark urine, severe abdominal pain (especially upper right quadrant), persistent vomiting, unusual fatigue, or signs of an allergic reaction (rash, swelling of face/lips/tongue, difficulty breathing).",
+    "doctor_audio_guidance": "Hello Sruthi, this is Dr. Aegis. I have reviewed your prescription for Paracetamol and Dolo650. I need to clarify a very important safety point: both of these medicines contain the same active ingredient, which is Paracetamol (also known as Acetaminophen). Dolo650 simply has a higher dose (650mg) compared to standard Paracetamol (usually 500mg). Therefore, you should NOT take both together. They are alternatives, not a combination. Please choose one type to take. For example, if you take Dolo650, do not take the other Paracetamol tablet at the same time. The standard adult dose is one tablet every 4 to 6 hours, and you must not exceed 4 tablets of Dolo650 (or the equivalent total dose) in 24 hours. It is safe to take with food or a full glass of water to prevent stomach upset. Please avoid alcohol completely while taking this medication, as it can stress your liver. If you experience any severe stomach pain, yellowing of the eyes, or persistent vomiting, please stop the medication and contact a doctor immediately. Otherwise, stay hydrated and rest well. If your pain or fever does not improve after 3 days, please consult your physician again.",
+    "metadata": {
+      "presc_id": "PRESC_6aca11e033fdc",
+      "patient_name": "sruthi",
+      "age": 22,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "Paracetamol",
+          "qty": 5
+        },
+        {
+          "name": "Dolo650",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 15:52:35",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "0c3fe6876b3600489a37b682eb6f9d8b82acbf8123998c57955312f36374e024",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=0c3fe6876b3600489a37b682eb6f9d8b82acbf8123998c57955312f36374e024",
+    "dispense_status": "PENDING"
+  },
+  "0c3fe6876b3600489a37b682eb6f9d8b82acbf8123998c57955312f36374e024": {
+    "patient_summary": "The prescription for Sruthi (22F) involves Paracetamol and Dolo650, which are both formulations of the same active ingredient (Acetaminophen/Paracetamol). This constitutes a significant therapeutic duplication and creates a high risk of accidental overdose and hepatotoxicity if both are taken concurrently or without strict separation.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Paracetamol",
+        "pharmacological_action": "Paracetamol (Acetaminophen) is an analgesic and antipyretic that acts centrally to inhibit prostaglandin synthesis, reducing pain and fever. It has minimal anti-inflammatory activity compared to NSAIDs. The catalog match suggests a combination product, but the primary active agent for pain relief is Paracetamol.",
+        "side_effects": "Common side effects are rare at therapeutic doses but may include nausea, vomiting, heartburn, stomach pain, diarrhea, loss of appetite, and dryness in the mouth. Serious adverse effects include hepatotoxicity (liver damage) and, rarely, severe skin reactions (Stevens-Johnson syndrome).",
+        "meal_guidelines": "Can be taken with or without food. Taking it with a small amount of food or water may help prevent gastric irritation. Avoid alcohol consumption while taking this medication. No specific restrictions on milk or citrus, but adequate hydration is recommended.",
+        "dosage_for_age": "For a 22-year-old female, the standard adult dose is 500mg to 1000mg every 4 to 6 hours, not exceeding 4000mg (4g) in 24 hours. The quantity of 5 tablets is appropriate for a short-term course if spaced correctly."
+      },
+      {
+        "medicine_name": "Dolo650",
+        "pharmacological_action": "Dolo650 contains 650mg of Paracetamol (Acetaminophen). It functions as an analgesic and antipyretic, working via the same central mechanism as standard Paracetamol. The catalog match to 'Zithrocin XL Syrup' is a data mismatch; clinically, Dolo650 is a Paracetamol formulation, not an antibiotic.",
+        "side_effects": "Similar to Paracetamol: nausea, abdominal pain, and diarrhea are possible. The primary risk is dose-dependent liver toxicity. Since the dose is higher (650mg) than standard 500mg tablets, the margin for error is smaller.",
+        "meal_guidelines": "Take with food or a full glass of water to minimize gastrointestinal discomfort. Do not take on an empty stomach if prone to nausea. Strictly avoid alcohol.",
+        "dosage_for_age": "650mg is a standard adult dose. However, because it is the same active ingredient as the other prescribed medicine, it should NOT be taken in addition to the other Paracetamol. It should be used as an alternative, not a supplement."
+      }
+    ],
+    "drug_interactions_and_safety": "CRITICAL SAFETY ALERT: Both Paracetamol and Dolo650 contain Acetaminophen (Paracetamol). Taking them together or in close succession can lead to cumulative dosing exceeding the safe limit of 4000mg/24 hours, causing acute liver failure. There is no therapeutic benefit to combining them. The patient must be instructed to treat these as the SAME medication. Choose one formulation (e.g., Dolo650) and adhere to the 4-6 hour interval. Do not mix. Monitor liver function if symptoms persist or if there is a history of liver disease. Avoid concurrent use with other acetaminophen-containing products (cold/flu remedies).",
+    "lifestyle_precautions": "1. Hydration: Drink plenty of water to support renal clearance and prevent dehydration. 2. Alcohol: Strictly avoid alcohol, as it significantly increases the risk of liver damage when combined with Paracetamol. 3. Driving: Paracetamol generally does not cause drowsiness, but if nausea or dizziness occurs, avoid driving. 4. Diet: Maintain a balanced diet; no specific food restrictions other than avoiding alcohol. 5. Sun Exposure: No significant photosensitivity associated with Paracetamol.",
+    "red_flag_symptoms": "Seek immediate emergency medical care if the patient experiences: yellowing of the skin or eyes (jaundice), dark urine, severe abdominal pain (especially upper right quadrant), persistent vomiting, unusual fatigue, or signs of an allergic reaction (rash, swelling of face/lips/tongue, difficulty breathing).",
+    "doctor_audio_guidance": "Hello Sruthi, this is Dr. Aegis. I have reviewed your prescription for Paracetamol and Dolo650. I need to clarify a very important safety point: both of these medicines contain the same active ingredient, which is Paracetamol (also known as Acetaminophen). Dolo650 simply has a higher dose (650mg) compared to standard Paracetamol (usually 500mg). Therefore, you should NOT take both together. They are alternatives, not a combination. Please choose one type to take. For example, if you take Dolo650, do not take the other Paracetamol tablet at the same time. The standard adult dose is one tablet every 4 to 6 hours, and you must not exceed 4 tablets of Dolo650 (or the equivalent total dose) in 24 hours. It is safe to take with food or a full glass of water to prevent stomach upset. Please avoid alcohol completely while taking this medication, as it can stress your liver. If you experience any severe stomach pain, yellowing of the eyes, or persistent vomiting, please stop the medication and contact a doctor immediately. Otherwise, stay hydrated and rest well. If your pain or fever does not improve after 3 days, please consult your physician again.",
+    "metadata": {
+      "presc_id": "PRESC_6aca11e033fdc",
+      "patient_name": "sruthi",
+      "age": 22,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "Paracetamol",
+          "qty": 5
+        },
+        {
+          "name": "Dolo650",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 15:52:35",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "0c3fe6876b3600489a37b682eb6f9d8b82acbf8123998c57955312f36374e024",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=0c3fe6876b3600489a37b682eb6f9d8b82acbf8123998c57955312f36374e024",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6aca122405b57": {
+    "patient_summary": "The 22‑year‑old female patient has been prescribed a short course of azithromycin and amoxicillin for a presumed bacterial infection and a daily dose of Allegra for allergic symptoms; overall the regimen is appropriate but requires attention to dosing intervals, food interactions, and monitoring for gastrointestinal and allergic adverse effects.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin",
+        "pharmacological_action": "Azithromycin is a macrolide antibiotic that binds to the 50S ribosomal subunit of susceptible bacteria, inhibiting protein synthesis and resulting in a bacteriostatic effect. It is primarily indicated for community‑acquired respiratory infections, skin infections, and certain sexually transmitted infections.",
+        "side_effects": "Common: nausea, abdominal pain, diarrhea, mild headache. Less common but serious: QT‑interval prolongation, hepatotoxicity, severe allergic reactions (rash, angioedema).",
+        "meal_guidelines": "Can be taken with or without food; however, taking with a light snack may reduce mild gastrointestinal upset. Avoid concomitant intake of antacids containing aluminum or magnesium within 2 hours, as they may lower absorption.",
+        "dosage_for_age": "Standard adult dosing (500 mg once daily for 3 days or a 500 mg loading dose followed by 250 mg daily for 4 days) is appropriate for a healthy 22‑year‑old female; no dose adjustment needed."
+      },
+      {
+        "medicine_name": "Amoxicillin",
+        "pharmacological_action": "Amoxicillin is a β‑lactam penicillin that inhibits bacterial cell‑wall synthesis by binding to penicillin‑binding proteins, leading to cell lysis. It is indicated for a broad range of bacterial infections including otitis media, sinusitis, bronchitis, and urinary tract infections.",
+        "side_effects": "Common: nausea, abdominal pain, diarrhea, possible mild rash. Rare but serious: Clostridioides difficile‑associated colitis, anaphylaxis, hepatic dysfunction.",
+        "meal_guidelines": "Best taken with food (e.g., a meal or snack) to improve gastrointestinal tolerance and absorption. Avoid taking with large amounts of dairy products immediately before or after a dose if the formulation is a suspension, as calcium can interfere minimally with absorption.",
+        "dosage_for_age": "Typical adult regimen (e.g., 500 mg every 8 hours or 875 mg twice daily) is suitable for a 22‑year‑old female; no adjustment required unless renal impairment is present, which is not indicated here."
+      },
+      {
+        "medicine_name": "Allegra (Fexofenadine)",
+        "pharmacological_action": "Fexofenadine is a second‑generation, non‑sedating antihistamine that selectively antagonizes peripheral H1 receptors, preventing histamine‑mediated symptoms such as sneezing, rhinorrhea, and itching.",
+        "side_effects": "Common: headache, mild drowsiness, dizziness, nausea. Rare: tachycardia, palpitations, severe hypersensitivity reactions.",
+        "meal_guidelines": "Take once daily with water, preferably 30 minutes before a meal. Do NOT take with fruit juices (grapefruit, orange, apple) or with antacids containing aluminum/magnesium within 2 hours, as these markedly reduce fexofenadine absorption.",
+        "dosage_for_age": "The standard adult dose of 120 mg once daily is appropriate for a 22‑year‑old female; no dose reduction needed."
+      }
+    ],
+    "drug_interactions_and_safety": "Azithromycin and amoxicillin have no direct pharmacokinetic interaction, but concurrent use may increase the risk of gastrointestinal upset and antibiotic‑associated diarrhea, including C. difficile infection. Allegra does not interact significantly with either antibiotic, but its absorption can be reduced by antacids or citrus juices; timing separation is essential. All three agents are primarily metabolized hepatically (azithromycin) or renally excreted (amoxicillin, fexofenadine); normal liver and kidney function in a healthy young adult makes them safe, but caution is advised if hepatic or renal disease emerges.",
+    "lifestyle_precautions": "• Maintain adequate hydration, especially while on antibiotics, to help prevent renal stones and support renal clearance. • Avoid alcohol while taking azithromycin or amoxicillin, as it may increase stomach irritation and liver load. • Do not drive or operate heavy machinery if you experience dizziness or drowsiness from Allegra. • Keep away from grapefruit, orange, or apple juice for at least 2 hours before and after taking Allegra. • Complete the full antibiotic courses even if symptoms improve to prevent resistance.",
+    "red_flag_symptoms": "Seek emergency care if you develop any of the following: severe rash or hives, swelling of face/tongue/lips (anaphylaxis), difficulty breathing or wheezing, chest pain or palpitations, sudden severe diarrhea or watery stools with fever (possible C. difficile infection), persistent vomiting, yellowing of skin or eyes (jaundice), dark urine, or any signs of liver injury, and any fainting or loss of consciousness.",
+    "doctor_audio_guidance": "Hello Hasini, this is Dr. Aegis. I’m reviewing the three medicines your clinician has prescribed. First, azithromycin is a macrolide antibiotic that will help clear the bacterial infection you have; you can take the 500‑milligram tablet once daily for three days, with or without food, but try to avoid antacids right around the dose. Second, amoxicillin is a penicillin‑type antibiotic that works by stopping bacterial cell‑wall formation; the usual adult dose is 500 mg every eight hours, and taking it with a meal can lessen stomach upset. Finally, Allegra 120 mg is an antihistamine for your allergy symptoms; take it once a day with a glass of water, preferably 30 minutes before you eat, and stay away from grapefruit or orange juice and antacids for a couple of hours, because they can lower how much medicine gets into your bloodstream. Common side effects you might notice are mild nausea, headache, or a little dizziness—nothing to worry about unless they become severe. Keep well‑hydrated, finish the entire antibiotic courses, avoid alcohol while on the antibiotics, and don’t drive if you feel drowsy. If you notice any rash, swelling, trouble breathing, chest pain, severe diarrhea, or yellowing of your eyes or skin, call emergency services right away. If you have any questions or concerns, please call our office. Take care and feel better soon.",
+    "metadata": {
+      "presc_id": "PRESC_6aca122405b57",
+      "patient_name": "hasini",
+      "age": 22,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 3
+        },
+        {
+          "name": "Amoxicillin",
+          "qty": 4
+        },
+        {
+          "name": "Allegra",
+          "qty": 2
+        }
+      ],
+      "analyzed_at": "2026-10-10 15:53:46",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "fb0f44bca5cdf9e19553e41731328a842552a36fa90c4c96b5c1d60883788d48",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=fb0f44bca5cdf9e19553e41731328a842552a36fa90c4c96b5c1d60883788d48",
+    "dispense_status": "PENDING"
+  },
+  "fb0f44bca5cdf9e19553e41731328a842552a36fa90c4c96b5c1d60883788d48": {
+    "patient_summary": "The 22‑year‑old female patient has been prescribed a short course of azithromycin and amoxicillin for a presumed bacterial infection and a daily dose of Allegra for allergic symptoms; overall the regimen is appropriate but requires attention to dosing intervals, food interactions, and monitoring for gastrointestinal and allergic adverse effects.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin",
+        "pharmacological_action": "Azithromycin is a macrolide antibiotic that binds to the 50S ribosomal subunit of susceptible bacteria, inhibiting protein synthesis and resulting in a bacteriostatic effect. It is primarily indicated for community‑acquired respiratory infections, skin infections, and certain sexually transmitted infections.",
+        "side_effects": "Common: nausea, abdominal pain, diarrhea, mild headache. Less common but serious: QT‑interval prolongation, hepatotoxicity, severe allergic reactions (rash, angioedema).",
+        "meal_guidelines": "Can be taken with or without food; however, taking with a light snack may reduce mild gastrointestinal upset. Avoid concomitant intake of antacids containing aluminum or magnesium within 2 hours, as they may lower absorption.",
+        "dosage_for_age": "Standard adult dosing (500 mg once daily for 3 days or a 500 mg loading dose followed by 250 mg daily for 4 days) is appropriate for a healthy 22‑year‑old female; no dose adjustment needed."
+      },
+      {
+        "medicine_name": "Amoxicillin",
+        "pharmacological_action": "Amoxicillin is a β‑lactam penicillin that inhibits bacterial cell‑wall synthesis by binding to penicillin‑binding proteins, leading to cell lysis. It is indicated for a broad range of bacterial infections including otitis media, sinusitis, bronchitis, and urinary tract infections.",
+        "side_effects": "Common: nausea, abdominal pain, diarrhea, possible mild rash. Rare but serious: Clostridioides difficile‑associated colitis, anaphylaxis, hepatic dysfunction.",
+        "meal_guidelines": "Best taken with food (e.g., a meal or snack) to improve gastrointestinal tolerance and absorption. Avoid taking with large amounts of dairy products immediately before or after a dose if the formulation is a suspension, as calcium can interfere minimally with absorption.",
+        "dosage_for_age": "Typical adult regimen (e.g., 500 mg every 8 hours or 875 mg twice daily) is suitable for a 22‑year‑old female; no adjustment required unless renal impairment is present, which is not indicated here."
+      },
+      {
+        "medicine_name": "Allegra (Fexofenadine)",
+        "pharmacological_action": "Fexofenadine is a second‑generation, non‑sedating antihistamine that selectively antagonizes peripheral H1 receptors, preventing histamine‑mediated symptoms such as sneezing, rhinorrhea, and itching.",
+        "side_effects": "Common: headache, mild drowsiness, dizziness, nausea. Rare: tachycardia, palpitations, severe hypersensitivity reactions.",
+        "meal_guidelines": "Take once daily with water, preferably 30 minutes before a meal. Do NOT take with fruit juices (grapefruit, orange, apple) or with antacids containing aluminum/magnesium within 2 hours, as these markedly reduce fexofenadine absorption.",
+        "dosage_for_age": "The standard adult dose of 120 mg once daily is appropriate for a 22‑year‑old female; no dose reduction needed."
+      }
+    ],
+    "drug_interactions_and_safety": "Azithromycin and amoxicillin have no direct pharmacokinetic interaction, but concurrent use may increase the risk of gastrointestinal upset and antibiotic‑associated diarrhea, including C. difficile infection. Allegra does not interact significantly with either antibiotic, but its absorption can be reduced by antacids or citrus juices; timing separation is essential. All three agents are primarily metabolized hepatically (azithromycin) or renally excreted (amoxicillin, fexofenadine); normal liver and kidney function in a healthy young adult makes them safe, but caution is advised if hepatic or renal disease emerges.",
+    "lifestyle_precautions": "• Maintain adequate hydration, especially while on antibiotics, to help prevent renal stones and support renal clearance. • Avoid alcohol while taking azithromycin or amoxicillin, as it may increase stomach irritation and liver load. • Do not drive or operate heavy machinery if you experience dizziness or drowsiness from Allegra. • Keep away from grapefruit, orange, or apple juice for at least 2 hours before and after taking Allegra. • Complete the full antibiotic courses even if symptoms improve to prevent resistance.",
+    "red_flag_symptoms": "Seek emergency care if you develop any of the following: severe rash or hives, swelling of face/tongue/lips (anaphylaxis), difficulty breathing or wheezing, chest pain or palpitations, sudden severe diarrhea or watery stools with fever (possible C. difficile infection), persistent vomiting, yellowing of skin or eyes (jaundice), dark urine, or any signs of liver injury, and any fainting or loss of consciousness.",
+    "doctor_audio_guidance": "Hello Hasini, this is Dr. Aegis. I’m reviewing the three medicines your clinician has prescribed. First, azithromycin is a macrolide antibiotic that will help clear the bacterial infection you have; you can take the 500‑milligram tablet once daily for three days, with or without food, but try to avoid antacids right around the dose. Second, amoxicillin is a penicillin‑type antibiotic that works by stopping bacterial cell‑wall formation; the usual adult dose is 500 mg every eight hours, and taking it with a meal can lessen stomach upset. Finally, Allegra 120 mg is an antihistamine for your allergy symptoms; take it once a day with a glass of water, preferably 30 minutes before you eat, and stay away from grapefruit or orange juice and antacids for a couple of hours, because they can lower how much medicine gets into your bloodstream. Common side effects you might notice are mild nausea, headache, or a little dizziness—nothing to worry about unless they become severe. Keep well‑hydrated, finish the entire antibiotic courses, avoid alcohol while on the antibiotics, and don’t drive if you feel drowsy. If you notice any rash, swelling, trouble breathing, chest pain, severe diarrhea, or yellowing of your eyes or skin, call emergency services right away. If you have any questions or concerns, please call our office. Take care and feel better soon.",
+    "metadata": {
+      "presc_id": "PRESC_6aca122405b57",
+      "patient_name": "hasini",
+      "age": 22,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 3
+        },
+        {
+          "name": "Amoxicillin",
+          "qty": 4
+        },
+        {
+          "name": "Allegra",
+          "qty": 2
+        }
+      ],
+      "analyzed_at": "2026-10-10 15:53:46",
+      "ai_physician": "Dr. Aegis (PhD Clinical Pharmacology & MD Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "fb0f44bca5cdf9e19553e41731328a842552a36fa90c4c96b5c1d60883788d48",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=fb0f44bca5cdf9e19553e41731328a842552a36fa90c4c96b5c1d60883788d48",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6aca2b341a361": {
+    "patient_summary": "The prescription for a 23-year-old male includes Dolo650 (Paracetamol) for analgesia/antipyresis and Allegra (Fexofenadine) for allergic rhinitis. The combination is clinically appropriate for managing concurrent pain or fever alongside allergic symptoms, with no significant pharmacokinetic interactions expected.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Dolo650",
+        "pharmacological_action": "Paracetamol (Acetaminophen) acts centrally to inhibit cyclooxygenase (COX) enzymes, reducing prostaglandin synthesis in the CNS. It is indicated for mild to moderate pain and fever reduction. Note: The internal repository incorrectly maps this to 'Zithrocin XL Syrup' (Azithromycin); clinical analysis proceeds based on the actual drug identity (Paracetamol 650mg) as per standard nomenclature for 'Dolo650'.",
+        "side_effects": "Generally well-tolerated. Rare adverse effects include hypersensitivity reactions (rash, angioedema) and hepatotoxicity only in cases of overdose or chronic excessive use. Nausea is uncommon but possible.",
+        "meal_guidelines": "Can be taken before, with, or after food. Taking it with food or a full glass of water may reduce the risk of gastric irritation, although Paracetamol is less irritating to the gastric mucosa than NSAIDs. Avoid alcohol consumption while taking this medication to prevent hepatic stress.",
+        "dosage_for_age": "Suitable for a 23-year-old male. The standard adult dose is 500-1000 mg every 4-6 hours, not exceeding 4000 mg in 24 hours. The prescribed quantity (3 tablets) suggests a short-term course or single-day supply, which is safe if spaced appropriately."
+      },
+      {
+        "medicine_name": "Allegra",
+        "pharmacological_action": "Fexofenadine is a second-generation non-sedating antihistamine that selectively blocks peripheral H1-receptors. It is indicated for the relief of symptoms associated with allergic rhinitis (sneezing, runny nose, itchy eyes) and chronic idiopathic urticaria.",
+        "side_effects": "Common side effects include headache, dizziness, and nausea. Unlike first-generation antihistamines, it has minimal CNS penetration, so drowsiness is rare but possible in sensitive individuals.",
+        "meal_guidelines": "Should be taken on an empty stomach (1 hour before or 2 hours after meals) for optimal absorption. Food, particularly high-fat meals, can significantly reduce the bioavailability of Fexofenadine. Avoid taking with fruit juices (apple, grapefruit, orange) as they can also reduce absorption. Take with water only.",
+        "dosage_for_age": "Suitable for a 23-year-old male. The standard adult dose is 120 mg once or twice daily. The prescribed quantity (2 tablets) aligns with a short-term therapeutic trial or a specific dosing schedule."
+      }
+    ],
+    "drug_interactions_and_safety": "There are no significant pharmacokinetic or pharmacodynamic interactions between Paracetamol and Fexofenadine. Both drugs are safe for a healthy 23-year-old male with no known hepatic or renal impairment. Paracetamol is metabolized by the liver, while Fexofenadine is primarily excreted unchanged by the kidneys; thus, organ load is distributed and minimal at therapeutic doses. Ensure the patient does not have a history of severe renal impairment, which would require dose adjustment for Fexofenadine.",
+    "lifestyle_precautions": "1. Hydration: Maintain adequate fluid intake to support renal clearance of Fexofenadine. 2. Driving: While Fexofenadine is non-sedating, individual responses vary. Advise the patient to monitor for dizziness or drowsiness before driving or operating heavy machinery. 3. Alcohol: Strictly avoid alcohol while taking Paracetamol to minimize the risk of hepatotoxicity. 4. Diet: Adhere to the empty-stomach rule for Allegra to ensure efficacy.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: 1. Signs of severe allergic reaction (anaphylaxis): difficulty breathing, swelling of the face/lips/tongue, or widespread hives. 2. Signs of liver injury: persistent nausea, vomiting, loss of appetite, upper right abdominal pain, yellowing of skin/eyes (jaundice), or dark urine. 3. Severe skin reactions: blistering, peeling, or severe rash. 4. Unusual bleeding or bruising (rare, but monitor).",
+    "doctor_audio_guidance": "Hello Irfan, this is your clinical consultant. I have reviewed your prescription for Dolo650 and Allegra. Dolo650 contains Paracetamol, which will help manage any pain or fever you might be experiencing. It is safe to take this with or without food, but I recommend taking it with a full glass of water. Please avoid alcohol completely while on this medication to protect your liver. Allegra contains Fexofenadine, a non-drowsy antihistamine for your allergy symptoms like sneezing and runny nose. For this medicine to work best, it is crucial that you take it on an empty stomach, meaning at least one hour before or two hours after eating. Also, please avoid taking it with fruit juices like orange or grapefruit, as they can reduce its effectiveness. Both medications are generally well-tolerated, but if you notice any unusual rash, severe stomach pain, or signs of an allergic reaction like difficulty breathing, please seek emergency care immediately. Stay hydrated, and if you feel any dizziness, avoid driving until you know how your body reacts. Get well soon.",
+    "metadata": {
+      "presc_id": "PRESC_6aca2b341a361",
+      "patient_name": "irfan",
+      "age": 23,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Dolo650",
+          "qty": 3
+        },
+        {
+          "name": "Allegra",
+          "qty": 2
+        }
+      ],
+      "analyzed_at": "2026-10-10 17:43:48",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "d40ba589222c0f4bf785160324b5ee57907ce4f1db8ff1c71dfd8b5ad25c91f1",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=d40ba589222c0f4bf785160324b5ee57907ce4f1db8ff1c71dfd8b5ad25c91f1",
+    "dispense_status": "PENDING"
+  },
+  "d40ba589222c0f4bf785160324b5ee57907ce4f1db8ff1c71dfd8b5ad25c91f1": {
+    "patient_summary": "The prescription for a 23-year-old male includes Dolo650 (Paracetamol) for analgesia/antipyresis and Allegra (Fexofenadine) for allergic rhinitis. The combination is clinically appropriate for managing concurrent pain or fever alongside allergic symptoms, with no significant pharmacokinetic interactions expected.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Dolo650",
+        "pharmacological_action": "Paracetamol (Acetaminophen) acts centrally to inhibit cyclooxygenase (COX) enzymes, reducing prostaglandin synthesis in the CNS. It is indicated for mild to moderate pain and fever reduction. Note: The internal repository incorrectly maps this to 'Zithrocin XL Syrup' (Azithromycin); clinical analysis proceeds based on the actual drug identity (Paracetamol 650mg) as per standard nomenclature for 'Dolo650'.",
+        "side_effects": "Generally well-tolerated. Rare adverse effects include hypersensitivity reactions (rash, angioedema) and hepatotoxicity only in cases of overdose or chronic excessive use. Nausea is uncommon but possible.",
+        "meal_guidelines": "Can be taken before, with, or after food. Taking it with food or a full glass of water may reduce the risk of gastric irritation, although Paracetamol is less irritating to the gastric mucosa than NSAIDs. Avoid alcohol consumption while taking this medication to prevent hepatic stress.",
+        "dosage_for_age": "Suitable for a 23-year-old male. The standard adult dose is 500-1000 mg every 4-6 hours, not exceeding 4000 mg in 24 hours. The prescribed quantity (3 tablets) suggests a short-term course or single-day supply, which is safe if spaced appropriately."
+      },
+      {
+        "medicine_name": "Allegra",
+        "pharmacological_action": "Fexofenadine is a second-generation non-sedating antihistamine that selectively blocks peripheral H1-receptors. It is indicated for the relief of symptoms associated with allergic rhinitis (sneezing, runny nose, itchy eyes) and chronic idiopathic urticaria.",
+        "side_effects": "Common side effects include headache, dizziness, and nausea. Unlike first-generation antihistamines, it has minimal CNS penetration, so drowsiness is rare but possible in sensitive individuals.",
+        "meal_guidelines": "Should be taken on an empty stomach (1 hour before or 2 hours after meals) for optimal absorption. Food, particularly high-fat meals, can significantly reduce the bioavailability of Fexofenadine. Avoid taking with fruit juices (apple, grapefruit, orange) as they can also reduce absorption. Take with water only.",
+        "dosage_for_age": "Suitable for a 23-year-old male. The standard adult dose is 120 mg once or twice daily. The prescribed quantity (2 tablets) aligns with a short-term therapeutic trial or a specific dosing schedule."
+      }
+    ],
+    "drug_interactions_and_safety": "There are no significant pharmacokinetic or pharmacodynamic interactions between Paracetamol and Fexofenadine. Both drugs are safe for a healthy 23-year-old male with no known hepatic or renal impairment. Paracetamol is metabolized by the liver, while Fexofenadine is primarily excreted unchanged by the kidneys; thus, organ load is distributed and minimal at therapeutic doses. Ensure the patient does not have a history of severe renal impairment, which would require dose adjustment for Fexofenadine.",
+    "lifestyle_precautions": "1. Hydration: Maintain adequate fluid intake to support renal clearance of Fexofenadine. 2. Driving: While Fexofenadine is non-sedating, individual responses vary. Advise the patient to monitor for dizziness or drowsiness before driving or operating heavy machinery. 3. Alcohol: Strictly avoid alcohol while taking Paracetamol to minimize the risk of hepatotoxicity. 4. Diet: Adhere to the empty-stomach rule for Allegra to ensure efficacy.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: 1. Signs of severe allergic reaction (anaphylaxis): difficulty breathing, swelling of the face/lips/tongue, or widespread hives. 2. Signs of liver injury: persistent nausea, vomiting, loss of appetite, upper right abdominal pain, yellowing of skin/eyes (jaundice), or dark urine. 3. Severe skin reactions: blistering, peeling, or severe rash. 4. Unusual bleeding or bruising (rare, but monitor).",
+    "doctor_audio_guidance": "Hello Irfan, this is your clinical consultant. I have reviewed your prescription for Dolo650 and Allegra. Dolo650 contains Paracetamol, which will help manage any pain or fever you might be experiencing. It is safe to take this with or without food, but I recommend taking it with a full glass of water. Please avoid alcohol completely while on this medication to protect your liver. Allegra contains Fexofenadine, a non-drowsy antihistamine for your allergy symptoms like sneezing and runny nose. For this medicine to work best, it is crucial that you take it on an empty stomach, meaning at least one hour before or two hours after eating. Also, please avoid taking it with fruit juices like orange or grapefruit, as they can reduce its effectiveness. Both medications are generally well-tolerated, but if you notice any unusual rash, severe stomach pain, or signs of an allergic reaction like difficulty breathing, please seek emergency care immediately. Stay hydrated, and if you feel any dizziness, avoid driving until you know how your body reacts. Get well soon.",
+    "metadata": {
+      "presc_id": "PRESC_6aca2b341a361",
+      "patient_name": "irfan",
+      "age": 23,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Dolo650",
+          "qty": 3
+        },
+        {
+          "name": "Allegra",
+          "qty": 2
+        }
+      ],
+      "analyzed_at": "2026-10-10 17:43:48",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "d40ba589222c0f4bf785160324b5ee57907ce4f1db8ff1c71dfd8b5ad25c91f1",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=d40ba589222c0f4bf785160324b5ee57907ce4f1db8ff1c71dfd8b5ad25c91f1",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6aca2dd10130d": {
+    "patient_summary": "The 23‑year‑old female patient has been prescribed a short course of azithromycin for a bacterial infection and intermittent paracetamol for pain/fever control; the regimen is appropriate if dosing and safety instructions are followed.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin",
+        "pharmacological_action": "Azithromycin is a macrolide antibiotic that binds to the 50S ribosomal subunit of susceptible bacteria, inhibiting protein synthesis and leading to bacteriostatic (or bactericidal at high concentrations) activity. It is primarily indicated for community‑acquired respiratory infections, skin infections, and certain sexually transmitted infections.",
+        "side_effects": "Common: nausea, abdominal pain, diarrhea, mild headache. Less common but serious: QT‑interval prolongation, severe allergic reactions (rash, angioedema), hepatotoxicity, Clostridioides difficile colitis.",
+        "meal_guidelines": "Can be taken with or without food; taking with a light meal may lessen gastrointestinal upset. Avoid antacids containing aluminum or magnesium within 2 hours of the dose. No specific beverage restrictions, but limit grapefruit juice as it may affect metabolism.",
+        "dosage_for_age": "Standard adult regimen (500 mg once daily for 3 days or a single 1 g dose) is appropriate for a healthy 23‑year‑old female; no dose reduction needed unless hepatic impairment is present."
+      },
+      {
+        "medicine_name": "Paracetamol",
+        "pharmacological_action": "Paracetamol (acetaminophen) is an analgesic and antipyretic that acts centrally to inhibit cyclooxygenase enzymes, reducing prostaglandin synthesis in the CNS and thereby lowering pain perception and fever. It is indicated for mild‑to‑moderate pain and fever.",
+        "side_effects": "Common: nausea, vomiting, mild abdominal discomfort. Rare but serious: hepatotoxicity (especially with doses >4 g/day or chronic alcohol use), hypersensitivity reactions, skin reactions (Stevens‑Johnson syndrome).",
+        "meal_guidelines": "Can be taken with or without food; taking with food may reduce stomach upset. Avoid concurrent alcohol intake and limit use of other hepatotoxic agents. No specific beverage restrictions, but stay well‑hydrated.",
+        "dosage_for_age": "Typical adult dose is 500 mg every 6–8 hours, not exceeding 4 g (8 tablets of 500 mg) per 24 hours. This dosing is safe for a 23‑year‑old female with normal liver function."
+      }
+    ],
+    "drug_interactions_and_safety": "Azithromycin and paracetamol have no direct pharmacokinetic interaction; they can be co‑administered safely. Both are metabolized in the liver, so concurrent use does not markedly increase hepatic burden, but cumulative liver toxicity should be monitored if other hepatotoxic drugs or excessive alcohol are used. Azithromycin may prolong the QT interval; avoid other QT‑prolonging agents (e.g., certain anti‑arrhythmics, fluoroquinolones) and correct electrolyte abnormalities. Renal function is generally unaffected, but dose adjustment is unnecessary in normal renal function.",
+    "lifestyle_precautions": "Maintain adequate hydration (≥2 L water daily). Limit or avoid alcohol while taking paracetamol to reduce liver risk. If dizziness occurs, refrain from operating heavy machinery or driving. Ensure sufficient rest; no special sun‑exposure restrictions, but avoid prolonged exposure if experiencing a rash. Store tablets at room temperature, away from moisture.",
+    "red_flag_symptoms": "Seek emergency care if any of the following occur: severe rash or hives, swelling of face/lips/tongue, difficulty breathing (anaphylaxis); chest pain, palpitations, or fainting (possible QT‑related arrhythmia); persistent vomiting or abdominal pain with jaundice (yellow eyes/skin) indicating liver injury; severe diarrhea with fever (possible C. difficile infection); or any sudden, unexplained change in mental status.",
+    "doctor_audio_guidance": "Hello Sruthi, this is Dr. [Your Name] reviewing your prescription. You have been given azithromycin, a short‑acting antibiotic that will help clear the bacterial infection you have. Take one 500‑milligram tablet once daily for three days; you can swallow it with a light meal or a glass of water, and try to avoid antacids containing aluminum or magnesium within two hours of the dose. The second medication is paracetamol, which will relieve any pain or fever you might feel. You can take 500 mg every six to eight hours, up to a maximum of four grams in a day, with or without food—just be sure not to exceed the total daily amount and avoid alcohol while you’re using it. Common side effects are mild stomach upset or nausea, but if you notice any rash, swelling, difficulty breathing, chest pain, unusual heartbeats, yellowing of the eyes or skin, or severe vomiting, call emergency services right away. Stay well‑hydrated, get plenty of rest, and avoid driving if you feel dizzy. If you have any questions or notice anything unusual, please contact our clinic. Take care and feel better soon.",
+    "metadata": {
+      "presc_id": "PRESC_6aca2dd10130d",
+      "patient_name": "sruthi",
+      "age": 23,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 4
+        },
+        {
+          "name": "Paracetamol",
+          "qty": 5
+        }
+      ],
+      "analyzed_at": "2026-10-10 17:51:42",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "40ece2e733b474b6e81db0e76926fb6bffa96b620d4625a6bc14c3c71fa9b992",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=40ece2e733b474b6e81db0e76926fb6bffa96b620d4625a6bc14c3c71fa9b992",
+    "dispense_status": "PENDING"
+  },
+  "40ece2e733b474b6e81db0e76926fb6bffa96b620d4625a6bc14c3c71fa9b992": {
+    "patient_summary": "The 23‑year‑old female patient has been prescribed a short course of azithromycin for a bacterial infection and intermittent paracetamol for pain/fever control; the regimen is appropriate if dosing and safety instructions are followed.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin",
+        "pharmacological_action": "Azithromycin is a macrolide antibiotic that binds to the 50S ribosomal subunit of susceptible bacteria, inhibiting protein synthesis and leading to bacteriostatic (or bactericidal at high concentrations) activity. It is primarily indicated for community‑acquired respiratory infections, skin infections, and certain sexually transmitted infections.",
+        "side_effects": "Common: nausea, abdominal pain, diarrhea, mild headache. Less common but serious: QT‑interval prolongation, severe allergic reactions (rash, angioedema), hepatotoxicity, Clostridioides difficile colitis.",
+        "meal_guidelines": "Can be taken with or without food; taking with a light meal may lessen gastrointestinal upset. Avoid antacids containing aluminum or magnesium within 2 hours of the dose. No specific beverage restrictions, but limit grapefruit juice as it may affect metabolism.",
+        "dosage_for_age": "Standard adult regimen (500 mg once daily for 3 days or a single 1 g dose) is appropriate for a healthy 23‑year‑old female; no dose reduction needed unless hepatic impairment is present."
+      },
+      {
+        "medicine_name": "Paracetamol",
+        "pharmacological_action": "Paracetamol (acetaminophen) is an analgesic and antipyretic that acts centrally to inhibit cyclooxygenase enzymes, reducing prostaglandin synthesis in the CNS and thereby lowering pain perception and fever. It is indicated for mild‑to‑moderate pain and fever.",
+        "side_effects": "Common: nausea, vomiting, mild abdominal discomfort. Rare but serious: hepatotoxicity (especially with doses >4 g/day or chronic alcohol use), hypersensitivity reactions, skin reactions (Stevens‑Johnson syndrome).",
+        "meal_guidelines": "Can be taken with or without food; taking with food may reduce stomach upset. Avoid concurrent alcohol intake and limit use of other hepatotoxic agents. No specific beverage restrictions, but stay well‑hydrated.",
+        "dosage_for_age": "Typical adult dose is 500 mg every 6–8 hours, not exceeding 4 g (8 tablets of 500 mg) per 24 hours. This dosing is safe for a 23‑year‑old female with normal liver function."
+      }
+    ],
+    "drug_interactions_and_safety": "Azithromycin and paracetamol have no direct pharmacokinetic interaction; they can be co‑administered safely. Both are metabolized in the liver, so concurrent use does not markedly increase hepatic burden, but cumulative liver toxicity should be monitored if other hepatotoxic drugs or excessive alcohol are used. Azithromycin may prolong the QT interval; avoid other QT‑prolonging agents (e.g., certain anti‑arrhythmics, fluoroquinolones) and correct electrolyte abnormalities. Renal function is generally unaffected, but dose adjustment is unnecessary in normal renal function.",
+    "lifestyle_precautions": "Maintain adequate hydration (≥2 L water daily). Limit or avoid alcohol while taking paracetamol to reduce liver risk. If dizziness occurs, refrain from operating heavy machinery or driving. Ensure sufficient rest; no special sun‑exposure restrictions, but avoid prolonged exposure if experiencing a rash. Store tablets at room temperature, away from moisture.",
+    "red_flag_symptoms": "Seek emergency care if any of the following occur: severe rash or hives, swelling of face/lips/tongue, difficulty breathing (anaphylaxis); chest pain, palpitations, or fainting (possible QT‑related arrhythmia); persistent vomiting or abdominal pain with jaundice (yellow eyes/skin) indicating liver injury; severe diarrhea with fever (possible C. difficile infection); or any sudden, unexplained change in mental status.",
+    "doctor_audio_guidance": "Hello Sruthi, this is Dr. [Your Name] reviewing your prescription. You have been given azithromycin, a short‑acting antibiotic that will help clear the bacterial infection you have. Take one 500‑milligram tablet once daily for three days; you can swallow it with a light meal or a glass of water, and try to avoid antacids containing aluminum or magnesium within two hours of the dose. The second medication is paracetamol, which will relieve any pain or fever you might feel. You can take 500 mg every six to eight hours, up to a maximum of four grams in a day, with or without food—just be sure not to exceed the total daily amount and avoid alcohol while you’re using it. Common side effects are mild stomach upset or nausea, but if you notice any rash, swelling, difficulty breathing, chest pain, unusual heartbeats, yellowing of the eyes or skin, or severe vomiting, call emergency services right away. Stay well‑hydrated, get plenty of rest, and avoid driving if you feel dizzy. If you have any questions or notice anything unusual, please contact our clinic. Take care and feel better soon.",
+    "metadata": {
+      "presc_id": "PRESC_6aca2dd10130d",
+      "patient_name": "sruthi",
+      "age": 23,
+      "gender": "Female",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 4
+        },
+        {
+          "name": "Paracetamol",
+          "qty": 5
+        }
+      ],
+      "analyzed_at": "2026-10-10 17:51:42",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "40ece2e733b474b6e81db0e76926fb6bffa96b620d4625a6bc14c3c71fa9b992",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=40ece2e733b474b6e81db0e76926fb6bffa96b620d4625a6bc14c3c71fa9b992",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6aca3530e939e": {
+    "patient_summary": "The prescription for Hari (22y Male) combines an antibiotic (Amoxicillin) for bacterial infection with an antihistamine (Allegra) for allergic symptoms and Vitamin C for immune support. The regimen is clinically appropriate for a young adult with no significant age-related contraindications, though the combination of medications requires monitoring for gastrointestinal and central nervous system side effects.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Amoxicillin",
+        "pharmacological_action": "Amoxicillin is a broad-spectrum penicillin antibiotic that inhibits bacterial cell wall synthesis by binding to penicillin-binding proteins (PBPs), leading to bacterial lysis and death. It is indicated for the treatment of susceptible bacterial infections such as respiratory tract, urinary tract, and skin infections.",
+        "side_effects": "Common side effects include nausea, abdominal pain, and diarrhea. Less common but serious reactions include allergic rashes, hives, or anaphylaxis. Prolonged use may lead to superinfections like candidiasis or C. difficile colitis.",
+        "meal_guidelines": "Amoxicillin can be taken with or without food. Taking it with food may reduce gastrointestinal upset. It should be taken with a full glass of water. Avoid taking it with antacids containing aluminum or magnesium, as they may reduce absorption. No specific dietary restrictions regarding milk or citrus, but maintaining a balanced diet is recommended.",
+        "dosage_for_age": "The dosage is appropriate for a 22-year-old male, assuming standard adult dosing protocols are followed. The quantity of 6 tablets suggests a short course, which is typical for uncomplicated bacterial infections. Ensure the patient completes the full course to prevent antibiotic resistance."
+      },
+      {
+        "medicine_name": "Vitamin C",
+        "pharmacological_action": "Vitamin C (Ascorbic Acid) is a water-soluble vitamin that acts as an antioxidant, supporting immune function, collagen synthesis, and iron absorption. It is indicated for the prevention and treatment of Vitamin C deficiency (scurvy) and may support general immune health.",
+        "side_effects": "Oral Vitamin C is generally well-tolerated. High doses may cause gastrointestinal distress, including nausea, diarrhea, and abdominal cramps. The repository lists injection site reactions, but since the prescription likely refers to oral supplements (given the context of other oral meds), these are less relevant unless specified otherwise.",
+        "meal_guidelines": "Vitamin C is best taken with food to minimize gastrointestinal irritation. It can be taken at any time of day. Avoid taking it on an empty stomach if the patient has a sensitive stomach. No specific beverage restrictions, but it is water-soluble, so adequate hydration is important.",
+        "dosage_for_age": "The dosage is suitable for a 22-year-old male. The quantity of 4 units suggests a short-term supplement. Ensure the dose does not exceed the recommended daily allowance to avoid potential gastrointestinal side effects."
+      },
+      {
+        "medicine_name": "Allegra",
+        "pharmacological_action": "Allegra (Fexofenadine) is a second-generation antihistamine that selectively blocks H1 receptors, reducing allergic symptoms such as sneezing, runny nose, and itching. It is indicated for the treatment of allergic rhinitis and chronic idiopathic urticaria.",
+        "side_effects": "Common side effects include headache, drowsiness, dizziness, and nausea. Although less sedating than first-generation antihistamines, some patients may still experience mild drowsiness. Rarely, it may cause palpitations or QT prolongation in susceptible individuals.",
+        "meal_guidelines": "Allegra should be taken on an empty stomach, at least 1 hour before or 2 hours after meals, as food can reduce its absorption. It should be taken with water. Avoid taking it with fruit juices (especially grapefruit, apple, or orange) as they may interfere with absorption. Do not take with antacids.",
+        "dosage_for_age": "The dosage is appropriate for a 22-year-old male. The quantity of 5 tablets suggests a short course for acute allergic symptoms. Ensure the patient is aware of the timing relative to meals to maximize efficacy."
+      }
+    ],
+    "drug_interactions_and_safety": "There are no significant direct pharmacokinetic interactions between Amoxicillin, Vitamin C, and Allegra. However, both Amoxicillin and Allegra can cause gastrointestinal side effects (nausea, diarrhea), so monitoring for compounded GI distress is advised. Allegra should be taken on an empty stomach, while Amoxicillin and Vitamin C can be taken with food, so timing should be staggered to avoid confusion and optimize absorption. No significant liver or kidney toxicity is expected at standard doses in a healthy 22-year-old, but renal function should be considered if the patient has pre-existing conditions.",
+    "lifestyle_precautions": "Maintain adequate hydration, especially while taking Amoxicillin, to support kidney function and reduce the risk of crystalluria. Avoid driving or operating heavy machinery until the patient knows how Allegra affects them, as drowsiness is a possible side effect. Avoid alcohol, as it may exacerbate gastrointestinal side effects and increase drowsiness. Ensure adequate sleep to support immune recovery. No specific sun exposure precautions are required for these medications.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences signs of a severe allergic reaction (difficulty breathing, swelling of the face/lips/tongue, hives), severe or persistent diarrhea (especially if bloody), signs of liver dysfunction (yellowing of skin/eyes, dark urine, severe fatigue), or cardiac symptoms (palpitations, fainting). Also, contact a doctor if symptoms do not improve or worsen after 3-5 days.",
+    "doctor_audio_guidance": "Hello Hari, this is your clinical consultant. You have been prescribed three medications to help you recover. First, Amoxicillin is an antibiotic to treat a bacterial infection. Please take it exactly as directed, usually with food to avoid stomach upset, and finish the entire course even if you feel better. Second, Allegra is an antihistamine to control your allergy symptoms like sneezing and runny nose. It is important to take this on an empty stomach, at least an hour before or two hours after eating, and avoid fruit juices as they can reduce its effectiveness. Some people feel a bit drowsy, so be careful when driving. Third, Vitamin C is a supplement to support your immune system. Take it with food to be gentle on your stomach. Drink plenty of water throughout the day. Watch out for any severe side effects like difficulty breathing, severe diarrhea, or unusual fatigue, and contact us immediately if these occur. Rest well and stay hydrated. You should start feeling better soon. Take care.",
+    "metadata": {
+      "presc_id": "PRESC_6aca3530e939e",
+      "patient_name": "hari",
+      "age": 22,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Amoxicillin",
+          "qty": 6
+        },
+        {
+          "name": "VitaminC",
+          "qty": 4
+        },
+        {
+          "name": "Allegra",
+          "qty": 5
+        }
+      ],
+      "analyzed_at": "2026-10-10 18:24:16",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "533c84d277ab86dabb13c0dc58e5461ee1e5f28cfda916b78743de0e15417261",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=533c84d277ab86dabb13c0dc58e5461ee1e5f28cfda916b78743de0e15417261",
+    "dispense_status": "PENDING"
+  },
+  "533c84d277ab86dabb13c0dc58e5461ee1e5f28cfda916b78743de0e15417261": {
+    "patient_summary": "The prescription for Hari (22y Male) combines an antibiotic (Amoxicillin) for bacterial infection with an antihistamine (Allegra) for allergic symptoms and Vitamin C for immune support. The regimen is clinically appropriate for a young adult with no significant age-related contraindications, though the combination of medications requires monitoring for gastrointestinal and central nervous system side effects.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Amoxicillin",
+        "pharmacological_action": "Amoxicillin is a broad-spectrum penicillin antibiotic that inhibits bacterial cell wall synthesis by binding to penicillin-binding proteins (PBPs), leading to bacterial lysis and death. It is indicated for the treatment of susceptible bacterial infections such as respiratory tract, urinary tract, and skin infections.",
+        "side_effects": "Common side effects include nausea, abdominal pain, and diarrhea. Less common but serious reactions include allergic rashes, hives, or anaphylaxis. Prolonged use may lead to superinfections like candidiasis or C. difficile colitis.",
+        "meal_guidelines": "Amoxicillin can be taken with or without food. Taking it with food may reduce gastrointestinal upset. It should be taken with a full glass of water. Avoid taking it with antacids containing aluminum or magnesium, as they may reduce absorption. No specific dietary restrictions regarding milk or citrus, but maintaining a balanced diet is recommended.",
+        "dosage_for_age": "The dosage is appropriate for a 22-year-old male, assuming standard adult dosing protocols are followed. The quantity of 6 tablets suggests a short course, which is typical for uncomplicated bacterial infections. Ensure the patient completes the full course to prevent antibiotic resistance."
+      },
+      {
+        "medicine_name": "Vitamin C",
+        "pharmacological_action": "Vitamin C (Ascorbic Acid) is a water-soluble vitamin that acts as an antioxidant, supporting immune function, collagen synthesis, and iron absorption. It is indicated for the prevention and treatment of Vitamin C deficiency (scurvy) and may support general immune health.",
+        "side_effects": "Oral Vitamin C is generally well-tolerated. High doses may cause gastrointestinal distress, including nausea, diarrhea, and abdominal cramps. The repository lists injection site reactions, but since the prescription likely refers to oral supplements (given the context of other oral meds), these are less relevant unless specified otherwise.",
+        "meal_guidelines": "Vitamin C is best taken with food to minimize gastrointestinal irritation. It can be taken at any time of day. Avoid taking it on an empty stomach if the patient has a sensitive stomach. No specific beverage restrictions, but it is water-soluble, so adequate hydration is important.",
+        "dosage_for_age": "The dosage is suitable for a 22-year-old male. The quantity of 4 units suggests a short-term supplement. Ensure the dose does not exceed the recommended daily allowance to avoid potential gastrointestinal side effects."
+      },
+      {
+        "medicine_name": "Allegra",
+        "pharmacological_action": "Allegra (Fexofenadine) is a second-generation antihistamine that selectively blocks H1 receptors, reducing allergic symptoms such as sneezing, runny nose, and itching. It is indicated for the treatment of allergic rhinitis and chronic idiopathic urticaria.",
+        "side_effects": "Common side effects include headache, drowsiness, dizziness, and nausea. Although less sedating than first-generation antihistamines, some patients may still experience mild drowsiness. Rarely, it may cause palpitations or QT prolongation in susceptible individuals.",
+        "meal_guidelines": "Allegra should be taken on an empty stomach, at least 1 hour before or 2 hours after meals, as food can reduce its absorption. It should be taken with water. Avoid taking it with fruit juices (especially grapefruit, apple, or orange) as they may interfere with absorption. Do not take with antacids.",
+        "dosage_for_age": "The dosage is appropriate for a 22-year-old male. The quantity of 5 tablets suggests a short course for acute allergic symptoms. Ensure the patient is aware of the timing relative to meals to maximize efficacy."
+      }
+    ],
+    "drug_interactions_and_safety": "There are no significant direct pharmacokinetic interactions between Amoxicillin, Vitamin C, and Allegra. However, both Amoxicillin and Allegra can cause gastrointestinal side effects (nausea, diarrhea), so monitoring for compounded GI distress is advised. Allegra should be taken on an empty stomach, while Amoxicillin and Vitamin C can be taken with food, so timing should be staggered to avoid confusion and optimize absorption. No significant liver or kidney toxicity is expected at standard doses in a healthy 22-year-old, but renal function should be considered if the patient has pre-existing conditions.",
+    "lifestyle_precautions": "Maintain adequate hydration, especially while taking Amoxicillin, to support kidney function and reduce the risk of crystalluria. Avoid driving or operating heavy machinery until the patient knows how Allegra affects them, as drowsiness is a possible side effect. Avoid alcohol, as it may exacerbate gastrointestinal side effects and increase drowsiness. Ensure adequate sleep to support immune recovery. No specific sun exposure precautions are required for these medications.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences signs of a severe allergic reaction (difficulty breathing, swelling of the face/lips/tongue, hives), severe or persistent diarrhea (especially if bloody), signs of liver dysfunction (yellowing of skin/eyes, dark urine, severe fatigue), or cardiac symptoms (palpitations, fainting). Also, contact a doctor if symptoms do not improve or worsen after 3-5 days.",
+    "doctor_audio_guidance": "Hello Hari, this is your clinical consultant. You have been prescribed three medications to help you recover. First, Amoxicillin is an antibiotic to treat a bacterial infection. Please take it exactly as directed, usually with food to avoid stomach upset, and finish the entire course even if you feel better. Second, Allegra is an antihistamine to control your allergy symptoms like sneezing and runny nose. It is important to take this on an empty stomach, at least an hour before or two hours after eating, and avoid fruit juices as they can reduce its effectiveness. Some people feel a bit drowsy, so be careful when driving. Third, Vitamin C is a supplement to support your immune system. Take it with food to be gentle on your stomach. Drink plenty of water throughout the day. Watch out for any severe side effects like difficulty breathing, severe diarrhea, or unusual fatigue, and contact us immediately if these occur. Rest well and stay hydrated. You should start feeling better soon. Take care.",
+    "metadata": {
+      "presc_id": "PRESC_6aca3530e939e",
+      "patient_name": "hari",
+      "age": 22,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Amoxicillin",
+          "qty": 6
+        },
+        {
+          "name": "VitaminC",
+          "qty": 4
+        },
+        {
+          "name": "Allegra",
+          "qty": 5
+        }
+      ],
+      "analyzed_at": "2026-10-10 18:24:16",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "533c84d277ab86dabb13c0dc58e5461ee1e5f28cfda916b78743de0e15417261",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=533c84d277ab86dabb13c0dc58e5461ee1e5f28cfda916b78743de0e15417261",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6aca39a4e2602": {
+    "patient_summary": "The prescription for a 20-year-old male involves a combination of Azithromycin and Amoxicillin for bacterial infection, alongside a multi-ingredient analgesic (Chlorzoxazone, Diclofenac, Paracetamol) for pain management. The regimen requires careful monitoring for gastrointestinal tolerance and potential hepatotoxicity due to the combination of NSAIDs and antibiotics.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin",
+        "pharmacological_action": "A macrolide antibiotic that inhibits bacterial protein synthesis by binding to the 50S ribosomal subunit. It is indicated for the treatment of susceptible bacterial infections, including respiratory tract, skin, and soft tissue infections.",
+        "side_effects": "Common side effects include nausea, abdominal pain, diarrhea, and vomiting. Rarely, it may cause QT prolongation or hypersensitivity reactions.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may reduce gastrointestinal discomfort. Avoid taking with antacids containing aluminum or magnesium within 2 hours before or 4 hours after the dose, as this reduces absorption. No specific restrictions on milk or citrus, but avoid alcohol to prevent additive GI irritation.",
+        "dosage_for_age": "The quantity of 6 tablets (likely 500mg each) suggests a standard 3-day course (500mg on day 1, then 250mg or 500mg on days 2-3) or a 5-day course. This is appropriate for a 20-year-old adult male with normal renal and hepatic function."
+      },
+      {
+        "medicine_name": "Paracetamol (in combination with Chlorzoxazone and Diclofenac)",
+        "pharmacological_action": "This is a combination analgesic. Paracetamol acts centrally to reduce pain and fever. Diclofenac is an NSAID that inhibits cyclooxygenase (COX) enzymes to reduce inflammation and pain. Chlorzoxazone is a centrally acting muscle relaxant that reduces muscle spasm. The combination is indicated for acute pain associated with muscle spasms.",
+        "side_effects": "Common side effects include nausea, vomiting, heartburn, stomach pain, diarrhea, loss of appetite, and dryness in the mouth. Chlorzoxazone may cause drowsiness or dizziness. Diclofenac carries risks of gastric irritation and renal stress.",
+        "meal_guidelines": "Must be taken with food or milk to minimize gastric irritation from Diclofenac. Do not take on an empty stomach. Avoid alcohol completely, as it significantly increases the risk of gastric bleeding and liver toxicity when combined with Paracetamol and Diclofenac.",
+        "dosage_for_age": "The quantity of 3 tablets suggests a short-term course (e.g., 1 tablet twice daily for 1.5 days or as directed). This is generally safe for a 20-year-old male, provided there is no history of peptic ulcer disease, renal impairment, or asthma exacerbated by NSAIDs."
+      },
+      {
+        "medicine_name": "Amoxicillin",
+        "pharmacological_action": "A penicillin-type antibiotic that inhibits bacterial cell wall synthesis. It is indicated for the treatment of susceptible bacterial infections, including respiratory, urinary, and skin infections.",
+        "side_effects": "Common side effects include nausea, abdominal pain, diarrhea, and rash. Hypersensitivity reactions (allergy) are a significant concern, especially in patients with a history of penicillin allergy.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may help reduce gastrointestinal upset. No specific dietary restrictions, but ensure adequate hydration. Avoid alcohol to prevent additive GI effects and potential masking of infection symptoms.",
+        "dosage_for_age": "The quantity of 4 tablets suggests a short course or specific dosing schedule. This is appropriate for a 20-year-old adult male. Note: The repository lists 'Zithrocin XL Syrup' as the catalog match for Amoxicillin, which is a data mismatch (Zithrocin is Azithromycin). The analysis assumes the intended drug is Amoxicillin based on the prescription name."
+      }
+    ],
+    "drug_interactions_and_safety": "The combination of Azithromycin and Amoxicillin is generally safe but redundant unless treating a polymicrobial infection or specific resistant strains; however, it is not contraindicated. The primary safety concern is the combination of Diclofenac (NSAID) and Paracetamol. While not directly interacting with the antibiotics, the NSAID component increases the risk of gastrointestinal bleeding and renal stress, especially if the patient is dehydrated. There is no significant pharmacokinetic interaction between Azithromycin and Amoxicillin. Monitor for signs of hypersensitivity to penicillins (Amoxicillin) and macrolides (Azithromycin). Liver function should be monitored if the course is extended, due to Paracetamol and potential hepatotoxicity from Diclofenac.",
+    "lifestyle_precautions": "Maintain adequate hydration (2-3 liters of water daily) to support renal function and reduce the risk of kidney stones or renal stress from Diclofenac. Avoid driving or operating heavy machinery if experiencing drowsiness or dizziness from Chlorzoxazone. Avoid alcohol completely during the treatment period to protect the liver and stomach. Complete the full course of antibiotics even if symptoms improve to prevent antibiotic resistance. Use sun protection if experiencing photosensitivity, though this is less common with these specific drugs.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: difficulty breathing, swelling of the face/lips/tongue (anaphylaxis), severe or persistent diarrhea (risk of C. difficile infection), dark urine, yellowing of skin/eyes (jaundice), severe abdominal pain, blood in stool or urine, or signs of severe allergic reaction (rash, hives).",
+    "doctor_audio_guidance": "Hello Mukesh, I am reviewing your prescription. You have been prescribed Azithromycin and Amoxicillin to treat a bacterial infection, and a combination pain reliever containing Paracetamol, Diclofenac, and Chlorzoxazone to manage pain and muscle spasms. It is crucial to take the pain reliever with food or milk to protect your stomach, as Diclofenac can cause irritation. The antibiotics can be taken with or without food, but consistency is key. Please avoid alcohol entirely during this period, as it can harm your liver and stomach when combined with these medications. Stay well-hydrated by drinking plenty of water. If you experience any severe rash, difficulty breathing, or persistent vomiting, seek emergency care immediately. Complete the full course of antibiotics as directed. If you have a history of penicillin allergy, please inform your doctor immediately. Wishing you a speedy recovery.",
+    "metadata": {
+      "presc_id": "PRESC_6aca39a4e2602",
+      "patient_name": "mukesh",
+      "age": 20,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 6
+        },
+        {
+          "name": "Paracetamol",
+          "qty": 3
+        },
+        {
+          "name": "Amoxicillin",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 18:42:17",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "35a038077cc86c39bdb36129c082a81ce272ca41bc5531307ebb5fb5bf9457d8",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=35a038077cc86c39bdb36129c082a81ce272ca41bc5531307ebb5fb5bf9457d8",
+    "dispense_status": "PENDING"
+  },
+  "35a038077cc86c39bdb36129c082a81ce272ca41bc5531307ebb5fb5bf9457d8": {
+    "patient_summary": "The prescription for a 20-year-old male involves a combination of Azithromycin and Amoxicillin for bacterial infection, alongside a multi-ingredient analgesic (Chlorzoxazone, Diclofenac, Paracetamol) for pain management. The regimen requires careful monitoring for gastrointestinal tolerance and potential hepatotoxicity due to the combination of NSAIDs and antibiotics.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin",
+        "pharmacological_action": "A macrolide antibiotic that inhibits bacterial protein synthesis by binding to the 50S ribosomal subunit. It is indicated for the treatment of susceptible bacterial infections, including respiratory tract, skin, and soft tissue infections.",
+        "side_effects": "Common side effects include nausea, abdominal pain, diarrhea, and vomiting. Rarely, it may cause QT prolongation or hypersensitivity reactions.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may reduce gastrointestinal discomfort. Avoid taking with antacids containing aluminum or magnesium within 2 hours before or 4 hours after the dose, as this reduces absorption. No specific restrictions on milk or citrus, but avoid alcohol to prevent additive GI irritation.",
+        "dosage_for_age": "The quantity of 6 tablets (likely 500mg each) suggests a standard 3-day course (500mg on day 1, then 250mg or 500mg on days 2-3) or a 5-day course. This is appropriate for a 20-year-old adult male with normal renal and hepatic function."
+      },
+      {
+        "medicine_name": "Paracetamol (in combination with Chlorzoxazone and Diclofenac)",
+        "pharmacological_action": "This is a combination analgesic. Paracetamol acts centrally to reduce pain and fever. Diclofenac is an NSAID that inhibits cyclooxygenase (COX) enzymes to reduce inflammation and pain. Chlorzoxazone is a centrally acting muscle relaxant that reduces muscle spasm. The combination is indicated for acute pain associated with muscle spasms.",
+        "side_effects": "Common side effects include nausea, vomiting, heartburn, stomach pain, diarrhea, loss of appetite, and dryness in the mouth. Chlorzoxazone may cause drowsiness or dizziness. Diclofenac carries risks of gastric irritation and renal stress.",
+        "meal_guidelines": "Must be taken with food or milk to minimize gastric irritation from Diclofenac. Do not take on an empty stomach. Avoid alcohol completely, as it significantly increases the risk of gastric bleeding and liver toxicity when combined with Paracetamol and Diclofenac.",
+        "dosage_for_age": "The quantity of 3 tablets suggests a short-term course (e.g., 1 tablet twice daily for 1.5 days or as directed). This is generally safe for a 20-year-old male, provided there is no history of peptic ulcer disease, renal impairment, or asthma exacerbated by NSAIDs."
+      },
+      {
+        "medicine_name": "Amoxicillin",
+        "pharmacological_action": "A penicillin-type antibiotic that inhibits bacterial cell wall synthesis. It is indicated for the treatment of susceptible bacterial infections, including respiratory, urinary, and skin infections.",
+        "side_effects": "Common side effects include nausea, abdominal pain, diarrhea, and rash. Hypersensitivity reactions (allergy) are a significant concern, especially in patients with a history of penicillin allergy.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may help reduce gastrointestinal upset. No specific dietary restrictions, but ensure adequate hydration. Avoid alcohol to prevent additive GI effects and potential masking of infection symptoms.",
+        "dosage_for_age": "The quantity of 4 tablets suggests a short course or specific dosing schedule. This is appropriate for a 20-year-old adult male. Note: The repository lists 'Zithrocin XL Syrup' as the catalog match for Amoxicillin, which is a data mismatch (Zithrocin is Azithromycin). The analysis assumes the intended drug is Amoxicillin based on the prescription name."
+      }
+    ],
+    "drug_interactions_and_safety": "The combination of Azithromycin and Amoxicillin is generally safe but redundant unless treating a polymicrobial infection or specific resistant strains; however, it is not contraindicated. The primary safety concern is the combination of Diclofenac (NSAID) and Paracetamol. While not directly interacting with the antibiotics, the NSAID component increases the risk of gastrointestinal bleeding and renal stress, especially if the patient is dehydrated. There is no significant pharmacokinetic interaction between Azithromycin and Amoxicillin. Monitor for signs of hypersensitivity to penicillins (Amoxicillin) and macrolides (Azithromycin). Liver function should be monitored if the course is extended, due to Paracetamol and potential hepatotoxicity from Diclofenac.",
+    "lifestyle_precautions": "Maintain adequate hydration (2-3 liters of water daily) to support renal function and reduce the risk of kidney stones or renal stress from Diclofenac. Avoid driving or operating heavy machinery if experiencing drowsiness or dizziness from Chlorzoxazone. Avoid alcohol completely during the treatment period to protect the liver and stomach. Complete the full course of antibiotics even if symptoms improve to prevent antibiotic resistance. Use sun protection if experiencing photosensitivity, though this is less common with these specific drugs.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: difficulty breathing, swelling of the face/lips/tongue (anaphylaxis), severe or persistent diarrhea (risk of C. difficile infection), dark urine, yellowing of skin/eyes (jaundice), severe abdominal pain, blood in stool or urine, or signs of severe allergic reaction (rash, hives).",
+    "doctor_audio_guidance": "Hello Mukesh, I am reviewing your prescription. You have been prescribed Azithromycin and Amoxicillin to treat a bacterial infection, and a combination pain reliever containing Paracetamol, Diclofenac, and Chlorzoxazone to manage pain and muscle spasms. It is crucial to take the pain reliever with food or milk to protect your stomach, as Diclofenac can cause irritation. The antibiotics can be taken with or without food, but consistency is key. Please avoid alcohol entirely during this period, as it can harm your liver and stomach when combined with these medications. Stay well-hydrated by drinking plenty of water. If you experience any severe rash, difficulty breathing, or persistent vomiting, seek emergency care immediately. Complete the full course of antibiotics as directed. If you have a history of penicillin allergy, please inform your doctor immediately. Wishing you a speedy recovery.",
+    "metadata": {
+      "presc_id": "PRESC_6aca39a4e2602",
+      "patient_name": "mukesh",
+      "age": 20,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 6
+        },
+        {
+          "name": "Paracetamol",
+          "qty": 3
+        },
+        {
+          "name": "Amoxicillin",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 18:42:17",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "35a038077cc86c39bdb36129c082a81ce272ca41bc5531307ebb5fb5bf9457d8",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=35a038077cc86c39bdb36129c082a81ce272ca41bc5531307ebb5fb5bf9457d8",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6aca3fcee38dd": {
+    "patient_summary": "The prescription for a 23-year-old male includes Azithromycin for bacterial infection and a combination analgesic (Chlorzoxazone, Diclofenac, Paracetamol) for musculoskeletal pain. The regimen is clinically appropriate for concurrent infection and pain management, requiring monitoring for gastrointestinal tolerance.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin (Zithrocin 500mg)",
+        "pharmacological_action": "A macrolide antibiotic that inhibits bacterial protein synthesis by binding to the 50S ribosomal subunit, exerting bacteriostatic effects against susceptible organisms. It is indicated for the treatment of community-acquired pneumonia, acute sinusitis, and other bacterial respiratory or soft tissue infections.",
+        "side_effects": "Common gastrointestinal disturbances including nausea, abdominal pain, and diarrhea. Rarely, QT prolongation or hypersensitivity reactions may occur.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with a light meal may reduce gastrointestinal upset. Avoid taking with antacids containing aluminum or magnesium within 2 hours before or 4 hours after dosing, as this reduces absorption. Avoid alcohol during treatment.",
+        "dosage_for_age": "The 500mg dose is standard for adult patients. For a 23-year-old male, this dosage is appropriate and safe, assuming normal renal and hepatic function."
+      },
+      {
+        "medicine_name": "Paracetamol (StayHappi Chlorzoxazone+Diclofenac+Paracetamol)",
+        "pharmacological_action": "A combination analgesic containing Paracetamol (central analgesic/antipyretic), Diclofenac (NSAID inhibiting COX enzymes to reduce inflammation and pain), and Chlorzoxazone (muscle relaxant acting on the CNS to relieve muscle spasm). Indicated for acute musculoskeletal pain with spasm.",
+        "side_effects": "Gastrointestinal irritation (nausea, vomiting, heartburn, stomach pain), diarrhea, loss of appetite, dry mouth. Chlorzoxazone may cause drowsiness or dizziness. Diclofenac carries risks of gastric ulceration and renal impairment with prolonged use.",
+        "meal_guidelines": "Must be taken with food or immediately after a meal to minimize gastric irritation from Diclofenac. Avoid taking on an empty stomach. Limit alcohol consumption strictly, as it increases the risk of gastric bleeding and hepatotoxicity.",
+        "dosage_for_age": "The combination dosage is suitable for an adult male. However, due to the presence of Chlorzoxazone, the patient should be advised to avoid driving or operating heavy machinery until they know how the medication affects their alertness."
+      }
+    ],
+    "drug_interactions_and_safety": "There is no direct pharmacokinetic interaction between Azithromycin and the combination analgesic. However, both medications can cause gastrointestinal side effects (nausea, diarrhea), which may be additive. The liver is the primary organ of metabolism for Paracetamol and Azithromycin, while Diclofenac poses a risk to renal function and gastric mucosa. For a healthy 23-year-old, the risk is low, but the patient should avoid other NSAIDs or alcohol to protect the liver and kidneys.",
+    "lifestyle_precautions": "Maintain adequate hydration to support renal function, especially while taking Diclofenac. Avoid driving or engaging in hazardous activities until the effects of Chlorzoxazone (drowsiness) are known. Complete the full course of Azithromycin even if symptoms improve. Avoid excessive sun exposure if photosensitivity occurs, though this is rare with this specific combination.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: severe abdominal pain or black/tarry stools (signs of GI bleeding), yellowing of skin or eyes (jaundice), difficulty breathing or chest pain (allergic reaction or cardiac issue), persistent vomiting preventing medication retention, or signs of severe allergic reaction (rash, swelling of face/lips).",
+    "doctor_audio_guidance": "Hello Bash, this is your clinical consultant. I have reviewed your prescription, which includes Azithromycin to treat a bacterial infection and a combination pain reliever to help with muscle spasms and pain. For the Azithromycin, you can take it with or without food, but taking it with a light meal might help if you feel nauseous. Please avoid antacids close to your dose time. For the pain medication, it is very important to take it with food or right after eating to protect your stomach from irritation. Since this medication contains a muscle relaxant, you might feel a bit drowsy or dizzy, so please be careful when driving or operating machinery. Stay well-hydrated by drinking plenty of water, and avoid alcohol completely while on these medications to protect your liver and stomach. If you notice any severe stomach pain, black stools, or signs of an allergic reaction like a rash or difficulty breathing, please seek emergency care immediately. Otherwise, complete the full course of antibiotics as prescribed. Get well soon.",
+    "metadata": {
+      "presc_id": "PRESC_6aca3fcee38dd",
+      "patient_name": "basha",
+      "age": 23,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 3
+        },
+        {
+          "name": "Paracetamol",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 19:08:50",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "c32f558cebe7ca69197555f19f418fc1a5d05e858ef931adbf310ca39cde2942",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=c32f558cebe7ca69197555f19f418fc1a5d05e858ef931adbf310ca39cde2942",
+    "dispense_status": "PENDING"
+  },
+  "c32f558cebe7ca69197555f19f418fc1a5d05e858ef931adbf310ca39cde2942": {
+    "patient_summary": "The prescription for a 23-year-old male includes Azithromycin for bacterial infection and a combination analgesic (Chlorzoxazone, Diclofenac, Paracetamol) for musculoskeletal pain. The regimen is clinically appropriate for concurrent infection and pain management, requiring monitoring for gastrointestinal tolerance.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin (Zithrocin 500mg)",
+        "pharmacological_action": "A macrolide antibiotic that inhibits bacterial protein synthesis by binding to the 50S ribosomal subunit, exerting bacteriostatic effects against susceptible organisms. It is indicated for the treatment of community-acquired pneumonia, acute sinusitis, and other bacterial respiratory or soft tissue infections.",
+        "side_effects": "Common gastrointestinal disturbances including nausea, abdominal pain, and diarrhea. Rarely, QT prolongation or hypersensitivity reactions may occur.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with a light meal may reduce gastrointestinal upset. Avoid taking with antacids containing aluminum or magnesium within 2 hours before or 4 hours after dosing, as this reduces absorption. Avoid alcohol during treatment.",
+        "dosage_for_age": "The 500mg dose is standard for adult patients. For a 23-year-old male, this dosage is appropriate and safe, assuming normal renal and hepatic function."
+      },
+      {
+        "medicine_name": "Paracetamol (StayHappi Chlorzoxazone+Diclofenac+Paracetamol)",
+        "pharmacological_action": "A combination analgesic containing Paracetamol (central analgesic/antipyretic), Diclofenac (NSAID inhibiting COX enzymes to reduce inflammation and pain), and Chlorzoxazone (muscle relaxant acting on the CNS to relieve muscle spasm). Indicated for acute musculoskeletal pain with spasm.",
+        "side_effects": "Gastrointestinal irritation (nausea, vomiting, heartburn, stomach pain), diarrhea, loss of appetite, dry mouth. Chlorzoxazone may cause drowsiness or dizziness. Diclofenac carries risks of gastric ulceration and renal impairment with prolonged use.",
+        "meal_guidelines": "Must be taken with food or immediately after a meal to minimize gastric irritation from Diclofenac. Avoid taking on an empty stomach. Limit alcohol consumption strictly, as it increases the risk of gastric bleeding and hepatotoxicity.",
+        "dosage_for_age": "The combination dosage is suitable for an adult male. However, due to the presence of Chlorzoxazone, the patient should be advised to avoid driving or operating heavy machinery until they know how the medication affects their alertness."
+      }
+    ],
+    "drug_interactions_and_safety": "There is no direct pharmacokinetic interaction between Azithromycin and the combination analgesic. However, both medications can cause gastrointestinal side effects (nausea, diarrhea), which may be additive. The liver is the primary organ of metabolism for Paracetamol and Azithromycin, while Diclofenac poses a risk to renal function and gastric mucosa. For a healthy 23-year-old, the risk is low, but the patient should avoid other NSAIDs or alcohol to protect the liver and kidneys.",
+    "lifestyle_precautions": "Maintain adequate hydration to support renal function, especially while taking Diclofenac. Avoid driving or engaging in hazardous activities until the effects of Chlorzoxazone (drowsiness) are known. Complete the full course of Azithromycin even if symptoms improve. Avoid excessive sun exposure if photosensitivity occurs, though this is rare with this specific combination.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: severe abdominal pain or black/tarry stools (signs of GI bleeding), yellowing of skin or eyes (jaundice), difficulty breathing or chest pain (allergic reaction or cardiac issue), persistent vomiting preventing medication retention, or signs of severe allergic reaction (rash, swelling of face/lips).",
+    "doctor_audio_guidance": "Hello Bash, this is your clinical consultant. I have reviewed your prescription, which includes Azithromycin to treat a bacterial infection and a combination pain reliever to help with muscle spasms and pain. For the Azithromycin, you can take it with or without food, but taking it with a light meal might help if you feel nauseous. Please avoid antacids close to your dose time. For the pain medication, it is very important to take it with food or right after eating to protect your stomach from irritation. Since this medication contains a muscle relaxant, you might feel a bit drowsy or dizzy, so please be careful when driving or operating machinery. Stay well-hydrated by drinking plenty of water, and avoid alcohol completely while on these medications to protect your liver and stomach. If you notice any severe stomach pain, black stools, or signs of an allergic reaction like a rash or difficulty breathing, please seek emergency care immediately. Otherwise, complete the full course of antibiotics as prescribed. Get well soon.",
+    "metadata": {
+      "presc_id": "PRESC_6aca3fcee38dd",
+      "patient_name": "basha",
+      "age": 23,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 3
+        },
+        {
+          "name": "Paracetamol",
+          "qty": 4
+        }
+      ],
+      "analyzed_at": "2026-10-10 19:08:50",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "c32f558cebe7ca69197555f19f418fc1a5d05e858ef931adbf310ca39cde2942",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=c32f558cebe7ca69197555f19f418fc1a5d05e858ef931adbf310ca39cde2942",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6acc9070c0bfa": {
+    "patient_summary": "The prescription for a 23-year-old male combines an antibiotic (Azithromycin), an antihistamine (Allegra), and an analgesic-muscle relaxant combination (Paracetamol/Diclofenac/Chlorzoxazone), likely addressing concurrent bacterial infection, allergic symptoms, and musculoskeletal pain. The regimen is generally appropriate for this demographic but requires careful monitoring for gastrointestinal and hepatic load due to the combination of NSAID and antibiotic.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin",
+        "pharmacological_action": "A macrolide antibiotic that inhibits bacterial protein synthesis by binding to the 50S ribosomal subunit, effective against a broad spectrum of bacteria causing respiratory and soft tissue infections.",
+        "side_effects": "Common side effects include nausea, abdominal pain, and diarrhea. Rare but serious risks include QT prolongation and hepatotoxicity.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may reduce gastrointestinal upset. Avoid antacids containing magnesium or aluminum within 2 hours before or 2 hours after dosing, as they reduce absorption.",
+        "dosage_for_age": "The quantity of 5 tablets suggests a standard 5-day course (500mg daily), which is the standard adult dosing regimen for uncomplicated infections. Suitable for a 23-year-old male."
+      },
+      {
+        "medicine_name": "Allegra",
+        "pharmacological_action": "A second-generation H1-antihistamine (Fexofenadine) that blocks histamine receptors, alleviating allergic rhinitis symptoms such as sneezing, runny nose, and itching without significant sedation.",
+        "side_effects": "Headache, drowsiness (less common than first-gen antihistamines), dizziness, and nausea. Generally well-tolerated.",
+        "meal_guidelines": "Can be taken with or without food. However, fruit juices (apple, grapefruit, orange) can significantly reduce its absorption; it is best taken with water. Avoid taking with antacids within 2 hours.",
+        "dosage_for_age": "The quantity of 4 tablets suggests a 4-day course (120mg daily), which is a standard adult dose for allergic conditions. Suitable for a 23-year-old male."
+      },
+      {
+        "medicine_name": "Paracetamol",
+        "pharmacological_action": "The catalog match indicates a combination tablet containing Chlorzoxazone (muscle relaxant), Diclofenac (NSAID), and Paracetamol (analgesic/antipyretic). It works by inhibiting prostaglandin synthesis (NSAID/Paracetamol) and central muscle relaxation (Chlorzoxazone) to relieve pain and spasm.",
+        "side_effects": "Nausea, vomiting, heartburn, stomach pain, diarrhea, loss of appetite, and dryness in mouth. Risk of GI bleeding and renal impairment with NSAID component.",
+        "meal_guidelines": "Must be taken with food or a full glass of milk to minimize gastric irritation from the Diclofenac component. Do not take on an empty stomach.",
+        "dosage_for_age": "The quantity of 3 tablets suggests a short-term course. The combination is potent; ensure the patient does not exceed the recommended daily limit of Diclofenac (usually 150mg/day) and Paracetamol (4g/day). Suitable for short-term use in a 23-year-old male without pre-existing renal or gastric issues."
+      }
+    ],
+    "drug_interactions_and_safety": "No direct severe pharmacokinetic interactions between Azithromycin, Fexofenadine, and the Diclofenac/Paracetamol/Chlorzoxazone combination. However, the combination of Diclofenac (NSAID) and Azithromycin may increase the risk of gastrointestinal irritation. Both Azithromycin and Paracetamol are metabolized by the liver; while the short course is unlikely to cause significant hepatotoxicity in a healthy 23-year-old, liver function should be monitored if symptoms persist. The NSAID component (Diclofenac) poses a risk to renal function if the patient is dehydrated; adequate hydration is critical.",
+    "lifestyle_precautions": "1. Hydration: Drink plenty of water to protect kidneys from Diclofenac and help flush the antibiotic. 2. Driving: Allegra is non-sedating, but Chlorzoxazone can cause drowsiness or dizziness; avoid driving or operating heavy machinery until the patient knows how they react to the muscle relaxant. 3. Alcohol: Strictly avoid alcohol, as it increases the risk of liver damage (Paracetamol/Azithromycin) and gastric bleeding (Diclofenac). 4. Diet: Avoid fruit juices with Allegra. Take the painkiller with a substantial meal.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: 1. Signs of severe allergic reaction (rash, swelling of face/lips/tongue, difficulty breathing). 2. Signs of GI bleeding (black/tarry stools, vomiting blood or coffee-ground material). 3. Signs of liver damage (yellowing of skin/eyes, dark urine, severe fatigue). 4. Signs of kidney injury (significant decrease in urine output, swelling in legs/feet). 5. Severe or persistent diarrhea (could indicate C. difficile infection from antibiotic use).",
+    "doctor_audio_guidance": "Hello Sarathy, this is your clinical consultant. I have reviewed your prescription, which includes Azithromycin for a bacterial infection, Allegra for allergy relief, and a combination painkiller for muscle pain. Here is how to take them safely. First, the Azithromycin: you can take this with or without food, but if your stomach is sensitive, take it with a light meal. Avoid antacids for two hours before and after. Second, the Allegra: take this with a full glass of water. Please avoid fruit juices like orange or grapefruit, as they can stop the medicine from working properly. Third, the painkiller: this contains an anti-inflammatory, so it is very important to take it with a full meal or a glass of milk to protect your stomach. Do not take it on an empty stomach. For safety, stay well hydrated by drinking plenty of water throughout the day. Avoid alcohol completely while on these medications. Be cautious when driving, as the muscle relaxant in the painkiller might make you feel a bit drowsy or dizzy. If you notice any severe stomach pain, black stools, yellowing of the eyes, or difficulty breathing, stop the medication and seek emergency care immediately. Otherwise, this is a standard and safe regimen for your age and health status. Get well soon.",
+    "metadata": {
+      "presc_id": "PRESC_6acc9070c0bfa",
+      "patient_name": "sarathy",
+      "age": 23,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 5
+        },
+        {
+          "name": "Allegra",
+          "qty": 4
+        },
+        {
+          "name": "Paracetamol",
+          "qty": 3
+        }
+      ],
+      "analyzed_at": "2026-10-12 13:18:15",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "13f3b9e405a06949433b7bb914dbb9e5ab7fee195613cf585d04cb9b10904000",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=13f3b9e405a06949433b7bb914dbb9e5ab7fee195613cf585d04cb9b10904000",
+    "dispense_status": "PENDING"
+  },
+  "13f3b9e405a06949433b7bb914dbb9e5ab7fee195613cf585d04cb9b10904000": {
+    "patient_summary": "The prescription for a 23-year-old male combines an antibiotic (Azithromycin), an antihistamine (Allegra), and an analgesic-muscle relaxant combination (Paracetamol/Diclofenac/Chlorzoxazone), likely addressing concurrent bacterial infection, allergic symptoms, and musculoskeletal pain. The regimen is generally appropriate for this demographic but requires careful monitoring for gastrointestinal and hepatic load due to the combination of NSAID and antibiotic.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Azithromycin",
+        "pharmacological_action": "A macrolide antibiotic that inhibits bacterial protein synthesis by binding to the 50S ribosomal subunit, effective against a broad spectrum of bacteria causing respiratory and soft tissue infections.",
+        "side_effects": "Common side effects include nausea, abdominal pain, and diarrhea. Rare but serious risks include QT prolongation and hepatotoxicity.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may reduce gastrointestinal upset. Avoid antacids containing magnesium or aluminum within 2 hours before or 2 hours after dosing, as they reduce absorption.",
+        "dosage_for_age": "The quantity of 5 tablets suggests a standard 5-day course (500mg daily), which is the standard adult dosing regimen for uncomplicated infections. Suitable for a 23-year-old male."
+      },
+      {
+        "medicine_name": "Allegra",
+        "pharmacological_action": "A second-generation H1-antihistamine (Fexofenadine) that blocks histamine receptors, alleviating allergic rhinitis symptoms such as sneezing, runny nose, and itching without significant sedation.",
+        "side_effects": "Headache, drowsiness (less common than first-gen antihistamines), dizziness, and nausea. Generally well-tolerated.",
+        "meal_guidelines": "Can be taken with or without food. However, fruit juices (apple, grapefruit, orange) can significantly reduce its absorption; it is best taken with water. Avoid taking with antacids within 2 hours.",
+        "dosage_for_age": "The quantity of 4 tablets suggests a 4-day course (120mg daily), which is a standard adult dose for allergic conditions. Suitable for a 23-year-old male."
+      },
+      {
+        "medicine_name": "Paracetamol",
+        "pharmacological_action": "The catalog match indicates a combination tablet containing Chlorzoxazone (muscle relaxant), Diclofenac (NSAID), and Paracetamol (analgesic/antipyretic). It works by inhibiting prostaglandin synthesis (NSAID/Paracetamol) and central muscle relaxation (Chlorzoxazone) to relieve pain and spasm.",
+        "side_effects": "Nausea, vomiting, heartburn, stomach pain, diarrhea, loss of appetite, and dryness in mouth. Risk of GI bleeding and renal impairment with NSAID component.",
+        "meal_guidelines": "Must be taken with food or a full glass of milk to minimize gastric irritation from the Diclofenac component. Do not take on an empty stomach.",
+        "dosage_for_age": "The quantity of 3 tablets suggests a short-term course. The combination is potent; ensure the patient does not exceed the recommended daily limit of Diclofenac (usually 150mg/day) and Paracetamol (4g/day). Suitable for short-term use in a 23-year-old male without pre-existing renal or gastric issues."
+      }
+    ],
+    "drug_interactions_and_safety": "No direct severe pharmacokinetic interactions between Azithromycin, Fexofenadine, and the Diclofenac/Paracetamol/Chlorzoxazone combination. However, the combination of Diclofenac (NSAID) and Azithromycin may increase the risk of gastrointestinal irritation. Both Azithromycin and Paracetamol are metabolized by the liver; while the short course is unlikely to cause significant hepatotoxicity in a healthy 23-year-old, liver function should be monitored if symptoms persist. The NSAID component (Diclofenac) poses a risk to renal function if the patient is dehydrated; adequate hydration is critical.",
+    "lifestyle_precautions": "1. Hydration: Drink plenty of water to protect kidneys from Diclofenac and help flush the antibiotic. 2. Driving: Allegra is non-sedating, but Chlorzoxazone can cause drowsiness or dizziness; avoid driving or operating heavy machinery until the patient knows how they react to the muscle relaxant. 3. Alcohol: Strictly avoid alcohol, as it increases the risk of liver damage (Paracetamol/Azithromycin) and gastric bleeding (Diclofenac). 4. Diet: Avoid fruit juices with Allegra. Take the painkiller with a substantial meal.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: 1. Signs of severe allergic reaction (rash, swelling of face/lips/tongue, difficulty breathing). 2. Signs of GI bleeding (black/tarry stools, vomiting blood or coffee-ground material). 3. Signs of liver damage (yellowing of skin/eyes, dark urine, severe fatigue). 4. Signs of kidney injury (significant decrease in urine output, swelling in legs/feet). 5. Severe or persistent diarrhea (could indicate C. difficile infection from antibiotic use).",
+    "doctor_audio_guidance": "Hello Sarathy, this is your clinical consultant. I have reviewed your prescription, which includes Azithromycin for a bacterial infection, Allegra for allergy relief, and a combination painkiller for muscle pain. Here is how to take them safely. First, the Azithromycin: you can take this with or without food, but if your stomach is sensitive, take it with a light meal. Avoid antacids for two hours before and after. Second, the Allegra: take this with a full glass of water. Please avoid fruit juices like orange or grapefruit, as they can stop the medicine from working properly. Third, the painkiller: this contains an anti-inflammatory, so it is very important to take it with a full meal or a glass of milk to protect your stomach. Do not take it on an empty stomach. For safety, stay well hydrated by drinking plenty of water throughout the day. Avoid alcohol completely while on these medications. Be cautious when driving, as the muscle relaxant in the painkiller might make you feel a bit drowsy or dizzy. If you notice any severe stomach pain, black stools, yellowing of the eyes, or difficulty breathing, stop the medication and seek emergency care immediately. Otherwise, this is a standard and safe regimen for your age and health status. Get well soon.",
+    "metadata": {
+      "presc_id": "PRESC_6acc9070c0bfa",
+      "patient_name": "sarathy",
+      "age": 23,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Azithromycin",
+          "qty": 5
+        },
+        {
+          "name": "Allegra",
+          "qty": 4
+        },
+        {
+          "name": "Paracetamol",
+          "qty": 3
+        }
+      ],
+      "analyzed_at": "2026-10-12 13:18:15",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "13f3b9e405a06949433b7bb914dbb9e5ab7fee195613cf585d04cb9b10904000",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=13f3b9e405a06949433b7bb914dbb9e5ab7fee195613cf585d04cb9b10904000",
+    "dispense_status": "PENDING"
+  },
+  "PRESC_6acc9a6a020b9": {
+    "patient_summary": "The prescription for a 25-year-old male combines an analgesic (Paracetamol), an antihistamine (Cetirizine), and a second analgesic (Dolo650), suggesting a clinical scenario of acute pain management with potential allergic or inflammatory components. The inclusion of two distinct paracetamol-based products requires careful monitoring to avoid accidental overdose.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Paracetamol",
+        "pharmacological_action": "Paracetamol (Acetaminophen) acts centrally to inhibit cyclooxygenase (COX) enzymes, reducing prostaglandin synthesis in the CNS, thereby providing analgesic and antipyretic effects. It is primarily indicated for mild to moderate pain and fever.",
+        "side_effects": "Common side effects are rare at therapeutic doses but may include nausea, vomiting, and gastrointestinal discomfort. Serious adverse effects include hepatotoxicity (liver damage) and nephrotoxicity (kidney damage) in cases of overdose or chronic excessive use.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with a small amount of food or water may help minimize gastric irritation. Avoid alcohol consumption as it significantly increases the risk of liver toxicity.",
+        "dosage_for_age": "For a 25-year-old male, the standard adult dose is typically 500mg to 1000mg every 4 to 6 hours, not exceeding 4000mg (4g) in 24 hours. The prescribed quantity of 4 tablets is appropriate for a short-term course, provided the total daily intake from all sources does not exceed the maximum limit."
+      },
+      {
+        "medicine_name": "Cetirizine",
+        "pharmacological_action": "Cetirizine is a second-generation H1-antihistamine that selectively blocks histamine H1 receptors, reducing symptoms of allergic rhinitis, urticaria, and other allergic conditions by inhibiting the release of inflammatory mediators.",
+        "side_effects": "Common side effects include drowsiness, fatigue, dry mouth, and headache. Less common effects may include nausea and nasopharyngitis. It is generally well-tolerated with fewer sedative effects than first-generation antihistamines.",
+        "meal_guidelines": "Can be taken with or without food. Food may slightly delay absorption but does not significantly affect overall efficacy. No specific dietary restrictions, but avoiding alcohol is recommended as it may enhance sedative effects.",
+        "dosage_for_age": "The standard adult dose is 10mg once daily. The prescribed quantity of 6 tablets suggests a 6-day course, which is appropriate for managing acute allergic symptoms. Dosing is suitable for a 25-year-old male with normal renal function."
+      },
+      {
+        "medicine_name": "Dolo650",
+        "pharmacological_action": "Dolo650 is a brand name for Paracetamol 650mg. It functions as an analgesic and antipyretic by inhibiting prostaglandin synthesis in the central nervous system. It is used for the relief of pain and reduction of fever.",
+        "side_effects": "Similar to Paracetamol, side effects are generally mild and include nausea, vomiting, and abdominal pain. Serious risks include liver and kidney damage if the maximum daily dose is exceeded.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may help reduce the risk of stomach upset. Avoid alcohol due to the increased risk of hepatotoxicity.",
+        "dosage_for_age": "Dolo650 contains 650mg of Paracetamol. For a 25-year-old male, this is a standard adult dose. However, since the patient is also prescribed 'Paracetamol' (likely 500mg or 650mg depending on the specific formulation not fully detailed in the catalog match), it is critical to ensure the total daily Paracetamol intake does not exceed 4000mg. The quantity of 2 tablets is safe if spaced appropriately and not combined with other Paracetamol-containing products beyond the safe limit."
+      }
+    ],
+    "drug_interactions_and_safety": "The primary safety concern is the potential for Paracetamol overdose due to the co-prescription of 'Paracetamol' and 'Dolo650' (which is also Paracetamol). The patient must be strictly advised to calculate the total daily Paracetamol intake from both sources to ensure it does not exceed 4000mg. There are no significant pharmacokinetic interactions between Paracetamol and Cetirizine. Both drugs are primarily metabolized by the liver (Paracetamol) and excreted by the kidneys (Cetirizine), so patients with pre-existing liver or kidney disease should be monitored. No major contraindications exist for a healthy 25-year-old male.",
+    "lifestyle_precautions": "1. Hydration: Maintain adequate fluid intake to support renal clearance of medications. 2. Driving/Alertness: Cetirizine may cause drowsiness, especially when starting treatment. Avoid driving or operating heavy machinery until the individual response to the medication is known. 3. Alcohol: Strictly avoid alcohol while taking Paracetamol to prevent liver damage. 4. Sun Exposure: No specific photosensitivity associated with these drugs, but general sun protection is always advisable. 5. Timing: Cetirizine is often taken at night to minimize daytime drowsiness, though it can be taken at any time.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: 1. Signs of liver damage (yellowing of skin/eyes, dark urine, severe abdominal pain, persistent nausea/vomiting). 2. Signs of severe allergic reaction (difficulty breathing, swelling of face/lips/tongue, hives). 3. Signs of kidney impairment (significant decrease in urine output, swelling in legs/feet). 4. Unusual bruising or bleeding (though rare with these drugs, it warrants investigation).",
+    "doctor_audio_guidance": "Hello Irfan, this is your clinical consultant. I have reviewed your prescription, which includes Paracetamol, Cetirizine, and Dolo650. Paracetamol and Dolo650 are both pain relievers and fever reducers, while Cetirizine is an antihistamine used to treat allergic symptoms like itching or runny nose. It is very important to note that Dolo650 is also a form of Paracetamol. Therefore, you must be careful not to take too much Paracetamol in total. The maximum safe daily dose for an adult is 4000mg. Please count your doses carefully to ensure you do not exceed this limit. You can take these medications with or without food, but taking them with a small snack may help prevent stomach upset. Please avoid alcohol completely while on this medication, as it can stress your liver. Cetirizine might make you feel a bit sleepy, so be cautious when driving or operating machinery, especially in the first few days. Drink plenty of water to stay hydrated. If you notice any yellowing of your eyes or skin, severe stomach pain, or difficulty breathing, please seek emergency medical care immediately. Otherwise, this is a safe and common combination for managing pain and allergies. Feel free to reach out if you have any further questions.",
+    "metadata": {
+      "presc_id": "PRESC_6acc9a6a020b9",
+      "patient_name": "irfan",
+      "age": 25,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Paracetamol",
+          "qty": 4
+        },
+        {
+          "name": "Cetirizine",
+          "qty": 6
+        },
+        {
+          "name": "Dolo650",
+          "qty": 2
+        }
+      ],
+      "analyzed_at": "2026-10-12 13:59:44",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "f57a9450ab61017a46a5036789bd24c2fcfd5494cff7620eddd4c09a989472c1",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=f57a9450ab61017a46a5036789bd24c2fcfd5494cff7620eddd4c09a989472c1",
+    "dispense_status": "PENDING"
+  },
+  "f57a9450ab61017a46a5036789bd24c2fcfd5494cff7620eddd4c09a989472c1": {
+    "patient_summary": "The prescription for a 25-year-old male combines an analgesic (Paracetamol), an antihistamine (Cetirizine), and a second analgesic (Dolo650), suggesting a clinical scenario of acute pain management with potential allergic or inflammatory components. The inclusion of two distinct paracetamol-based products requires careful monitoring to avoid accidental overdose.",
+    "medicines_analysis": [
+      {
+        "medicine_name": "Paracetamol",
+        "pharmacological_action": "Paracetamol (Acetaminophen) acts centrally to inhibit cyclooxygenase (COX) enzymes, reducing prostaglandin synthesis in the CNS, thereby providing analgesic and antipyretic effects. It is primarily indicated for mild to moderate pain and fever.",
+        "side_effects": "Common side effects are rare at therapeutic doses but may include nausea, vomiting, and gastrointestinal discomfort. Serious adverse effects include hepatotoxicity (liver damage) and nephrotoxicity (kidney damage) in cases of overdose or chronic excessive use.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with a small amount of food or water may help minimize gastric irritation. Avoid alcohol consumption as it significantly increases the risk of liver toxicity.",
+        "dosage_for_age": "For a 25-year-old male, the standard adult dose is typically 500mg to 1000mg every 4 to 6 hours, not exceeding 4000mg (4g) in 24 hours. The prescribed quantity of 4 tablets is appropriate for a short-term course, provided the total daily intake from all sources does not exceed the maximum limit."
+      },
+      {
+        "medicine_name": "Cetirizine",
+        "pharmacological_action": "Cetirizine is a second-generation H1-antihistamine that selectively blocks histamine H1 receptors, reducing symptoms of allergic rhinitis, urticaria, and other allergic conditions by inhibiting the release of inflammatory mediators.",
+        "side_effects": "Common side effects include drowsiness, fatigue, dry mouth, and headache. Less common effects may include nausea and nasopharyngitis. It is generally well-tolerated with fewer sedative effects than first-generation antihistamines.",
+        "meal_guidelines": "Can be taken with or without food. Food may slightly delay absorption but does not significantly affect overall efficacy. No specific dietary restrictions, but avoiding alcohol is recommended as it may enhance sedative effects.",
+        "dosage_for_age": "The standard adult dose is 10mg once daily. The prescribed quantity of 6 tablets suggests a 6-day course, which is appropriate for managing acute allergic symptoms. Dosing is suitable for a 25-year-old male with normal renal function."
+      },
+      {
+        "medicine_name": "Dolo650",
+        "pharmacological_action": "Dolo650 is a brand name for Paracetamol 650mg. It functions as an analgesic and antipyretic by inhibiting prostaglandin synthesis in the central nervous system. It is used for the relief of pain and reduction of fever.",
+        "side_effects": "Similar to Paracetamol, side effects are generally mild and include nausea, vomiting, and abdominal pain. Serious risks include liver and kidney damage if the maximum daily dose is exceeded.",
+        "meal_guidelines": "Can be taken with or without food. Taking it with food may help reduce the risk of stomach upset. Avoid alcohol due to the increased risk of hepatotoxicity.",
+        "dosage_for_age": "Dolo650 contains 650mg of Paracetamol. For a 25-year-old male, this is a standard adult dose. However, since the patient is also prescribed 'Paracetamol' (likely 500mg or 650mg depending on the specific formulation not fully detailed in the catalog match), it is critical to ensure the total daily Paracetamol intake does not exceed 4000mg. The quantity of 2 tablets is safe if spaced appropriately and not combined with other Paracetamol-containing products beyond the safe limit."
+      }
+    ],
+    "drug_interactions_and_safety": "The primary safety concern is the potential for Paracetamol overdose due to the co-prescription of 'Paracetamol' and 'Dolo650' (which is also Paracetamol). The patient must be strictly advised to calculate the total daily Paracetamol intake from both sources to ensure it does not exceed 4000mg. There are no significant pharmacokinetic interactions between Paracetamol and Cetirizine. Both drugs are primarily metabolized by the liver (Paracetamol) and excreted by the kidneys (Cetirizine), so patients with pre-existing liver or kidney disease should be monitored. No major contraindications exist for a healthy 25-year-old male.",
+    "lifestyle_precautions": "1. Hydration: Maintain adequate fluid intake to support renal clearance of medications. 2. Driving/Alertness: Cetirizine may cause drowsiness, especially when starting treatment. Avoid driving or operating heavy machinery until the individual response to the medication is known. 3. Alcohol: Strictly avoid alcohol while taking Paracetamol to prevent liver damage. 4. Sun Exposure: No specific photosensitivity associated with these drugs, but general sun protection is always advisable. 5. Timing: Cetirizine is often taken at night to minimize daytime drowsiness, though it can be taken at any time.",
+    "red_flag_symptoms": "Seek immediate medical attention if the patient experiences: 1. Signs of liver damage (yellowing of skin/eyes, dark urine, severe abdominal pain, persistent nausea/vomiting). 2. Signs of severe allergic reaction (difficulty breathing, swelling of face/lips/tongue, hives). 3. Signs of kidney impairment (significant decrease in urine output, swelling in legs/feet). 4. Unusual bruising or bleeding (though rare with these drugs, it warrants investigation).",
+    "doctor_audio_guidance": "Hello Irfan, this is your clinical consultant. I have reviewed your prescription, which includes Paracetamol, Cetirizine, and Dolo650. Paracetamol and Dolo650 are both pain relievers and fever reducers, while Cetirizine is an antihistamine used to treat allergic symptoms like itching or runny nose. It is very important to note that Dolo650 is also a form of Paracetamol. Therefore, you must be careful not to take too much Paracetamol in total. The maximum safe daily dose for an adult is 4000mg. Please count your doses carefully to ensure you do not exceed this limit. You can take these medications with or without food, but taking them with a small snack may help prevent stomach upset. Please avoid alcohol completely while on this medication, as it can stress your liver. Cetirizine might make you feel a bit sleepy, so be cautious when driving or operating machinery, especially in the first few days. Drink plenty of water to stay hydrated. If you notice any yellowing of your eyes or skin, severe stomach pain, or difficulty breathing, please seek emergency medical care immediately. Otherwise, this is a safe and common combination for managing pain and allergies. Feel free to reach out if you have any further questions.",
+    "metadata": {
+      "presc_id": "PRESC_6acc9a6a020b9",
+      "patient_name": "irfan",
+      "age": 25,
+      "gender": "Male",
+      "medicines": [
+        {
+          "name": "Paracetamol",
+          "qty": 4
+        },
+        {
+          "name": "Cetirizine",
+          "qty": 6
+        },
+        {
+          "name": "Dolo650",
+          "qty": 2
+        }
+      ],
+      "analyzed_at": "2026-10-12 13:59:44",
+      "ai_physician": "AI Clinical Consultant (PhD Clinical Pharmacology & Internal Medicine)",
+      "ai_engine": "Groq (qwen/qwen3.8-27b Failover)",
+      "catalog_source": "Medicine-model_2 (11,498 Indian & Global Drug Formulations)"
+    },
+    "token": "f57a9450ab61017a46a5036789bd24c2fcfd5494cff7620eddd4c09a989472c1",
+    "prescription_url": "https://iotcloud22.in/4973/view_prescription.php?token=f57a9450ab61017a46a5036789bd24c2fcfd5494cff7620eddd4c09a989472c1",
+    "dispense_status": "PENDING"
+  }
+}

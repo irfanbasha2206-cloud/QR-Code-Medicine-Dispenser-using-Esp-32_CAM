@@ -92,11 +92,29 @@ try {
     // ─── 4. Search Database for Matching Prescription ───
     $safeQr = mysqli_real_escape_string($conn, $qr_text);
     
-    // Attempt 1: Exact QR text match
-    $sql = "SELECT * FROM `4973_patient` WHERE qr_text = '$safeQr' ORDER BY id DESC LIMIT 1";
+    // Attempt 1: Exact QR text match or presc_id match
+    $sql = "SELECT * FROM `4973_patient` WHERE qr_text = '$safeQr' OR presc_id = '$safeQr' ORDER BY id DESC LIMIT 1";
     $result = mysqli_query($conn, $sql);
 
-    // Attempt 2: LIKE search
+    // Attempt 1b: Extract presc_id if QR text is a URL or contains PRESC_...
+    if (!$result || mysqli_num_rows($result) === 0) {
+        if (preg_match('/(PRESC_[a-zA-Z0-9]+)/', $qr_text, $mMatch)) {
+            $foundPresc = mysqli_real_escape_string($conn, $mMatch[1]);
+            $sqlPresc = "SELECT * FROM `4973_patient` WHERE presc_id = '$foundPresc' ORDER BY id DESC LIMIT 1";
+            $result = mysqli_query($conn, $sqlPresc);
+        }
+    }
+
+    // Attempt 1c: Extract token if QR text is a view_prescription URL
+    if (!$result || mysqli_num_rows($result) === 0) {
+        if (preg_match('/token=([a-zA-Z0-9]+)/', $qr_text, $tMatch)) {
+            $foundToken = mysqli_real_escape_string($conn, $tMatch[1]);
+            $sqlToken = "SELECT * FROM `4973_patient` WHERE token = '$foundToken' ORDER BY id DESC LIMIT 1";
+            $result = mysqli_query($conn, $sqlToken);
+        }
+    }
+
+    // Attempt 2: LIKE search on qr_text
     if (!$result || mysqli_num_rows($result) === 0) {
         $sqlLike = "SELECT * FROM `4973_patient` WHERE qr_text LIKE '%$safeQr%' ORDER BY id DESC LIMIT 1";
         $result = mysqli_query($conn, $sqlLike);
@@ -132,28 +150,10 @@ try {
     $prescId = $row['presc_id'] ?? '';
     $now = date('Y-m-d H:i:s');
 
-    // ─── 5. Ensure Status Columns Exist & Update to DISPENSED ───
-    try {
-        $colCheck = mysqli_query($conn, "SHOW COLUMNS FROM `4973_patient` LIKE 'dispense_status'");
-        if ($colCheck && mysqli_num_rows($colCheck) === 0) {
-            @mysqli_query($conn, "ALTER TABLE `4973_patient` ADD COLUMN `dispense_status` VARCHAR(50) DEFAULT 'PENDING'");
-            @mysqli_query($conn, "ALTER TABLE `4973_patient` ADD COLUMN `dispensed_at` DATETIME NULL");
-        }
-    } catch (Throwable $t) {
-        // Suppress any column check/alter error
-    }
-
-    // Update using ID
-    if ($rowId > 0) {
-        @mysqli_query($conn, "UPDATE `4973_patient` SET `dispense_status` = 'DISPENSED', `dispensed_at` = '$now' WHERE id = $rowId");
-    }
-    // Also update using presc_id as safeguard
-    if (!empty($prescId)) {
-        $safePresc = mysqli_real_escape_string($conn, $prescId);
-        @mysqli_query($conn, "UPDATE `4973_patient` SET `dispense_status` = 'DISPENSED', `dispensed_at` = '$now' WHERE presc_id = '$safePresc'");
-    }
-
-    // ─── 6. Decode Medicines ───
+    // ─── 5. Check if already DISPENSED ───
+    $currentStatus = strtoupper($row['dispense_status'] ?? 'PENDING');
+    
+    // Decode Medicines first
     $dbMedicines = [];
     if (!empty($row['medicines'])) {
         $decoded = json_decode($row['medicines'], true);
@@ -165,10 +165,90 @@ try {
         $dbMedicines = $medicines;
     }
 
-    // ─── 7. Success Response ───
+    if ($currentStatus === 'DISPENSED') {
+        echo json_encode([
+            "status"          => "already_dispensed",
+            "message"         => "This prescription has already been dispensed.",
+            "presc_id"        => $prescId ?: 'PRESC_N/A',
+            "patient"         => [
+                "name"   => $row['patient_name'] ?? 'Unknown',
+                "gender" => $row['gender'] ?? '-',
+                "age"    => $row['age'] ?? '-',
+                "dob"    => $row['dob'] ?? '-',
+                "phone"  => $row['phone'] ?? '-'
+            ],
+            "medicines"       => $dbMedicines,
+            "doctor"          => $row['doctor'] ?? 'doctor',
+            "prescribed_at"   => $row['created_at'] ?? $now,
+            "dispensed_at"    => $row['dispensed_at'] ?? $now,
+            "dispense_status" => "DISPENSED"
+        ], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+        exit;
+    }
+
+    // ─── 6. Ensure Columns Exist & Update Status to SCANNED ───
+    try {
+        $colCheck = mysqli_query($conn, "SHOW COLUMNS FROM `4973_patient` LIKE 'scanned_at'");
+        if ($colCheck && mysqli_num_rows($colCheck) === 0) {
+            @mysqli_query($conn, "ALTER TABLE `4973_patient` ADD COLUMN `scanned_at` DATETIME NULL");
+        }
+        $colCheckStatus = mysqli_query($conn, "SHOW COLUMNS FROM `4973_patient` LIKE 'dispense_status'");
+        if ($colCheckStatus && mysqli_num_rows($colCheckStatus) === 0) {
+            @mysqli_query($conn, "ALTER TABLE `4973_patient` ADD COLUMN `dispense_status` VARCHAR(50) DEFAULT 'PENDING'");
+            @mysqli_query($conn, "ALTER TABLE `4973_patient` ADD COLUMN `dispensed_at` DATETIME NULL");
+        }
+    } catch (Throwable $t) {
+        // Suppress any column check/alter error
+    }
+
+    // Mark as SCANNED in Database (Hardware confirm_dispense.php will set DISPENSED)
+    if ($rowId > 0) {
+        @mysqli_query($conn, "UPDATE `4973_patient` SET `dispense_status` = 'SCANNED', `scanned_at` = '$now' WHERE id = $rowId");
+    }
+    if (!empty($prescId)) {
+        $safePresc = mysqli_real_escape_string($conn, $prescId);
+        @mysqli_query($conn, "UPDATE `4973_patient` SET `dispense_status` = 'SCANNED', `scanned_at` = '$now' WHERE presc_id = '$safePresc'");
+    }
+
+    // ─── 7. Write Hardware Command to shared/light2.json ───
+    $slots = [];
+    $slotNum = 1;
+    $totalPills = 0;
+    foreach ($dbMedicines as $med) {
+        $mName = trim($med['name'] ?? '');
+        $mQty = (int)($med['qty'] ?? 1);
+        if ($mName === '' || $mQty <= 0) continue;
+        if ($slotNum > 3) break; // Hardware supports 3 slots (SLOT1, SLOT2, SLOT3)
+        $slots[] = [
+            "slot_id" => $slotNum,
+            "name"    => $mName,
+            "count"   => $mQty
+        ];
+        $totalPills += $mQty;
+        $slotNum++;
+    }
+
+    $sharedDir = __DIR__ . '/shared';
+    if (!is_dir($sharedDir)) {
+        @mkdir($sharedDir, 0777, true);
+    }
+    $light2Data = [
+        "command"     => "dispense",
+        "presc_id"    => $prescId,
+        "patient"     => $row['patient_name'] ?? 'Patient',
+        "total_slots" => count($slots),
+        "total_pills" => $totalPills,
+        "slots"       => $slots,
+        "scanned_at"  => $now,
+        "status"      => "ready" // 🎯 Triggers hardware: if (command == "dispense" && status == "ready")
+    ];
+    $light2File = $sharedDir . '/light2.json';
+    @file_put_contents($light2File, json_encode($light2Data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+
+    // ─── 8. Success Response (SCANNED — Dispensing Active) ───
     $response = [
         "status"          => "success",
-        "message"         => "Prescription dispensed successfully!",
+        "message"         => "QR verified! Dispense sequence queued on hardware dispenser.",
         "presc_id"        => $prescId ?: 'PRESC_N/A',
         "patient"         => [
             "name"   => $row['patient_name'] ?? 'Unknown',
@@ -177,11 +257,13 @@ try {
             "dob"    => $row['dob'] ?? '-',
             "phone"  => $row['phone'] ?? '-'
         ],
-        "medicines"       => $dbMedicines,
-        "doctor"          => $row['doctor'] ?? 'doctor',
-        "prescribed_at"   => $row['created_at'] ?? $now,
-        "dispensed_at"    => $now,
-        "dispense_status" => "DISPENSED"
+        "medicines"        => $dbMedicines,
+        "doctor"           => $row['doctor'] ?? 'doctor',
+        "prescribed_at"    => $row['created_at'] ?? $now,
+        "scanned_at"       => $now,
+        "dispense_status"  => "SCANNED",
+        "hardware_command" => "ready",
+        "slots"            => $slots
     ];
 
     echo json_encode($response, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
