@@ -28,8 +28,8 @@ except Exception:
     pass
 
 # API Configuration
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "AQ.Ab8RN6KF5WbJQe5EuQ_y0lrD4SItD2rmyYOMGg1SrjvxY1uPaA")
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "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")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODELS_DIR = os.path.join(BASE_DIR, "models")
